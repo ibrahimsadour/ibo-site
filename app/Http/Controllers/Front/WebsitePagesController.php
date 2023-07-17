@@ -41,6 +41,7 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
 
 
         return view('front.pages.about.index', compact('about','sections','articles','tags','first_articles','last_articles','cars'));
@@ -56,6 +57,7 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
 
         return view('front.pages.privacy-policy.index', compact('privacy_policy_page','sections','articles','tags','first_articles','last_articles','cars'));
     }
@@ -70,6 +72,7 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
 
         return view('front.pages.terms-condition.index', compact('terms_condition_page','sections','articles','tags','first_articles','last_articles','cars'));
     }
@@ -81,6 +84,8 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
+
         return view('front.pages.contact-us.index', compact('sections','articles','tags','first_articles','last_articles','cars'));
     }
 
@@ -93,6 +98,8 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
+
         return view('front.pages.404.index', compact('sections','articles','tags','first_articles','last_articles'));
     }
     public function sitemap (){

@@ -14,7 +14,7 @@ class SectionsController extends Controller
     public function show_all_sections()
     {
         $sections = Section::all();
-        return view('front.pages.sections.sections_group', compact('sections'    ));
+        return view('front.pages.sections.sections_group', compact('sections'));
     }
 
     //show one article
@@ -37,7 +37,9 @@ class SectionsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
 
-        return view('front.pages.sections.section', compact('section','articles','tags','sections','sectionTags'));
+
+        return view('front.pages.sections.section', compact('section','articles','tags','sections','sectionTags','page_links'));
     }
 }

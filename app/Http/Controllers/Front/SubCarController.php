@@ -23,7 +23,9 @@ class SubCarController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.cars.sub-cars.index', compact('car','sections','articles','tags','first_articles','last_articles','cars','subCar','TagssubCars'));
+        $page_links = FooterPageLinks();        
+
+        return view('front.pages.cars.sub-cars.index', compact('car','sections','articles','tags','first_articles','last_articles','cars','subCar','TagssubCars','page_links'));
 
     }
     //show one subcar with her tag in article
@@ -42,9 +44,11 @@ class SubCarController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
+
         if (!$car) {
         return redirect()->route('404.index');
         }
-        return view('front.pages.cars.sub-cars.subcar-with-tag', compact('car','slugTag','sections','articles','tags','first_articles','last_articles','cars','subCar'));
+        return view('front.pages.cars.sub-cars.subcar-with-tag', compact('page_links','car','slugTag','sections','articles','tags','first_articles','last_articles','cars','subCar'));
     }
 }

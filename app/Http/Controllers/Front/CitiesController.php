@@ -24,7 +24,9 @@ class CitiesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.cities.cities_group', compact('cities','sections','articles','tags','first_articles','last_articles'));
+        $page_links = FooterPageLinks();        
+
+        return view('front.pages.cities.cities_group', compact('cities','sections','articles','tags','first_articles','last_articles','page_links'));
     }
     //show one city with her all tags
     public function show_one_city($slug)
@@ -38,7 +40,9 @@ class CitiesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.cities.city', compact('city','sections','articles','tags','first_articles','last_articles','cars','cityTags'));
+        $page_links = FooterPageLinks();        
+
+        return view('front.pages.cities.city', compact('city','sections','articles','tags','first_articles','last_articles','cars','cityTags','page_links'));
 
     }
     //show one city with his tag
@@ -56,11 +60,13 @@ class CitiesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
+
 
         if (!$city) {
         return redirect()->route('404.index');
         }
-        return view('front.pages.cities.city-with-tag', compact('city','slugTag','sections','articles','tags','first_articles','last_articles','cars'));
+        return view('front.pages.cities.city-with-tag', compact('city','slugTag','sections','articles','tags','first_articles','last_articles','cars','page_links'));
 
 
     }

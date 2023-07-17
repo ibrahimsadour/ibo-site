@@ -23,7 +23,9 @@ class CarsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.cars.cars_group', compact('cars','sections','articles','tags','first_articles','last_articles'));
+        $page_links = FooterPageLinks();        
+
+        return view('front.pages.cars.cars_group', compact('cars','sections','articles','tags','first_articles','last_articles','page_links'));
     }
     //show one cars with all her tags
     public function show_one_car($slug)
@@ -39,9 +41,10 @@ class CarsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
 
         // return $subCar;
-        return view('front.pages.cars.car', compact('car','sections','articles','tags','first_articles','last_articles','cars','carTags','subCars'));
+        return view('front.pages.cars.car', compact('car','sections','articles','tags','first_articles','last_articles','cars','carTags','subCars','page_links'));
 
     }
     //show one car with her tag
@@ -59,10 +62,12 @@ class CarsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
+
         if (!$car) {
         return redirect()->route('404.index');
         }
-        return view('front.pages.cars.car-with-tag', compact('car','slugTag','sections','articles','tags','first_articles','last_articles','cars'));
+        return view('front.pages.cars.car-with-tag', compact('car','slugTag','sections','articles','tags','first_articles','last_articles','cars','page_links'));
 
 
     }

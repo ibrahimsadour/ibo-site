@@ -37,8 +37,8 @@ class ArticlesController extends Controller
        $articles = Article::Active()->inRandomOrder()->limit(5)->get();
        $tags = Tag::Active()->inRandomOrder()->limit(10)->get();
        $sections = Section::select()->Active()->get();
-
-        return view('front.pages.articles.article', compact('article','articles','tags','sections','cars'));
+       $page_links = FooterPageLinks();        
+       return view('front.pages.articles.article', compact('article','articles','tags','sections','cars','page_links'));
     }
 
 }

@@ -23,8 +23,9 @@ class TagsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $page_links = FooterPageLinks();        
 
-        return view('front.pages.tags.tags_group', compact('tags','show_all_tags','sections','articles','first_articles','last_articles','cars'));
+        return view('front.pages.tags.tags_group', compact('tags','show_all_tags','sections','articles','first_articles','last_articles','cars','page_links'));
     }
     //show one tag
     public function show_one_tag($slug)
@@ -42,7 +43,9 @@ class TagsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars'));
+        $page_links = FooterPageLinks();        
+
+        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars'.'page_links'));
 
 }
     //show one tag
