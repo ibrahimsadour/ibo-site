@@ -88,128 +88,104 @@
                 </div>
                 <!-- Candlestick Multi Level Control Chart -->
 
-                <!-- Sell Orders & Buy Order -->
                 <div class="row match-height">
+                    <!-- section -->
                     <div class="col-12 col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">أعلانات منشورة</h4>
+                                <h4 class="card-title">@lang('admin/dashboard-blade.section')</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <p class="text-muted">أخر عشر اعلانات منشورة</p>
-                                </div>
                             </div>
                             <div class="card-content">
                                 <div class="table-responsive">
                                     <table class="table table-de mb-0">
                                         <thead>
                                         <tr>
-                                            <th>الاسم</th>
-                                            <th>القسم</th>
-                                            <th>السعر</th>
+                                            <th>@lang('admin/dashboard-blade.title')</th>
+                                            <th>@lang('admin/dashboard-blade.status')</th>
+                                            <th>@lang('admin/dashboard-blade.photo')</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="bg-success bg-lighten-5">
-                                            <td>10583.4</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45000000</td>
-                                            <td>$ 4762.53</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10583.5</td>
-                                            <td><i class="cc BTC-alt"></i> 0.04000000</td>
-                                            <td>$ 423.34</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10583.7</td>
-                                            <td><i class="cc BTC-alt"></i> 0.25100000</td>
-                                            <td>$ 2656.51</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10583.8</td>
-                                            <td><i class="cc BTC-alt"></i> 0.35000000</td>
-                                            <td>$ 3704.33</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10595.7</td>
-                                            <td><i class="cc BTC-alt"></i> 0.30000000</td>
-                                            <td>$ 3178.71</td>
-                                        </tr>
-                                        <tr class="bg-danger bg-lighten-5">
-                                            <td>10599.5</td>
-                                            <td><i class="cc BTC-alt"></i> 0.02000000</td>
-                                            <td>$ 211.99</td>
-                                        </tr>
+                                            <?php $count = 0; ?>
+                                            @isset($active_sctions)
+                                                @foreach($active_sctions as $section)
+                                                    <?php if($count == 3) break; ?>  
+                                                        <tr>
+                                                            <td>{{ Str::limit($section -> name, 45) }}</td>
+                                                            <td>
+                                                                @if($section -> getActive() === "active" || $section -> getActive() === "مفعل")
+                                                                    <b class="success">{{$section -> getActive() }}
+                                                                        @else
+                                                                            <b class="warning">{{$section -> getActive()}}</b>
+                                                                @endif
+                                                            </td>                                                             
+                                                            <td> <img style="width: 150px; height: 100px;" src="{{$section ->photo}}"></td>
+                                                        </tr>
+                                                    <?php $count++; ?>
+                                                @endforeach
+                                            @endisset         
+   
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- end section -->
+
+                    <!-- tags -->
                     <div class="col-12 col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">الاعلانات المباعة</h4>
+                                <h4 class="card-title">@lang('admin/dashboard-blade.tags')</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <p class="text-muted">أخر عشر اعلانات مباعة</p>
-                                </div>
                             </div>
                             <div class="card-content">
                                 <div class="table-responsive">
                                     <table class="table table-de mb-0">
                                         <thead>
                                         <tr>
-                                            <th>الاسم</th>
-                                            <th>القسم</th>
-                                            <th>السعر</th>
+                                            <th>@lang('admin/dashboard-blade.date')</th>
+                                            <th>@lang('admin/dashboard-blade.title')</th>
+                                            <th>@lang('admin/dashboard-blade.status')</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="bg-danger bg-lighten-5">
-                                            <td>10599.5</td>
-                                            <td><i class="cc BTC-alt"></i> 0.02000000</td>
-                                            <td>$ 211.99</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10583.5</td>
-                                            <td><i class="cc BTC-alt"></i> 0.04000000</td>
-                                            <td>$ 423.34</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10583.8</td>
-                                            <td><i class="cc BTC-alt"></i> 0.35000000</td>
-                                            <td>$ 3704.33</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10595.7</td>
-                                            <td><i class="cc BTC-alt"></i> 0.30000000</td>
-                                            <td>$ 3178.71</td>
-                                        </tr>
-                                        <tr class="bg-danger bg-lighten-5">
-                                            <td>10583.7</td>
-                                            <td><i class="cc BTC-alt"></i> 0.25100000</td>
-                                            <td>$ 2656.51</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10595.8</td>
-                                            <td><i class="cc BTC-alt"></i> 0.29697926</td>
-                                            <td>$ 3146.74</td>
-                                        </tr>
+                                            <?php $count = 0; ?>
+                                            @isset($select_10_active_tags)
+                                                @foreach($select_10_active_tags as $tag)
+                                                    <?php if($count == 10) break; ?>  
+                                                        <tr>
+                                                            <td>{{ Str::limit($tag ->created_at) }}</td>
+                                                            <td>{{ Str::limit($tag -> name, 45) }}</td>
+                                                            <td>
+                                                                @if($tag -> getActive() === "active" || $tag -> getActive() === "مفعل")
+                                                                    <b class="success">{{$tag -> getActive() }}
+                                                                        @else
+                                                                            <b class="warning">{{$tag -> getActive()}}</b>
+                                                                @endif
+                                                            </td>                                                             
+                                                        </tr>
+                                                    <?php $count++; ?>
+                                                @endforeach
+                                            @endisset 
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- end tags -->
+
                 </div>
-                <!--/ Sell Orders & Buy Order -->
-                <!-- Active Orders -->
+                
+                <!-- Latest_articles_added -->
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Active Order</h4>
+                                <h4 class="card-title">@lang('admin/dashboard-blade.Latest_articles_added')</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <td>
@@ -219,100 +195,55 @@
                             </div>
                             <div class="card-content">
                                 <div class="table-responsive">
-                                    <table class="table table-de mb-0">
-                                        <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Type</th>
-                                            <th>Amount BTC</th>
-                                            <th>BTC Remaining</th>
-                                            <th>Price</th>
-                                            <th>USD</th>
-                                            <th>Fee (%)</th>
-                                            <th>Cancel</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td>11900.12</td>
-                                            <td>$ 6979.78</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:50:50</td>
-                                            <td class="danger">Sell</td>
-                                            <td><i class="cc BTC-alt"></i> 1.38647</td>
-                                            <td><i class="cc BTC-alt"></i> 0.38647</td>
-                                            <td>11905.09</td>
-                                            <td>$ 4600.97</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:49:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45879</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45879</td>
-                                            <td>11901.85</td>
-                                            <td>$ 5460.44</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.89877</td>
-                                            <td><i class="cc BTC-alt"></i> 0.89877</td>
-                                            <td>11899.25</td>
-                                            <td>$ 10694.6</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="danger">Sell</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45712</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45712</td>
-                                            <td>11908.58</td>
-                                            <td>$ 5443.65</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td>11900.12</td>
-                                            <td>$ 6979.78</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+
+                                        <table class="table table-de mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th>@lang('admin/dashboard-blade.date')</th>
+                                                <th>@lang('admin/dashboard-blade.title')</th>
+                                                <th>@lang('admin/dashboard-blade.slug')</th>
+                                                <th>@lang('admin/dashboard-blade.status')</th>
+                                                <th>@lang('admin/dashboard-blade.keywoord')</th>
+                                                <th>@lang('admin/dashboard-blade.photo')</th>
+                                                <th>@lang('admin/dashboard-blade.delete')</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $count = 0; ?>
+                                                @isset($last_articles)
+                                                    @foreach($last_articles as $article)
+                                                        <?php if($count == 3) break; ?>    
+                                                        <tr>
+                                                            <td>{{$article -> created_at}}</td>
+                                                            <td>{{ Str::limit($article -> name, 45) }}</td>
+                                                            <td>{{ Str::limit($article -> slug, 45) }}</td>
+
+                                                            <td>
+                                                                @if($article -> getActive() === "active" || $article -> getActive() === "مفعل")
+                                                                    <b class="success">{{$article -> getActive() }}
+                                                                        @else
+                                                                            <b class="warning">{{$article -> getActive()}}</b>
+                                                                @endif
+                                                            </td>                                                            
+                                                            <td>{{ Str::limit($article -> seo_keyword, 45) }}</td>
+                                                            <td> <img style="width: 150px; height: 100px;" src="{{$article ->photo}}"></td>
+                                                            <td>
+                                                                <a href="{{route('admin.articles.delete',$article -> id)}}"class="btn btn-sm round btn-outline-danger"><i class="la la-trash"></i>حذف</a>
+                                                            </td>
+                                                        </tr>
+                                                        <?php $count++; ?>
+                                                    @endforeach
+                                                @endisset         
+
+                                            </tbody>
+                                        </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Active Orders -->
+                <!-- end Latest_articles_added -->
+
             </div>
         </div>
     </div>

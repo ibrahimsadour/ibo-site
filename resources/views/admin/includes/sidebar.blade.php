@@ -9,7 +9,7 @@
               <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
                <a href=""><i class="icon-globe"></i>
                    <span class="menu-title" data-i18n="nav.dash.main">الصفحات</span>
-                   <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Car::count()}}</span>
+                   <span class="badge badge badge-info badge-pill float-right mr-2">6</span>
                </a>
                <ul class="menu-content">
                    <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.home-page')}}"> الرئيسية</a></li>
@@ -159,7 +159,7 @@
             
             </li>
             {{--   ذاكرة التخزين المؤقت   --}}
-            <li>
+            <li>    
                 <a><i class="la la-tags"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">ذاكرة التخزين المؤقت </span>
                     <span class="badge badge badge-success badge-pill float-right mr-2"></span>
@@ -179,6 +179,18 @@
                 </ul>
             </li>
 
+            {{--   Footer   --}}
+           <li class="{{ Request::is('admin/footer') ? 'nav-item active' : '' }}">
+            <a href=""><i class="la la-tags"></i>
+                <span class="menu-title" data-i18n="nav.dash.main">Footer</span>
+                <span class="badge badge badge-warning badge-pill float-right mr-2">اضغط هنا للتعديل</span>
+            </a>
+            <ul class="menu-content">
+                <li class="{{ Request::is('admin/footer') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.footer')}}"
+                                                                                   data-i18n="nav.dash.ecommerce"> تعديل قائمة الصفحات</a>
+                </li>
+            </ul>
+        </li>
             <li class=" nav-item"><a href="/" target="_blank"><i class="la la-support"></i><span
                 class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>
             </li>

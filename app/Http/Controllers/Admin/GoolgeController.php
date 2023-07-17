@@ -19,7 +19,7 @@ class GoolgeController extends Controller
         $this->middleware('auth');
     }
 
-    //show all cities
+    //show all cities   
     public function index()
 
     {

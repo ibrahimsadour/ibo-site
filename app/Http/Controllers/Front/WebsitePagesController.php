@@ -26,9 +26,9 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-                
+        $page_links = FooterPageLinks();        
         $home_page = HomePage::first();
-        return view('front.pages.home', compact(['sections','articles','tags','first_articles','last_articles','home_page','cars']));
+        return view('front.pages.home', compact(['sections','articles','tags','first_articles','last_articles','home_page','cars','page_links']));
     }
 
     public function about_page (){

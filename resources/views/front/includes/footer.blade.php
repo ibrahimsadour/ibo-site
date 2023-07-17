@@ -11,22 +11,19 @@
                             <div class="widget-posts-list-wrapper">
                                 <div class="widget-posts-list-container timeline-widget">
                                     <ul class="posts-list-items widget-posts-wrapper">
-                                      
-                                        <li class="widget-single-post-item">
-                                            <a href="{{route('cities.index')}}">
-                                                <h3>خدمات لجميع مدن الكويت</h3>
-                                            </a>
-                                        </li>
-                                        <li class="widget-single-post-item">
-                                            <a href="{{route('cars.index')}}">
-                                                <h3>خدمات سيارات الكويت</h3>
-                                            </a>
-                                        </li>
-                                        <li class="widget-single-post-item">
-                                            <a href="{{route('tags.index')}}">
-                                                <h3>بنشر متنقل الكويت</h3>
-                                            </a>
-                                        </li>
+                                        <?php $count = 0; ?>
+                                        @isset($page_links)
+                                        @foreach($page_links as $page_link)
+                                            <?php if($count == 3) break; ?>
+                                                <li class="widget-single-post-item">
+                                                    <a href="{{$page_link->link}}">
+                                                        <h3>{{$page_link->title}}</h3>
+                                                    </a>
+                                                </li>
+
+                                            <?php $count++; ?>
+                                            @endforeach
+                                        @endisset       
 
                                     </ul>
                                 </div>

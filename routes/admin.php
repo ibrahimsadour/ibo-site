@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\Pages\HomePageController;
 use App\Http\Controllers\Admin\ImportExcelController;
 use App\Http\Controllers\Admin\GoolgeController;
 use App\Http\Controllers\Admin\SubCarController;
+use App\Http\Controllers\Admin\FooterController;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
@@ -250,6 +251,19 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
 
     });
     ############################# End cache Route ###############################
+
+    ############################# Begin home-page Route ###############################
+    Route::group(['prefix' => 'footer'], function () {
+        Route::get('/',[FooterController::class ,'index']) -> name('admin.footer');
+        Route::post('store',[FooterController::class ,'store']) -> name('admin.footer.store');
+        Route::get('edit/{id}',[FooterController::class ,'edit']) -> name('admin.footer.edit');
+        Route::post('update/{id}',[FooterController::class ,'update']) -> name('admin.footer.update');
+        Route::get('delete/{id}',[FooterController::class ,'destroy']) -> name('admin.footer.delete');
+        Route::get('changeStatus/{id}',[FooterController::class ,'changeStatus']) -> name('admin.footer.status');
+
+        
+    });
+    ############################# End Cars Route ################################
 });
 ############################# End admin Dashboard Route ###############################
 

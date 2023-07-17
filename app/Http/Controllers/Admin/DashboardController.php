@@ -19,8 +19,11 @@ class DashboardController extends Controller
 
     //show_dashboard
     public function show_dashboard (){
-
-        return view('admin.dashboard');
+        $last_articles = selectLast_Articles();
+        $active_sctions = selectActiveSctions();
+        $select_10_active_tags = select10ActiveTags();
+        
+        return view('admin.dashboard',compact('last_articles','active_sctions','select_10_active_tags'));
     }
 
     //show_form
