@@ -233,8 +233,22 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
 
         });
         ############################# End Cars Route ################################
+
+
     ############################# Begin cache Route ###############################
-    Route::get('cache/application',[CacheController::class ,'application_cache']) -> name('admin.cache.application');
+    Route::group(['prefix' => 'cache'], function () {
+        Route::get('clear-cache',[CacheController::class ,'clear_cache']) -> name('admin.cache.clear.cache');
+        Route::get('optimize',[CacheController::class ,'optimize']) -> name('admin.cache.optimize');
+        Route::get('optimize-clear',[CacheController::class ,'optimize_clear']) -> name('admin.cache.optimize.clear');
+        Route::get('route-cache',[CacheController::class ,'route_cache']) -> name('admin.cache.route.cache');
+        Route::get('route-clear',[CacheController::class ,'route_clear']) -> name('admin.cache.route.clear');
+        Route::get('view-clear',[CacheController::class ,'view_clear']) -> name('admin.cache.view.clear');
+        Route::get('view-cache',[CacheController::class ,'view_cache']) -> name('admin.cache.view.cache');
+        Route::get('config-cache',[CacheController::class ,'config_cache']) -> name('admin.cache.config.cache');
+        Route::get('config-clear',[CacheController::class ,'config_clear']) -> name('admin.cache.config.clear');
+        Route::get('compiled-clear',[CacheController::class ,'clear_compiled']) -> name('admin.cache.compiled.clear');
+
+    });
     ############################# End cache Route ###############################
 });
 ############################# End admin Dashboard Route ###############################

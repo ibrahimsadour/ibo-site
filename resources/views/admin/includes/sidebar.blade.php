@@ -142,26 +142,47 @@
 
                </ul>
            </li>
-           {{--   الخدمات   --}}
-           <li class="{{ Request::is('admin/google') ? 'nav-item active' : '' }}">
-            <a href=""><i class="icon-globe"></i>
-                <span class="menu-title" data-i18n="nav.dash.main">روابط غوغل Google codes</span>
-                <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Google::count()}}</span>
-            </a>
-            <ul class="menu-content">
-                <li class="{{ Request::is('admin/google') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.google')}}"
-                                                                               data-i18n="nav.dash.ecommerce"> عرض كل الاكواد</a>
-                </li>
-                <li class="{{ Request::is('admin/google/create') ? 'active' : '' }}" >
-                    <a class="menu-item" href="{{route('admin.google.create')}}" data-i18n="nav.dash.crypto">أضف كود جديد </a>
-                </li>
-            </ul>
-        </li>
+           {{--   روابط غوغل  --}}
+            <li class="{{ Request::is('admin/google') ? 'nav-item active' : '' }}">
+                <a href=""><i class="icon-globe"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">روابط غوغل Google codes</span>
+                    <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Google::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="{{ Request::is('admin/google') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.google')}}"
+                                                                                data-i18n="nav.dash.ecommerce"> عرض كل الاكواد</a>
+                    </li>
+                    <li class="{{ Request::is('admin/google/create') ? 'active' : '' }}" >
+                        <a class="menu-item" href="{{route('admin.google.create')}}" data-i18n="nav.dash.crypto">أضف كود جديد </a>
+                    </li>
+                </ul>
+            
+            </li>
+            {{--   ذاكرة التخزين المؤقت   --}}
+            <li>
+                <a><i class="la la-tags"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">ذاكرة التخزين المؤقت </span>
+                    <span class="badge badge badge-success badge-pill float-right mr-2"></span>
+                </a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{route('admin.cache.clear.cache')}}">Cache Clear</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.optimize')}}">Optimize</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.optimize.clear')}}">Optimize clear</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.route.cache')}}">route cache</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.route.clear')}}">route clear</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.view.clear')}}">view clear</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.view.cache')}}">view cache</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.config.cache')}}">config cache</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.config.clear')}}">config clear</a></li>
+                    <li><a class="menu-item" href="{{route('admin.cache.compiled.clear')}}">compiled clear</a></li>
+
+                </ul>
+            </li>
 
             <li class=" nav-item"><a href="/" target="_blank"><i class="la la-support"></i><span
-                        class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>
+                class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>
             </li>
-           <li class=" nav-item">
+            <li class=" nav-item">
                 <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation"><i
                         class="la la-text-height"></i>
                     <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
