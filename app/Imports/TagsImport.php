@@ -19,10 +19,10 @@ class TagsImport implements ToCollection, WithHeadingRow,WithValidation
             $data=[
                 'name'=>$row['name'],
                 'slug'=>Str::slug($row['slug'],'-', null),
-                'description'=> ' نقدم لك افضل خدمة '.$row['description']. ' في جميع مدن الكويت على مدار 24 ساعة في اليوم نقل عفش | نقل اثاث | نجار تركيب اثاث ايكيا',
-                'seo_title'=>$row['seo_title'].' |  نقل عفش | نقل اثاث على مدار 24 ساعة',
+                'description'=>$row['description'],
+                'seo_title'=>$row['seo_title'].' في الكويت على مدار 24 ساعة',
                 'seo_keyword'=>$row['seo_keyword'],
-                'seo_description'=> ' نقدم لك افضل خدمة '.$row['seo_description']. ' في جميع مدن الكويت على مدار 24 ساعة في اليوم  نقل عفش | نقل اثاث |   نجار تركيب اثاث ايكيا',
+                'seo_description'=> ' نقدم لك افضل خدمة '.$row['seo_description']. ' في جميع مدن الكويت على مدار 24 ساعة في اليوم اتصل لنصل اليك باسرع وقت',
                 'active'=>'1',
 
             ];

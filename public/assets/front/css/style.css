@@ -1876,12 +1876,6 @@ div:not(.tie-ignore-fitvid) > .wp-video-shortcode {
     .container-404 h2 {
         font-size: 60px;
     }
-    h2{
-        font-size: 18px; 
-    }
-    h3{
-        font-size: 16px; 
-    }
 }
 .container-404 h3 {
     font-size: 28px;
@@ -3750,15 +3744,6 @@ html .tie-cat-64:hover:after {
 @media (max-width: 768px) {
     .styles_search_wrapper__7GGVH .styles_input_wrap__ZD8VR {
         width: 100%;
-    }
-    .text-1-regular {
-        font-size: 14px;
-        line-height: 25px;
-    }
-    .styles_header__P_8O6 .styles_slogan__FLcMz {
-        color: #fff;
-        margin-bottom: 16px;
-        font-size: 18px;
     }
 }
 @media (max-width: 768px) {

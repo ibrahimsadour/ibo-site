@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Car;
 use App\Models\City;
 use App\Models\Section;
 use App\Models\Service;
@@ -18,15 +19,14 @@ class SitemapController extends Controller
 
     public function sitemap_index(){
 
-        return Sitemap::create(env('APP_URL')) 
-            ->add(Url::create('/')) 
+        return Sitemap::create(env('APP_URL'))  
             ->add(Url::create('/about'))
             ->add(Url::create('/privacy-policy'))
             ->add(Url::create('/terms-condition'))
             ->add(Url::create('/contact-us'))
             ->add(Url::create('/tags'))
             ->add(Url::create('/cities'))
-            ->add(Url::create('/services'))
+            ->add(Url::create('/cars'))
             ->add(Url::create('/articles'))
             ->writeToFile('sitemap_index.xml');
     }
@@ -53,11 +53,11 @@ class SitemapController extends Controller
         $sitemap = Sitemap::create();
         foreach ($cities as $city) {
             foreach($city->tags as $tag){
-                $sitemap ->add(Url::create('cities/'.$tag->slug.'-'.$city->slug.'/'.$city->slug));
+                $sitemap ->add(Url::create('cities/'.$tag->slug.'/'.$city->slug));
             }
 
         }
-        return  $sitemap->writeToFile(public_path('sitemap-city-tags.xml'));
+        return  $sitemap->writeToFile(public_path('sitemap_city_tags.xml'));
     }
     public function sitemap_tags(){
         $tags = Tag::Active()->get();
@@ -66,6 +66,25 @@ class SitemapController extends Controller
             $sitemap ->add(Url::create('tags/'.$tag->slug));
         }
         return  $sitemap->writeToFile(public_path('sitemap_tags.xml'));
+    }
+    public function sitemap_cars(){
+        $cars = Car::Active()->get();
+        $sitemap = Sitemap::create();
+        foreach ($cars as $car) {
+            $sitemap ->add(Url::create('cars/'.$car->slug));
+        }
+        return  $sitemap->writeToFile(public_path('sitemap_cars.xml'));
+    }
+    public function sitemap_car_tags(){
+        $cars = Car::with('tags')->get();
+
+        $sitemap = Sitemap::create();
+        foreach ($cars as $car) {
+            foreach($car->tags as $tag){
+                $sitemap ->add(Url::create('cars/'.$tag->slug.'/'.$car->slug));
+            }
+        }
+        return  $sitemap->writeToFile(public_path('sitemap_car_tags.xml'));
     }
     public function sitemap_services(){
         $services = Service::all();

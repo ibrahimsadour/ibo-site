@@ -11,6 +11,8 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية </a>
                                 </li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.services')}}"> قسم السيارات </a>
+                                </li>
                                 <li class="breadcrumb-item active"> تعديل - {{$service -> name}}
                                 </li>
                             </ol>

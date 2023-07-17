@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use DB;
 class HomePageController extends Controller
 {
+    //show all cars
     public function index()
 
     {

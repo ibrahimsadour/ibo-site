@@ -95,6 +95,7 @@ class TagsController extends Controller
 
     public function update($id, TagsRequest $request)
     {
+        //validation => CarsRequest
 
         try {
             //find Car

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Car;
 use App\Models\Section;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -18,11 +19,12 @@ class TagsController extends Controller
         // Group query to show some items
         $sections = selectActiveSctions();
         $articles = select5ActiveArticles();
+        $cars = select3ActiveCars();
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
 
-        return view('front.pages.tags.tags_group', compact('tags','show_all_tags','sections','articles','first_articles','last_articles'));
+        return view('front.pages.tags.tags_group', compact('tags','show_all_tags','sections','articles','first_articles','last_articles','cars'));
     }
     //show one tag
     public function show_one_tag($slug)
@@ -36,12 +38,19 @@ class TagsController extends Controller
         // Group query to show some items
         $sections = selectActiveSctions();
         $articles = select5ActiveArticles();
+        $cars = select3ActiveCars();
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles'));
+        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars'));
+
+}
+    //show one tag
+    public function show_tag_cars($id)
+    {
+        $tag = Tag::with('cars')->find($id);
+        return $tag;
 
     }
-  
 
 }

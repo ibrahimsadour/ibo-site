@@ -8,6 +8,7 @@ use App\Http\Controllers\Front\CitiesController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Front\SubCarController;
 use App\Http\Controllers\Front\ServicesController;
+use App\Http\Controllers\Front\CarsController;
 use App\Http\Controllers\Front\SectionsController;
 
 
@@ -46,6 +47,7 @@ Route::group( [
 
     ###########################################
     Route::get('tags',[TagsController::class ,'show_all_tags']) -> name('tags.index');
+    Route::get('tags/{id}/cars',[TagsController::class ,'show_tag_cars']) -> name('tag.cars.index');
     Route::get('tags/{slug}',[TagsController::class ,'show_one_tag']) -> name('tag.index');
     ###########################################
 
@@ -57,7 +59,18 @@ Route::group( [
     ###########################################
     Route::get('cities',[CitiesController::class ,'show_all_cities']) -> name('cities.index');
     Route::get('cities/{slug}',[CitiesController::class ,'show_one_city']) -> name('city.index');
-    Route::get('cities/{slugTag}/{city?}',[CitiesController::class ,'show_city_tag'])-> name('city.tag.index');
+    Route::get('cities/{slugcity}/{slugTag}',[CitiesController::class ,'show_city_tag']) -> name('city.tag.index');
+    ###########################################
+
+    ###########################################
+    Route::get('cars',[CarsController::class ,'show_all_cars']) -> name('cars.index');
+    Route::get('cars/{slug}',[CarsController::class ,'show_one_car']) -> name('car.index');
+    Route::get('cars/{slugcar}/{slugTag}',[CarsController::class ,'show_car_tag']) -> name('car.tags.index');
+
+    ##################
+    Route::get('sub-cars/{slugcar}/{slugSubcar}',[SubCarController::class ,'show_one_subcar']) -> name('subcar.index');
+    Route::get('sub-cars/{slugcar}/{slugSubcar}/{slugSubcarTag}',[SubCarController::class ,'show_subcar_with_one_tag']) -> name('subcar.tag.index');
+
     ###########################################
 
     ###########################################
@@ -72,6 +85,9 @@ Route::group( [
     // sitemap for all cities + sitemap for evry city with her tags
     Route::get('sitemap-cities', [SitemapController::class ,'sitemap_cities'])-> name('sitemap-cities');
     Route::get('sitemap-city-tags', [SitemapController::class ,'sitemap_city_tags'])-> name('sitemap-city-tags');
+    // sitemap for all cars + sitemap for evry car with her tags
+    Route::get('sitemap-cars', [SitemapController::class ,'sitemap_cars'])-> name('sitemap-cars');
+    Route::get('sitemap-car-tags', [SitemapController::class ,'sitemap_car_tags'])-> name('sitemap-car-tags');
 
     Route::get('sitemap-tags', [SitemapController::class ,'sitemap_tags'])-> name('sitemap-tags');
     Route::get('sitemap-services',[SitemapController::class ,'sitemap_services'])-> name('sitemap-services');

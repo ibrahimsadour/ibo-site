@@ -6,6 +6,7 @@
 ##################################################################################
 
 use App\Models\Article;
+use App\Models\Car;
 use App\Models\Section;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Config;
@@ -162,11 +163,23 @@ function googleCodeFooter()
     }
 }
 
+// function groupQury($sections,$articles,$cars,$first_articles, $last_articles,$tags)
+// {
+//    return  $sections = Section::select()->Active()->get();
+//    return $articles = Article::with('service')->Active()->inRandomOrder()->limit(5)->get();
+//    return $cars = Car::Active()->inRandomOrder()->limit(3)->get();
+//    return $first_articles = Article::Active()->take(10)->get();
+//    return $last_articles = Article::Active()->latest()->get();
+//    return $tags = Tag::Active()->inRandomOrder()->limit(10)->get();
+// }
 function selectActiveSctions(){
     return Section::select()->Active()->get();
 }
 function select5ActiveArticles(){
     return Article::with('service')->Active()->inRandomOrder()->limit(5)->get();
+}
+function select3ActiveCars(){
+    return Car::Active()->inRandomOrder()->limit(3)->get();
 }
 function selectFirst_Articles(){
     return Article::Active()->take(10)->get();

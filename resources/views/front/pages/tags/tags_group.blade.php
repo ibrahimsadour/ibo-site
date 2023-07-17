@@ -16,7 +16,7 @@
                 <div class="tagcloud">
                     @isset($show_all_tags)
                         @foreach($show_all_tags as $tag)
-                            <a href="{{ URL::route('tag.index',$tag ->slug)}}" title="{{$tag -> name}} {{get_default_country()}}" >{{ Str::limit($tag -> name, 45)}} {{get_default_country()}}</a>
+                            <a href="{{ URL::route('tag.index',$tag -> slug) }}" title="{{$tag -> name}}" >{{ Str::limit($tag -> name, 45) }}</a>
                         @endforeach
                         <div>{{$show_all_tags->links()}}</div>
                     @endisset

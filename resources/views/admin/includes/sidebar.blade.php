@@ -6,15 +6,16 @@
                             class="menu-title" data-i18n="nav.add_on_drag_drop.main">لوحة التحكم</span></a>
               </li>
               {{--   الصفحات   --}}
-              <li>
+              <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
                <a href=""><i class="icon-globe"></i>
                    <span class="menu-title" data-i18n="nav.dash.main">الصفحات</span>
-                   <span class="badge badge badge-info badge-pill float-right mr-2"></span>
+                   <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Car::count()}}</span>
                </a>
                <ul class="menu-content">
-                   <li class="{{ Request::is('admin/home-page') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.home-page')}}"> الرئيسية</a></li>
+                   <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.home-page')}}"> الرئيسية</a></li>
+                   <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}" > المقالات </a></li>
                    <li class="{{ Request::is('admin/about') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.about')}}" > من نحن </a></li>
-                   <li class=""><a class="menu-item" href="{{route('contact-us.index')}}" > الاتصال </a></li>
+                   <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}" > الاتصال </a></li>
                    <li class="{{ Request::is('admin/privacy-policy') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.privacy-policy')}}" > سياسة الخصوصية </a></li>
                    <li class="{{ Request::is('admin/terms-condition') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.terms-condition')}}" > اتفاقية الاستخدام </a></li>
                </ul>
@@ -30,11 +31,26 @@
                        <li class="{{ Request::is('admin/sections') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.sections')}}"
                                                                                       data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                        </li>
-                       <li class="{{ Request::is('admin/sections/create') ? 'active' : '' }}" >
+                       <li class="{{ Request::is('admin/cars/sections') ? 'active' : '' }}" >
                            <a class="menu-item" href="{{route('admin.sections.create')}}" data-i18n="nav.dash.crypto">أضف قسم جديد </a>
                        </li>
                    </ul>
                </li>
+                {{--   السيارات   --}}
+              <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
+                     <a href=""><i class="icon-globe"></i>
+                            <span class="menu-title" data-i18n="nav.dash.main">اسماء ماركات السيارات</span>
+                            <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Car::count()}}</span>
+                     </a>
+                     <ul class="menu-content">
+                            <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}"
+                                                 data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                            </li>
+                            <li class="{{ Request::is('admin/cars/create') ? 'active' : '' }}" >
+                                   <a class="menu-item" href="{{route('admin.cars.create')}}" data-i18n="nav.dash.crypto">أضف سيارة جديدة </a>
+                            </li>
+                     </ul>
+              </li>
 
                  {{--   المدن   --}}
               <li class="{{ Request::is('admin/cities') ? 'nav-item active' : '' }}"><a href=""><i class="ft-map-pin"></i>
@@ -96,7 +112,7 @@
                </ul>
            </li>
            {{--   خريطة الموقع   --}}
-           <li>
+           <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
                <a href=""><i class="icon-globe"></i>
                    <span class="menu-title" data-i18n="nav.dash.main">خريطة الموقع</span>
                    <span class="badge badge badge-info badge-pill float-right mr-2">7</span>
@@ -112,48 +128,35 @@
                       </li>
                     </ul>
                   </li>
+                  <li class="has-sub is-shown"><a class="menu-item" href="#"><i></i><span data-i18n="Buttons">خريطة السيارات</span></a>
+                    <ul class="menu-content" style="">
+                      <li class=""><a class="menu-item" href="{{route('sitemap-cars')}}"><i></i><span data-i18n="Basic Buttons">السيارات فقط</span></a>
+                      </li>
+                      <li class=""><a class="menu-item" href="{{route('sitemap-car-tags')}}"><i></i><span data-i18n="Extended Buttons">السيارات مع العلامات الدلالية</span></a>
+                      </li>
+                    </ul>
+                  </li>
                    <li><a class="menu-item" href="{{route('sitemap-tags')}}" >العلامات الدلالية</a></li>
                    <li><a class="menu-item" href="{{route('sitemap-services')}}" >الخدمات</a></li>
                    <li><a class="menu-item" href="{{route('sitemap-sections')}}" >الاقسام</a></li>
 
                </ul>
            </li>
-           {{--   روابط غوغل  --}}
-            <li class="{{ Request::is('admin/google') ? 'nav-item active' : '' }}">
-                <a href=""><i class="icon-globe"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">روابط غوغل Google codes</span>
-                    <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Google::count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="{{ Request::is('admin/google') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.google')}}"
-                                                                                data-i18n="nav.dash.ecommerce"> عرض كل الاكواد</a>
-                    </li>
-                    <li class="{{ Request::is('admin/google/create') ? 'active' : '' }}" >
-                        <a class="menu-item" href="{{route('admin.google.create')}}" data-i18n="nav.dash.crypto">أضف كود جديد </a>
-                    </li>
-                </ul>
-            </li>
-
-            {{--   ذاكرة التخزين المؤقت   --}}
-           <li>
-                <a><i class="la la-tags"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">ذاكرة التخزين المؤقت </span>
-                    <span class="badge badge badge-success badge-pill float-right mr-2"></span>
-                </a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href="{{route('admin.cache.clear.cache')}}">Cache Clear</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.optimize')}}">Optimize</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.optimize.clear')}}">Optimize clear</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.route.cache')}}">route cache</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.route.clear')}}">route clear</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.view.clear')}}">view clear</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.view.cache')}}">view cache</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.config.cache')}}">config cache</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.config.clear')}}">config clear</a></li>
-                    <li><a class="menu-item" href="{{route('admin.cache.compiled.clear')}}">compiled clear</a></li>
-
-                </ul>
-            </li>
+           {{--   الخدمات   --}}
+           <li class="{{ Request::is('admin/google') ? 'nav-item active' : '' }}">
+            <a href=""><i class="icon-globe"></i>
+                <span class="menu-title" data-i18n="nav.dash.main">روابط غوغل Google codes</span>
+                <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Google::count()}}</span>
+            </a>
+            <ul class="menu-content">
+                <li class="{{ Request::is('admin/google') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.google')}}"
+                                                                               data-i18n="nav.dash.ecommerce"> عرض كل الاكواد</a>
+                </li>
+                <li class="{{ Request::is('admin/google/create') ? 'active' : '' }}" >
+                    <a class="menu-item" href="{{route('admin.google.create')}}" data-i18n="nav.dash.crypto">أضف كود جديد </a>
+                </li>
+            </ul>
+        </li>
 
             <li class=" nav-item"><a href="/" target="_blank"><i class="la la-support"></i><span
                         class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>

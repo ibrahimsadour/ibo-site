@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Requests\CitiesRequest;
+use App\Models\Car;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\City;
@@ -92,6 +93,7 @@ class CitiesController extends Controller
 
     public function update($id, CitiesRequest $request)
     {
+        //validation => CarsRequest
 
         try {
             //find Car
@@ -145,7 +147,7 @@ class CitiesController extends Controller
         try {
             $city = City::find($id);
             if (!$city)
-                return redirect()->route('admin.cities')->with(['error' => 'هذه المدينة غير موجود ']);
+                return redirect()->route('admin.cars')->with(['error' => 'هذه المدينة غير موجود ']);
 
             $status =  $city -> active  == 0 ? 1 : 0;
 

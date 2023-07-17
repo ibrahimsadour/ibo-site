@@ -15,6 +15,7 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('car_id')->unsigned();
             $table->integer('city_id')->unsigned();
             $table->integer('service_id')->unsigned();
             $table->integer('section_id')->unsigned();

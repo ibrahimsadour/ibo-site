@@ -94,6 +94,7 @@ class ServicesController extends Controller
 
     public function update($id, ServicesRequest $request)
     {
+        //validation => CarsRequest
 
         try {
             //find Service

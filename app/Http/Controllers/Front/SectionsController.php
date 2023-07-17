@@ -33,6 +33,7 @@ class SectionsController extends Controller
         // Group query to show some items
         $sections = selectActiveSctions();
         $articles = select5ActiveArticles();
+        $cars = select3ActiveCars();
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();

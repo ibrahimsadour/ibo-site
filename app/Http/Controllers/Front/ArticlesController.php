@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Car;
 use App\Models\Section;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -32,11 +33,12 @@ class ArticlesController extends Controller
         if (!$article) {
             return redirect()->route('404.index');
         }
+        $cars = Car::Active()->inRandomOrder()->limit(3)->get();
        $articles = Article::Active()->inRandomOrder()->limit(5)->get();
        $tags = Tag::Active()->inRandomOrder()->limit(10)->get();
        $sections = Section::select()->Active()->get();
 
-        return view('front.pages.articles.article', compact('article','articles','tags','sections'));
+        return view('front.pages.articles.article', compact('article','articles','tags','sections','cars'));
     }
 
 }
