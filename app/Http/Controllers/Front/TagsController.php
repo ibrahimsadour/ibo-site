@@ -45,7 +45,7 @@ class TagsController extends Controller
         $tags = select10ActiveTags();
         $page_links = FooterPageLinks();        
 
-        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars'.'page_links'));
+        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars','page_links'));
 
 }
     //show one tag

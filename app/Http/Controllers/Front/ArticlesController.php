@@ -16,7 +16,7 @@ class ArticlesController extends Controller
     public function show_all_articles()
     {
         $articles = Article::select()->Active()->get();
-        return view('front.pages.articles.articles_group', compact('articles'    ));
+        return view('front.pages.articles.articles_group', compact('articles'));
     }
 
     //show one article

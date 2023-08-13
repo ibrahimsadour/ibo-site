@@ -252,7 +252,7 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
     });
     ############################# End cache Route ###############################
 
-    ############################# Begin home-page Route ###############################
+    ############################# Begin FooterController Route ###############################
     Route::group(['prefix' => 'footer'], function () {
         Route::get('/',[FooterController::class ,'index']) -> name('admin.footer');
         Route::post('store',[FooterController::class ,'store']) -> name('admin.footer.store');
@@ -263,7 +263,7 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
 
         
     });
-    ############################# End Cars Route ################################
+    ############################# End FooterController Route ################################
 });
 ############################# End admin Dashboard Route ###############################
 
