@@ -53,6 +53,20 @@
                                 <h3 class="entry-sub-title margin-bottom">رقم {{$slugTag}} {{$city->name}} في {{get_default_country()}} </h3>
                                 <p>إن كنت متواجدًا في دولة {{get_default_country()}}.. فبإمكانك الاستفادة من خدمة {{$slugTag}} {{get_default_country()}}  حيث تتيح لك تلك الخدمة إمكانية تصليح سيارتك،على اكمل وجه على الطرق.. وكذلك إمكانية الاستفادة من حلول إصلاح المركبات التي تعرضت إلى الأعطال، وإليك أهم المراكز التي تقدم تلك الخدمات عبر الآتي:</p>
                                 
+                                <h3 class="entry-sub-title margin-bottom">نصائح ستجعلك تحتاج {{$slugTag}} بعد فترة من الزمن:</h3>
+                                <p>تواصل مع بنشر متنقل  من أجل خدمة {{$slugTag}} في {{get_default_country()}}</p>
+                                <p>خصومات هائلة بنشر {{get_default_country()}} على خدمة {{$slugTag}}</p>
+                                <p>عروض وخصومات بنشر {{get_default_country()}} على خدمة {{$slugTag}} لا تنتهي، فكل فترة يتم الإعلان عن عروض لا تقاوم تأتي بخصومات هائلة ستجعلك لا تريد أن تفوت هذه الفرصة من بين يديك، فهذا المكان متخصص في صيانة كافة أنواع السيارات ولديه مجموعة مميزة من الفنيين والمهندسين الذين يمتلكون خبرة واسعة في صيانة السيارات.</p>
+
+                                <strong><p><center> تصفح جميع اقسام خدمات السيارات في {{get_default_country()}}<a href="{{url('/services')}}" title="خدمات السيارات"> اضغط هنا</a></center></p></strong>
+
+                                <h3 class="entry-sub-title margin-bottom">ما هو الوقت المناسب من أجل من طلب خدمة {{$slugTag}}  من موقعنا؟</h3>
+                                <p>خدمة {{$slugTag}}   تتم في شركتنا على أعلى مستوى حيث تمتلك أفضل أنواع قطع الغيار الأصلية وتقدمها لك بأسعار تنافسية لضمان تحقيق المعادلة الصعبة بين الجودة العالية والسعر المعقول الذي يتناسب مع كافة الفئات المختلفة.</p>
+                                <p>شركة بنشر متنقل  تعلم جيدًا مدى أهمية وضرورة خدمة {{$slugTag}}، لذلك تمتلك مجموعة متخصصة في إجراء هذه الخدمة لك على أعلى مستوى، كما إنها تمتلك كافة المستلزمات والمعدات الحديثة التي تجعل القيام بعملية تبديل بطارية اودي سهلة وبسيطة ولا تستغرق وقتًا طويلًا.</p>
+
+                                <h3 class="entry-sub-title margin-bottom">كيف تتم عملية خدمة {{$slugTag}}  مع بنشر {{get_default_country()}}: </h3>
+                                <p> إذا قمت بالاستعانة بشركة كراج أونلاين من الأجل{{$slugTag}}، فستلاحظ أن هناك مجموعة من المحترفين يتولون هذه المهمة الدقيقة التي تحتاج إلى خبرة كبيرة من أجل القيام بها بالشكل الصحيح والمطلوب وفي أقصر وقت ممكن أيضًا.</p>
+
                                 <ul>
                                     <li class="maker-list-inside-article">
                                         <p>المتميز لخدمات {{$slugTag}}: يمكنك الحصول على خدمات {{$slugTag}} من خلال هذا المركز على أعلى مستوى من الدقة.. وكذلك بالاعتماد على خبرات الموظفين ممن يملكون الخبرة في مجال تصليح المركبات وصيانتها، ومن هنا نشير إلى أنه يقدم خدمات {{$slugTag}} .. بالإضافة إلى إمكانية  معالجة أعطال الكهرباء على مدار اليوم، وللتواصل قم بالاتصال على مدارالساعة .</p>
@@ -124,7 +138,10 @@
                                 <p>هدفنا صيانة جميع انواع السيارات في اي وقت علي مدار الساعة و اينما كنت في اي مكان كنت فيه او حتي امام منزلك لتغطي جميع مناطق {{get_default_country()}} حيث نقدم لكم كافه الخدمات المتعلقه بخدمة و صيانة السيارات.</p>
                                 <br>
                                 <strong><p><center> العودة للصفحة الرئيسية <a href="{{url('/')}}" > هنا</a></center></p></strong>
-
+                                <br>
+                                <p>"Mobile Car Maintenance Service: Experience the convenience of on-the-go car maintenance. Our mobile service brings expert mechanics directly to your location, offering a wide range of services, from routine check-ups to repairs. Say goodbye to the hassle of driving to a garage – now, quality car care comes to you."</p>
+                                <p>Mobile car maintenance service brings the convenience of automotive care to your doorstep. Whether it's routine check-ups, oil changes, tire rotations, or minor repairs, this service ensures that your car receives professional attention without the need to visit a physical garage. With skilled technicians equipped to handle various tasks on-site, mobile car maintenance is all about efficiency, saving you time and hassle while keeping your vehicle in optimal condition.</p>
+    
                                 {{-- dynamic content --}}
                                 <p>{!! $city ->description !!} </p>
                                 <br>

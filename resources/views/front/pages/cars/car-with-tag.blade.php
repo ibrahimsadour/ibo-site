@@ -127,9 +127,49 @@
                                 <p>{{$slugTag}} سيارات {{$car->name}} يقدم لكم جمِيع الضمانات والكفالات اللازمة وذَلك لعدم حدوث أي أضرار أو أخطاء لسيارتك {{$car->name}} تحدث بعد ذلك قد تتسبب في توقف السّيارة عن السير، بهدف تحقيق الأمن والسلام والحماية إلى جمِيع أفراد العائلة والأطفال وجميع عملائنا الكرام على الطرق الصحراوية السّريعة.</p>
                                 <strong><h6><center>خدمة {{$slugTag}} تقوم بها الورشة المتنقلة بأسرع الإمكانيات  <a href="{{get_default_social_link_facebook()}}" rel="nofollow" target="_blank">للاستفسار هنا</a></center></h6></strong>
                                 <p>وورشة صيانة كراج سيارات {{$car->name}} تتميز أيضا بالتجديد الكامل والمستمر في كل ما يتعلق بخدمات الصيانة. سواء كان التجديد المستمر إما في معدات الورشة أو في الخدمات الرائعة والعروض الممتازة المقدمة كل يوم في مدينة {{get_default_country()}} ، كراج متنقل {{get_default_country()}} لتصليح سيارات . فني يرسل دوما لكل عميل تتعطل سيارته في أي وقت ورشة تصل لحيث مكانه وتصلح له سيارته في أي أقل وقت وأيضا خلال وقت قصير. فورشة صيانة السيارات مجهزة تماما فني بنتلي وجميع قطع الغيار والسوائل والعاملين بالورشة أصبحوا من الخبراء فهم مهندسين وفنيين ميكانيكيين يعرفون تماما في كل ما يتعلق بأي أعطال في السيارة أو المركبة. ولكي يحصل أي زبون على الصيانة لأي سيارة يملكها عليه في أي وقت عليه فقط الاتصال على رقم فني.</p>
+                                
+                                <strong><p><center>قائمة بجميع خدمات السيارات في {{get_default_country()}}<a href="{{url('/tags')}}" title="خدمات السيارات"> اضغط هنا</a></center></p></strong>
+                                <h5 class="entry-sub-title margin-bottom" > كيف تتواصل مع خدمة {{$slugTag}} {{$car->name}} في {{get_default_country()}}:</h5>
+                                <p>من السهل عليك التواصل مع الشركة والحصول على خدمة {{$slugTag}} {{$car->name}} بسلاسة، وذلك عن طريق الاتصال بالشركة وتحديد الخدمة من خلال رقمنا في الموقع الذي يمكنك استخدامه في أي مدينة تتواجد بها، وعقب فترة قصيرة من بدء الاتصال ستجد الفريق المتخصص قد وصل إليك وبدء بالعمل على حل مشكلة سيارتك.</p>
+                                <h5 class="entry-sub-title margin-bottom" > الأسئلة الشائعة حول خدمة {{$slugTag}} {{$car->name}} في {{get_default_country()}}:</h5>
+                                <h6 class="entry-sub-title margin-bottom" > ما هي خدمة {{$slugTag}} {{$car->name}} في {{get_default_country()}}:</h6>
+                                <p>هي خدمة تقدمها شركات أو فنيون محترفون يصلون إلى موقعك لإجراء خدمات الصيانة والإصلاح لسيارتك. يتم تزويد هؤلاء الفنيين بالأدوات والمعدات اللازمة لإجراء الإصلاحات في موقعك بدلاً من سحب السيارة إلى ورشة الإصلاح.</p>
+                                <h6 class="entry-sub-title margin-bottom" >ما هي الخدمات التي يمكن تقديمها من خلال {{$slugTag}} {{$car->name}} في {{get_default_country()}}:</h6>
+                                <p>يمكن أن تشمل الخدمات المقدمة إصلاح المحركات، وتغيير الزيوت والفلاتر، وإصلاح نظام الفرامل، وتغيير الإطارات، وإصلاح نظام التكييف، وصيانة البطارية، وإصلاح أعطال الكهرباء والإلكترونيات، وغيرها من الخدمات الشائعة.</p>
+                                <h6 class="entry-sub-title margin-bottom" > هل يمكنني الاعتماد على جودة الخدمة المقدمة من {{$slugTag}} {{$car->name}} في {{get_default_country()}}:</h6>
+                                <p>نعم، يمكنك الاعتماد على جودة الخدمة المقدمة من موقعنا {{url('/')}} في {{get_default_country()}} إذا اخترت شركة موثوقة ومرخصة وتتمتع بسمعة جيدة في السوق. قم بالبحث عن تقييمات العملاء السابقين والمراجعات عبر غوغل للتأكد من جودة الخدمة.</p>
+                                <h6 class="entry-sub-title margin-bottom" > هل تكلفة خدمة {{$slugTag}} {{$car->name}} في {{get_default_country()}} أعلى من سحب السيارة إلى ورشة الإصلاح:</h6>
+                                <p>عم، قد تكون تكلفة خدمة  {{$slugTag}} {{$car->name}} أعلى قليلاً من سحب السيارة إلى ورشة الإصلاح،ذلك بسبب تكاليف التنقل والتجهيزات اللازمة للفنيين. ومع ذلك، قد يكون توفير الوقت والجهد في سحب السيارة هو أمر مهم بالنسبة للعديد من الأشخاص.</p>
+                                <h6 class="entry-sub-title margin-bottom" > كيف يمكنني العثور على {{$slugTag}} {{$car->name}} في {{get_default_country()}} على غوغل:</h6>
+                                <p>يمكنك البحث ببساطة عن {{$slugTag}} {{$car->name}} في {{get_default_country()}} على محرك البحث غوغل.ستظهر لك قائمة بالشركات والمقدمين المحتملين، مع تقييمات المستخدمين وتفاصيل الاتصال. قم بمراجعة الخيارات المتاحة واختيار الأنسب لاحتياجاتك.</p>
+                                <h6 class="entry-sub-title margin-bottom" > هدفنا من خدمة {{$slugTag}} {{$car->name}} في {{get_default_country()}}:</h6>
+                                <p>هدفنا صيانة جميع انواع السيارات في اي وقت علي مدار الساعة و اينما كنت في اي مكان كنت فيه او حتي امام منزلك لتغطي جميع مناطق {{get_default_country()}} حيث نقدم لكم كافه الخدمات المتعلقه بخدمة و صيانة السيارات.</p>
+                                <br>
+                                <strong><p><center> العودة للصفحة الرئيسية <a href="{{url('/')}}" > هنا</a></center></p></strong>
+                                <br>
+                                <p>"Mobile Car Maintenance Service: Experience the convenience of on-the-go car maintenance. Our mobile service brings expert mechanics directly to your location, offering a wide range of services, from routine check-ups to repairs. Say goodbye to the hassle of driving to a garage – now, quality car care comes to you."</p>
+                                <p>Mobile car maintenance service brings the convenience of automotive care to your doorstep. Whether it's routine check-ups, oil changes, tire rotations, or minor repairs, this service ensures that your car receives professional attention without the need to visit a physical garage. With skilled technicians equipped to handle various tasks on-site, mobile car maintenance is all about efficiency, saving you time and hassle while keeping your vehicle in optimal condition.</p>
+    
+
                                 {{-- dynamic content --}}
                                 <p>{!! $car ->description !!} </p>
 
+                                <br>
+                                <div class="post-bottom-meta post-bottom-tags post-tags-modern">
+                                    <b><span id="more-1787"></span>للمزيد حول خدمة {{$slugTag}} {{$car->name}} في {{get_default_country()}} و جميع الخدمات المتعلقة بالسيارات في {{get_default_country()}} يمكنك زيارة احد مواقعنا:</b><br>
+                                    <br>
+                                    <a class="post-cat tie-cat-6" href="https://kw-service.com/" title="بنشر متنقل">بنشر متنقل</a>
+                                    <a class="post-cat tie-cat-6" href="https://scrapkw.com/" title="سكراب السالمي">سكراب السالمي</a>
+                                    <a class="post-cat tie-cat-6" href="https://carservicekuwait.com/" title="كراج متنقل">كراج متنقل</a>
+                                    <a class="post-cat tie-cat-6" href="https://carservicekuwait.com/" title="بازار الخليج">بازار الخليج</a>
+                                    <a class="post-cat tie-cat-6" href="http://kw-service.net/" title="اعلانات الكويت">اعلانات الكويت</a>
+                                    <a class="post-cat tie-cat-6" href="https://kw-moving.com/" title="نقل عفش">نقل عفش</a>
+                                    <a class="post-cat tie-cat-6" href="https://sat.kw-service.net/" title="فني ستلايت الكويت">فني ستلايت الكويت</a>
+                                    <a class="post-cat tie-cat-6" href="https://auto.kw-service.net/" title="تبديل بطارية">تبديل بطارية</a>
+                                    <a class="post-cat tie-cat-6" href="https://cars.kw-service.net/" title="تبديل تواير">تبديل تواير</a>
+                                    <a class="post-cat tie-cat-6" href="https://scrap.kw-service.net/" title="قطع غيار سيارات في الكويت<">قطع غيار سيارات في الكويت</a>
+                                    <a class="post-cat tie-cat-6" href="https://sa-4sale.com/" title="بنشر السعودية">بنشر السعودية</a>
+                                </div>
                         </div>
                     </div>
                     @include('front.includes.first-main-sidebar')
