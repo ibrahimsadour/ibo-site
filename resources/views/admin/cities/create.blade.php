@@ -41,7 +41,7 @@
                                                                     <label for="projectinput1">اسم المدينة</label>
                                                                     <input type="text" value="" id="name"
                                                                            class="form-control"
-                                                                           placeholder="مثال(الكويت - الجهراء)"
+                                                                           placeholder="مثال(الجهراء)"
                                                                            alue="{{old('name')}}"
                                                                            name="name">
                                                                     @error("name")
