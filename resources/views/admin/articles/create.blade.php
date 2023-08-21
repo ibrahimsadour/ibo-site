@@ -84,7 +84,8 @@
                                                             <label for="projectinput1"> اختر القسم
                                                             </label>
                                                             <select name="section_id" class="select2 form-control" value="{{old('section_id')}}" >
-                                                                <optgroup label="من فضلك أختر ماركة السيارة ">
+                                                                <option value="0">بدون اضافة القسم</option>
+                                                                <optgroup label="من فضلك أختر القسم ">
                                                                     @if($sections  -> count() > 0)
                                                                         @foreach($sections as $section)
                                                                             <option value="{{$section -> id}}">{{$section ->name}}</option>
@@ -105,6 +106,7 @@
                                                             <label for="projectinput1"> اختر ماركة السيارة
                                                             </label>
                                                             <select name="car_id" class="select2 form-control" value="{{old('car_id')}}" >
+                                                                <option value="0">بدون اضافة ماركة السيارة</option>
                                                                 <optgroup label="من فضلك أختر ماركة السيارة ">
                                                                     @if($cars  -> count() > 0)
                                                                         @foreach($cars as $car)
@@ -126,6 +128,7 @@
                                                             <label for="projectinput1"> اختر اسم المدينة
                                                             </label>
                                                             <select name="city_id" class="select2 form-control" value="{{old('city_id')}}" >
+                                                                <option value="0">بدون اضافة مدن</option>
                                                                 <optgroup label="من فضلك اختر اسم المدينة">
                                                                     @if($cities  -> count() > 0)
                                                                         @foreach($cities as $city)
@@ -147,6 +150,7 @@
                                                             <label for="projectinput1"> اختر الخدمة المناسبة
                                                             </label>
                                                             <select name="service_id" class="select2 form-control" value="{{old('service_id')}}" >
+                                                                <option value="0">بدون اضافة خدمة</option>
                                                                 <optgroup label=" من فضلك اختر الخدمة المناسبة">
                                                                     @if($services  -> count() > 0)
                                                                         @foreach($services as $service)

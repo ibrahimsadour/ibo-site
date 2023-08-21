@@ -11,13 +11,13 @@
                 <?php if($count == 2) break; ?>
                     <li class="post-item post-1892 post type-post status-publish format-standard has-post-thumbnail category-64 tag-94 tie-standard">
                         <a aria-label="{{$article ->name}}" href="{{ url($article ->slug) }}"
-                            class="post-thumb"><span class="post-cat-wrap"><span class="post-cat tie-cat-64">{{$article ->service->name}}</span></span><img width="390" height="220" src="{{$article ->photo}}" alt="{{$article ->name}}" title="{{$article ->name}}" /></a>
+                            class="post-thumb"><span class="post-cat-wrap"><span class="post-cat tie-cat-64">{{ $article->service->name ?? '' }}</span></span><img width="390" height="220" src="{{$article ->photo}}" alt="{{$article ->name}}" title="{{$article ->name}}" /></a>
                         <div class="post-details">
                             <div class="post-meta clearfix">
                             <span class="author-meta single-author no-avatars">
                                 <span class="meta-item meta-author-wrapper meta-author-63">
                                     <span class="meta-author">
-                                        <span class="author-name tie-icon">{{$article ->car->name}}</span>
+                                        <span class="author-name tie-icon">{{ $article ->car->name ?? ''}}</span>
                                     </span>
                                 </span>
                             </span>

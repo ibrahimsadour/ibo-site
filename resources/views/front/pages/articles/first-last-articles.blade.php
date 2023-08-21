@@ -14,7 +14,7 @@
                     href="{{url($article ->slug)}}" title="{{ $article -> name}}"
                     class="post-thumb"
                     >
-                        <span class="post-cat-wrap"><span class="post-cat tie-cat-48">{{$article ->service->name}}</span></span>
+                        <span class="post-cat-wrap"><span class="post-cat tie-cat-48">{{ $article->service->name ?? '' }}</span></span>
                         <img width="390" height="220" src="{{ $article->photo}}" alt="{{$article ->name}}" title="{{$article ->name}}" class="attachment-jannah-image-large size-jannah-image-large lazy-img wp-post-image" alt="" decoding="async" loading="lazy" />
                     </a>
                     <div class="post-details">
@@ -54,7 +54,7 @@
                     href="{{url($article ->slug)}}" title="{{ $article -> name}}"
                     class="post-thumb"
                     >
-                        <span class="post-cat-wrap"><span class="post-cat tie-cat-48">{{$article ->service->name}}</span></span>
+                        <span class="post-cat-wrap"><span class="post-cat tie-cat-48">{{ $article->service->name ?? '' }}</span></span>
                         <img width="390" height="220" src="{{ $article->photo}}" alt="{{$article ->name}}" title="{{$article ->name}}" class="attachment-jannah-image-large size-jannah-image-large lazy-img wp-post-image" alt="" decoding="async" loading="lazy" />
                     </a>
                     <div class="post-details">

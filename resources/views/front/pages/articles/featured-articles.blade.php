@@ -17,7 +17,7 @@
                                                     <img class="size-jannah-image-large lazy-img " height="480" width="680" alt="{{$article ->name}}"  title="{{$article ->name}}" decoding="async" loading="lazy" src="{{$article->photo}}">
                                                     <a href="{{ URL::route('article.index',$article -> slug) }}" title="{{ $article -> name}}" class="all-over-thumb-link" aria-label="{{$article ->name}}"></a>
                                                 <div class="thumb-overlay">
-                                                    <span class="post-cat-wrap post-cat tie-cat-8">{{$article -> service->name}}  </span>
+                                                    <span class="post-cat-wrap post-cat tie-cat-8">{{ $article->service->name ?? '' }}  </span>
                                                     <div class="thumb-content">
                                                         <div class="thumb-meta"><span class="date meta-item tie-icon">{{$article -> created_at->diffForHumans()}}</span></div>
                                                         <h2 class="thumb-title"><a href="{{ URL::route('article.index',$article -> slug) }}" title="{{ $article -> name}}" >{{ Str::limit($article -> seo_description, 50) }}</a></h2>

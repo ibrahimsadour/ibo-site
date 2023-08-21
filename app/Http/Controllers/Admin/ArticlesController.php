@@ -92,7 +92,7 @@ class ArticlesController extends Controller
         if($request->section_id != 0 ){
             $section_id = $request->section_id;
         }else{
-            $car_id = Null;
+            $section_id = Null;
         }
         // car_id
         if($request->car_id != 0 ){

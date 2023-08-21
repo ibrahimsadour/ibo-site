@@ -14,7 +14,7 @@
                                 aaria-label="{{$article ->name}}" href="{{ url($article ->slug) }}" title="{{$article ->name}}"
                                 class="post-thumb"
                             >
-                                <span class="post-cat-wrap"><span class="post-cat tie-cat-8">{{$article ->service->name}}</span></span>
+                                <span class="post-cat-wrap"><span class="post-cat tie-cat-8">{{ $article->service->name ?? '' }}</span></span>
                                 <img
                                     width="390"
                                     height="220"

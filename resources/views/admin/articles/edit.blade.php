@@ -103,6 +103,7 @@
                                                         <label for="projectinput1"> اختر ماركة السيارة
                                                         </label>
                                                         <select name="car_id" class="select2 form-control" value="{{old('car_id')}}" >
+                                                            <option value="0">بدون اضافة ماركة السيارة</option>
                                                             <optgroup label="  اسم السيارة الحالية  ">
                                                                 @if($cars  -> count() > 0)
                                                                 @foreach($cars as $car)
@@ -128,6 +129,7 @@
                                                         <label for="projectinput1"> اختر اسم المدينة
                                                         </label>
                                                         <select name="city_id" class="select2 form-control" value="{{old('city_id')}}" >
+                                                            <option value="0">بدون اضافة مدن</option>
                                                             <optgroup label="الحالية اسم المدينة">
                                                                 @if($cities  -> count() > 0)
                                                                     @foreach($cities as $city)
@@ -152,6 +154,7 @@
                                                         <label for="projectinput1"> اختر الخدمة المناسبة
                                                         </label>
                                                         <select name="service_id" class="select2 form-control" value="{{old('service_id')}}" >
+                                                            <option value="0">بدون اضافة خدمة</option>
                                                             <optgroup label=" من فضلك اختر الخدمة المناسبة">
                                                                 @if($services  -> count() > 0)
                                                                 @foreach($services as $service)
