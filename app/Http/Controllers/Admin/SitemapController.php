@@ -33,11 +33,11 @@ class SitemapController extends Controller
 
     public function sitemap_article(){
         $articles = Article::Active()->get();
-        $sitemap = Sitemap::create();
+        $sitemap = Sitemap::create(env('APP_URL'));
         foreach ($articles as $article) {
             $sitemap ->add(Url::create($article->slug));
         }
-        return  $sitemap->writeToFile(public_path('sitemap_articles.xml'));
+        return  $sitemap->writeToFile('sitemap_articles.xml');
     }
     public function sitemap_cities(){
         $cities = City::Active()->get();
