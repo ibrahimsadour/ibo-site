@@ -20,7 +20,7 @@
                                 <div class="post-overlay">
                                     <div class="post-content">
                                         <div class="post-meta clearfix">
-                                            <span class="post-cat tie-cat-75">{{$article ->section-> name}}</span>
+                                            <span class="post-cat tie-cat-75">{{$article ->section->name ?? '' }}</span>
 
                                             <span class="date meta-item tie-icon" style="float: left;">{{$article -> created_at->diffForHumans()}}</span>
                                         </div>
