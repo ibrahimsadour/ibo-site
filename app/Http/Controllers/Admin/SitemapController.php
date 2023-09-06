@@ -45,7 +45,7 @@ class SitemapController extends Controller
         foreach ($cities as $city) {
             $sitemap ->add(Url::create('cities/'.$city->slug));
         }
-        return  $sitemap->writeToFile(public_path('sitemap_cities.xml'));
+        return  $sitemap->writeToFile('sitemap_cities.xml');
     }
     public function sitemap_city_tags(){
         $cities = City::with('tags')->get();
@@ -57,7 +57,7 @@ class SitemapController extends Controller
             }
 
         }
-        return  $sitemap->writeToFile(public_path('sitemap_city_tags.xml'));
+        return  $sitemap->writeToFile('sitemap_city_tags.xml');
     }
     public function sitemap_tags(){
         $tags = Tag::Active()->get();
@@ -65,7 +65,7 @@ class SitemapController extends Controller
         foreach ($tags as $tag) {
             $sitemap ->add(Url::create('tags/'.$tag->slug));
         }
-        return  $sitemap->writeToFile(public_path('sitemap_tags.xml'));
+        return  $sitemap->writeToFile('sitemap_tags.xml');
     }
     public function sitemap_cars(){
         $cars = Car::Active()->get();
@@ -73,7 +73,7 @@ class SitemapController extends Controller
         foreach ($cars as $car) {
             $sitemap ->add(Url::create('cars/'.$car->slug));
         }
-        return  $sitemap->writeToFile(public_path('sitemap_cars.xml'));
+        return  $sitemap->writeToFile('sitemap_cars.xml');
     }
     public function sitemap_car_tags(){
         $cars = Car::with('tags')->get();
@@ -84,7 +84,7 @@ class SitemapController extends Controller
                 $sitemap ->add(Url::create('cars/'.$tag->slug.'/'.$car->slug));
             }
         }
-        return  $sitemap->writeToFile(public_path('sitemap_car_tags.xml'));
+        return  $sitemap->writeToFile('sitemap_car_tags.xml');
     }
     public function sitemap_services(){
         $services = Service::all();
@@ -92,7 +92,7 @@ class SitemapController extends Controller
         foreach ($services as $service) {
             $sitemap ->add(Url::create('services/'.$service->slug));
         }
-        return  $sitemap->writeToFile(public_path('sitemap_services.xml'));
+        return  $sitemap->writeToFile('sitemap_services.xml');
     }
     public function sitemap_sections(){
         $sections = Section::all();
@@ -100,7 +100,7 @@ class SitemapController extends Controller
         foreach ($sections as $section) {
             $sitemap ->add(Url::create('sections/'.$section->slug));
         }
-        return  $sitemap->writeToFile(public_path('sitemap_sections.xml'));
+        return  $sitemap->writeToFile('sitemap_sections.xml');
     }
 
 
