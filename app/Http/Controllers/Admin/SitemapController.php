@@ -28,7 +28,7 @@ class SitemapController extends Controller
             ->add(Url::create('/cities'))
             ->add(Url::create('/cars'))
             ->add(Url::create('/articles'))
-            ->writeToFile('sitemap_index.xml');
+            ->writeToFile('sitemap.xml');
     }
 
     public function sitemap_article(){
