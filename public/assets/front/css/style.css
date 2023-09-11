@@ -5031,8 +5031,3 @@ input[type="submit"]:not(.noRipple), input[type="button"]:not(.noRipple), button
         display: none;
     }
 }
-/* @media screen and (max-width:768px){
-.ev-action{
-    display: none;
-    }
-} */
