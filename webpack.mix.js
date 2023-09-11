@@ -14,3 +14,18 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .vue()
     .sass('resources/sass/app.scss', 'public/css');
+
+    mix.styles([
+        'resources/assets/css/bootstrap.css',
+        'resources/assets/css/bootstrap-grid.css',
+        'resources/assets/css/bootstrap-utilities.css'
+    ],'public/css/bootstrap.css');
+    
+    mix.styles([
+        'resources/assets/css/app.css',
+        'resources/assets/css/util.css'
+    ], 'public/css/app.css');
+
+    mix.styles([
+        'resources/assets/css/style.css',
+    ], 'public/css/style.css');
