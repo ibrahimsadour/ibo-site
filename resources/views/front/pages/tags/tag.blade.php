@@ -71,6 +71,8 @@
                         @endif
                         {{-- Backlinks site --}}
                         <div class="back_link">
+                            <br>
+                            <center><h6> خدمات اعلانية اخرى في الكويت </h6></center>
                             <p><br>إذا كنت في الكويت وتبحث عن خدمات متعددة تلبي احتياجاتك، فأنت في المكان الصحيح. من <a href="https://scrapkw.com/" data-type="link" data-id="https://scrapkw.com/" target="_blank" title="سكراب السالمي" >سكراب السالمي</a> إلى <a href="https://scrap.kw-service.net/" data-type="link" data-id="https://scrap.kw-service.net/" target="_blank" title="قطع غيار سيارات">قطع غيار سيارات</a> وخدمات النقل وترفيه الـ <a href="https://sat.kw-service.net/sections/%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D8%A7%D8%AA-iptv-%D8%A8%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA" data-type="link" title="اشتراك IPTV" data-id="https://sat.kw-service.net/">اشتراك IPTV</a>،  <a href="https://cars.kw-service.net/" data-type="link" title="بنشر متنقل" data-id="https://cars.kw-service.net/">بنشر متنقل</a> يمكنك العثور على كل ما تحتاجه في هذا البلد الجميل.</p>
 
                             <p><strong>1. <a href="https://scrapkw.com/" data-type="link" data-id="https://scrapkw.com/" title="سكراب السالمي" target="_blank">سكراب السالمي</a>:</strong> إذا كنت بحاجة إلى التخلص من الأشياء القديمة والغير مرغوب فيها بشكل آمن وفعال، فإن ال <a href="https://scrapkw.com/" data-type="link" data-id="https://scrapkw.com/" target="_blank" title="سكراب السالمي">سكراب السالمي</a> هو حلاً مثاليًا لك. <strong>scrapkw.com</strong> يمكنك التخلص من سكراب بسهولة وبيئة بمساعدتهم.</p>
@@ -97,7 +99,7 @@
                             
                         </div>
                         <div class="post-bottom-meta post-bottom-tags post-tags-modern">
-                            <b><span id="more-1787"></span>للمزيد حول خدمة {{$slugTag}} في {{$city->name}} و جميع الخدمات المتعلقة بالسيارات في {{get_default_country()}} يمكنك زيارة احد مواقعنا:</b><br>
+                            <b><span id="more-1787"></span>للمزيد حول خدمة {{$tag->name}} و جميع الخدمات المتعلقة بالسيارات في {{get_default_country()}} يمكنك زيارة احد مواقعنا:</b><br>
                             <br>
                             <a class="post-cat tie-cat-6" href="https://kw-service.com/" title="بنشر متنقل">بنشر متنقل</a>
                             <a class="post-cat tie-cat-6" href="https://scrapkw.com/" title="سكراب السالمي">سكراب السالمي</a>
