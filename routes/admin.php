@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TagsController;
 use App\Http\Controllers\Relation\RelationsController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\CacheController;
+use App\Http\Controllers\Admin\DynamicContentController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\Pages\PrivacyPolicyController;
 use App\Http\Controllers\Admin\Pages\AboutController;
@@ -264,6 +265,19 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         
     });
     ############################# End FooterController Route ################################
+
+    // dynamic content (tags - city - cars) المحتوى الافتراضي للعلامات و المقالة  والمدن  والسيارات
+    ###########################################
+    Route::group( ['prefix' => 'dynamic-content', 'middleware' => 'auth'],function() {
+        Route::get('/',[DynamicContentController::class ,'dynamic_content_index']) -> name('admin.dynamic_content.index');
+        Route::post('store',[DynamicContentController::class ,'dynamic_content_store']) -> name('admin.dynamic_content.store');
+        Route::get('delete/{id}',[DynamicContentController::class ,'dynamic_content_destroy']) -> name('admin.dynamic_content.delete');
+        Route::get('changeStatus/{id}',[DynamicContentController::class ,'dynamic_content_changeStatus']) -> name('admin.dynamic_content.status');
+        Route::get('edit/{id}',[DynamicContentController::class ,'dynamic_content_edit']) -> name('admin.dynamic_content.edit');
+        Route::post('update/{id}',[DynamicContentController::class ,'dynamic_content_update']) -> name('admin.dynamic_content.update');
+    });
+    ###########################################
+
 });
 ############################# End admin Dashboard Route ###############################
 

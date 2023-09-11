@@ -12,8 +12,8 @@
                    <span class="badge badge badge-info badge-pill float-right mr-2">6</span>
                </a>
                <ul class="menu-content">
-                   <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.home-page')}}"> الرئيسية</a></li>
-                   <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}" > المقالات </a></li>
+                   <li class="{{ Request::is('admin/home-page') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.home-page')}}"> الرئيسية</a></li>
+                   <li class="{{ Request::is('admin/dynamic-content') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.dynamic_content.index')}}" > الصفحات الافتراضية </a></li>
                    <li class="{{ Request::is('admin/about') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.about')}}" > من نحن </a></li>
                    <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}" > الاتصال </a></li>
                    <li class="{{ Request::is('admin/privacy-policy') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.privacy-policy')}}" > سياسة الخصوصية </a></li>

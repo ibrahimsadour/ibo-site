@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Car;
+use App\Models\DynamicContent;
 use App\Models\Section;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -43,9 +44,11 @@ class TagsController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        $page_links = FooterPageLinks();        
+        $page_links = FooterPageLinks();
+        $tag_contents =  DynamicContent::Where('name','tag')->Where('active','1')->first(); 
+               
 
-        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars','page_links'));
+        return view('front.pages.tags.tag', compact('tag','sections','articles','tags','first_articles','last_articles','cars','page_links','tag_contents'));
 
 }
     //show one tag

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Car;
 use App\Models\City;
+use App\Models\DynamicContent;
 use App\Models\Section;
 use App\Models\Service;
 use App\Models\Tag;
@@ -61,12 +62,13 @@ class CitiesController extends Controller
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
         $page_links = FooterPageLinks();        
+        $city_contents =  DynamicContent::Where('name','city')->Where('active','1')->first(); 
 
 
         if (!$city) {
         return redirect()->route('404.index');
         }
-        return view('front.pages.cities.city-with-tag', compact('city','slugTag','sections','articles','tags','first_articles','last_articles','cars','page_links'));
+        return view('front.pages.cities.city-with-tag', compact('city','slugTag','sections','articles','tags','first_articles','last_articles','cars','page_links','city_contents'));
 
 
     }
