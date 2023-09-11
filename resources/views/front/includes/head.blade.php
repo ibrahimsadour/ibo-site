@@ -36,7 +36,7 @@
     @if (trim($__env->yieldContent('seo_image')))
         <meta property="og:image" content="@yield('seo_image')" />
     @else
-        <meta property="og:image" content="{{asset('assets/images/pages/default_seo_image.webp')}}" />
+        <meta property="og:image" content="{{get_default_seo_image()}}" />
     @endif
     {{-- SEO og:URL  --}}
     @if (trim($__env->yieldContent('seo_url')))
