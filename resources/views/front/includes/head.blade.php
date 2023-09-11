@@ -71,7 +71,7 @@
     <link rel='stylesheet' href="{{asset('assets/front/css/style.min.css')}}" type='text/css' media='all' />
     <link rel='stylesheet' href="{{asset('assets/front/css/widgets.min.css')}}" type='text/css' media='all' />
     <link rel="stylesheet" href="{{asset('assets/front/rtl.css')}}" type="text/css" media="screen" /> --}}
-    <link rel='stylesheet' href="{{asset('assets/front/css/update/style.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{asset('assets/front/css/style.css')}}" type='text/css' media='all' />
 
     {{-- hier is Google code or insert header code --}}
     {!! googleCodeHeader()!!} 
