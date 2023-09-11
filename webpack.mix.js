@@ -22,9 +22,9 @@ mix.js('resources/js/app.js', 'public/js')
     ],'public/css/bootstrap.css');
     
     mix.styles([
-        'resources/assets/css/app.css',
+        'resources/assets/front/css/style.css',
         'resources/assets/css/util.css'
-    ], 'public/css/app.css');
+    ], 'public/assets/front/css/style.css');
 
     mix.styles([
         'resources/assets/css/style.css',
