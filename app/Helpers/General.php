@@ -11,8 +11,7 @@ use App\Models\Footer;
 use App\Models\Section;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Config;
-
-
+use Illuminate\Support\Facades\Schema;
 
 // deze method pakket de huidig taal
 function get_default_lang(){
@@ -197,10 +196,11 @@ function FooterPageLinks(){
 // this function to check if the table car active or not 
 // here it will be check the first items in the car table 
 function check_if_cars_active(){
-    $firstRow = Car::first();
-    if($firstRow){
+    if (Schema::hasTable('cars')){
+        $firstRow = Car::first();
         return $firstRow->active;
     }
+
 }
 
 define('PAGINATION_COUNT',15); // PAGINATION_COUNT : een vast variabel  om alleen 10 items te laat zien om de pagina
