@@ -198,8 +198,9 @@ function FooterPageLinks(){
 // here it will be check the first items in the car table 
 function check_if_cars_active(){
     $firstRow = Car::first();
-    if(isset($firstRow))
-     return $firstRow->active;
+    if($firstRow){
+        return $firstRow->active;
+    }
 }
 
 define('PAGINATION_COUNT',15); // PAGINATION_COUNT : een vast variabel  om alleen 10 items te laat zien om de pagina
