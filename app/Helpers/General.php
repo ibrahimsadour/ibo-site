@@ -198,7 +198,9 @@ function FooterPageLinks(){
 function check_if_cars_active(){
     if (Schema::hasTable('cars')){
         $firstRow = Car::first();
-        return $firstRow->active;
+        if($firstRow){
+            return $firstRow->active;
+        }
     }
 
 }
