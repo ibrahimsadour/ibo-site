@@ -198,6 +198,7 @@ function FooterPageLinks(){
 // here it will be check the first items in the car table 
 function check_if_cars_active(){
     $firstRow = Car::first();
+    if(isset($firstRow))
      return $firstRow->active;
 }
 
