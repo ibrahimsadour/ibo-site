@@ -7,6 +7,7 @@
             </div>
             <div class="widget-posts-list-wrapper">
                 <div class="widget-posts-list-container posts-list-counter">
+                    @if(check_if_cars_active() === 1)
                     <ul class="posts-list-items widget-posts-wrapper">
                         @isset($cars)
                             @foreach($cars as $car)
@@ -46,6 +47,7 @@
                             @endforeach
                         @endisset
                     </ul>
+                    @endif
                 </div>
             </div>
         </div>

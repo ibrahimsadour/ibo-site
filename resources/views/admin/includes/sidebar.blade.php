@@ -15,7 +15,7 @@
                    <li class="{{ Request::is('admin/home-page') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.home-page')}}"> الرئيسية</a></li>
                    <li class="{{ Request::is('admin/dynamic-content') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.dynamic_content.index')}}" > الصفحات الافتراضية </a></li>
                    <li class="{{ Request::is('admin/about') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.about')}}" > من نحن </a></li>
-                   <li class="{{ Request::is('admin/cars') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}" > الاتصال </a></li>
+                   <li class="{{ Request::is('admin') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.cars')}}" > الاتصال </a></li>
                    <li class="{{ Request::is('admin/privacy-policy') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.privacy-policy')}}" > سياسة الخصوصية </a></li>
                    <li class="{{ Request::is('admin/terms-condition') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.terms-condition')}}" > اتفاقية الاستخدام </a></li>
                </ul>
@@ -37,8 +37,9 @@
                    </ul>
                </li>
                 {{--   السيارات   --}}
-              <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
-                     <a href=""><i class="icon-globe"></i>
+                @if(check_if_cars_active() === 1)
+                    <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}"  style="color: #787878;">
+                     <a href="">
                             <span class="menu-title" data-i18n="nav.dash.main">اسماء ماركات السيارات</span>
                             <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Car::count()}}</span>
                      </a>
@@ -51,6 +52,14 @@
                             </li>
                      </ul>
               </li>
+              @else
+              <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
+                <a href="{{route('admin.cars')}}" style="    color: #ff4961;">
+                       <span class="menu-title" data-i18n="nav.dash.main">هذا القسم معطل</span>
+                       <span class="badge badge badge-danger badge-pill float-right mr-2">معطل</i></span>
+                    </a>
+         </li>
+              @endif
 
                  {{--   المدن   --}}
               <li class="{{ Request::is('admin/cities') ? 'nav-item active' : '' }}"><a href=""><i class="ft-map-pin"></i>
@@ -128,6 +137,7 @@
                       </li>
                     </ul>
                   </li>
+                  @if(check_if_cars_active() === 1)
                   <li class="has-sub is-shown"><a class="menu-item" href="#"><i></i><span data-i18n="Buttons">خريطة السيارات</span></a>
                     <ul class="menu-content" style="">
                       <li class=""><a class="menu-item" href="{{route('sitemap-cars')}}"><i></i><span data-i18n="Basic Buttons">السيارات فقط</span></a>
@@ -136,6 +146,7 @@
                       </li>
                     </ul>
                   </li>
+                  @endif
                    <li><a class="menu-item" href="{{route('sitemap-tags')}}" >العلامات الدلالية</a></li>
                    <li><a class="menu-item" href="{{route('sitemap-services')}}" >الخدمات</a></li>
                    <li><a class="menu-item" href="{{route('sitemap-sections')}}" >الاقسام</a></li>

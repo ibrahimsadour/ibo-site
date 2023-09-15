@@ -1,8 +1,35 @@
 @extends('admin.layouts.admin')
 @section('title','قسم السيارات')
 @section('content')
+    <?php  
+    $firstRow = App\Models\Car::first();
+    $firstColumnName = $firstRow->active;
+    // App\Models\Car:::query()->update('active' => '0' );
+    ?>
+    <div class="content-header" style="float: left;">
+        <h3 class="content-header-title">الحالة 
+            @if($firstColumnName === 1) <b class="success"> (مفعل) </b> 
+            @else
+                <b class="warning">(غير مفعل)</b> 
+            @endif  
+        </h3>
+        <div class="row breadcrumbs-top">
+            <div class="breadcrumb-wrapper col-12">
+
+                @if ($firstColumnName === 1 )
+                
+                <a href="{{route('deactive-car-table')}}" class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">الغاء</a>
+                
+                @else
+                <a href="{{route('deactive-car-table')}}" class="btn btn-outline-warning  btn-min-width box-shadow-3 mr-1 mb-1" >تفعيل</a>
+                @endif
+                
+            </div>
+        </div>
+    </div>
+@if(check_if_cars_active() === 1)
+
     <div class="app-content content">
-        <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
                     <h3 class="content-header-title">قسم اسماء السيارات</h3>
@@ -17,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
             <div class="content-body">
                 <!-- DOM - jQuery events table -->
                 <section id="dom">
@@ -146,4 +173,5 @@
             </div>
         </div>
     </div>
+@endif
 @endsection

@@ -97,6 +97,7 @@
                                                 </div>
 
                                             <div class="row" >
+                                                @if(check_if_cars_active() === 1)
                                                 <!-- car_id -->
                                                 <div class="col-md-3">
                                                     <div class="form-group">
@@ -123,6 +124,7 @@
                                                         @enderror
                                                     </div>
                                                 </div>
+                                                @endif
                                                 <!-- city_id -->
                                                 <div class="col-md-3">
                                                     <div class="form-group">

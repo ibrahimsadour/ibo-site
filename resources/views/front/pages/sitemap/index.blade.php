@@ -87,6 +87,7 @@ th {
                                 <td><a href="{{ url('sitemap_sections.xml')}}">{{ url('sitemap_sections.xml')}}</a></td>
                                 <td>الاقسام</td>
                             </tr>
+                            @if(check_if_cars_active() === 1)
                             <tr>
                                 <td><a href="{{ url('sitemap_cars.xml')}}">{{ url('sitemap_cars.xml')}}</a></td>
                                 <td>السيارات</td>
@@ -94,6 +95,7 @@ th {
                                 <td><a href="{{ url('sitemap_car_tags.xml')}}">{{ url('sitemap_car_tags.xml')}}</a></td>
                                 <td>السيارت مع العلامات الدلالية</td>
                             </tr>
+                            @endif
                             <tr>
                                 <td><a href="{{ url('sitemap_cities.xml')}}">{{ url('sitemap_cities.xml')}}</a></td>
                                 <td>المدن</td>

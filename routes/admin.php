@@ -47,17 +47,22 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
     ############################# Begin Cars Route ###############################
     Route::group(['prefix' => 'cars'], function () {
         Route::get('/',[CarsController::class ,'index']) -> name('admin.cars');
-        Route::get('create',[CarsController::class ,'create']) -> name('admin.cars.create');
-        Route::post('store',[CarsController::class ,'store']) -> name('admin.cars.store');
-        Route::get('edit/{id}',[CarsController::class ,'edit']) -> name('admin.cars.edit');
-        Route::post('update/{id}',[CarsController::class ,'update']) -> name('admin.cars.update');
-        Route::get('delete/{id}',[CarsController::class ,'destroy']) -> name('admin.cars.delete');
-        //change Status the category and the vendors
-        Route::get('changeStatus/{id}',[CarsController::class ,'changeStatus']) -> name('admin.cars.status');
-        // insert_all_tags_to_one_car
-        Route::post('insert',[CarsController::class ,'insert_all_tags_to_one_car']) -> name('insert-all-tags-to-one-car');
-        //delete_all_tags_of_one_car 
-        Route::get  ('delete-tags/{id}',[CarsController::class ,'delete_all_tags_of_one_car']) -> name('delete-all-tags-of-one-car');
+
+        // active or deactive car table
+        Route::get  ('deactive-car-table',[CarsController::class ,'deactive_car_table']) -> name('deactive-car-table');
+        if(check_if_cars_active() === 1){
+            Route::get('create',[CarsController::class ,'create']) -> name('admin.cars.create');
+            Route::post('store',[CarsController::class ,'store']) -> name('admin.cars.store');
+            Route::get('edit/{id}',[CarsController::class ,'edit']) -> name('admin.cars.edit');
+            Route::post('update/{id}',[CarsController::class ,'update']) -> name('admin.cars.update');
+            Route::get('delete/{id}',[CarsController::class ,'destroy']) -> name('admin.cars.delete');
+            //change Status the category and the vendors
+            Route::get('changeStatus/{id}',[CarsController::class ,'changeStatus']) -> name('admin.cars.status');
+            // insert_all_tags_to_one_car
+            Route::post('insert',[CarsController::class ,'insert_all_tags_to_one_car']) -> name('insert-all-tags-to-one-car');
+            //delete_all_tags_of_one_car 
+            Route::get  ('delete-tags/{id}',[CarsController::class ,'delete_all_tags_of_one_car']) -> name('delete-all-tags-of-one-car');
+        }
     });
     ############################# End Cars Route ################################
 

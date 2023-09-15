@@ -63,14 +63,15 @@ Route::group( [
     ###########################################
 
     ###########################################
-    Route::get('cars',[CarsController::class ,'show_all_cars']) -> name('cars.index');
-    Route::get('cars/{slug}',[CarsController::class ,'show_one_car']) -> name('car.index');
-    Route::get('cars/{slugcar}/{slugTag}',[CarsController::class ,'show_car_tag']) -> name('car.tags.index');
-
-    ##################
-    Route::get('sub-cars/{slugcar}/{slugSubcar}',[SubCarController::class ,'show_one_subcar']) -> name('subcar.index');
-    Route::get('sub-cars/{slugcar}/{slugSubcar}/{slugSubcarTag}',[SubCarController::class ,'show_subcar_with_one_tag']) -> name('subcar.tag.index');
-
+    if(check_if_cars_active() === 1){
+        Route::get('cars',[CarsController::class ,'show_all_cars']) -> name('cars.index');
+        Route::get('cars/{slug}',[CarsController::class ,'show_one_car']) -> name('car.index');
+        Route::get('cars/{slugcar}/{slugTag}',[CarsController::class ,'show_car_tag']) -> name('car.tags.index');
+    
+        ##################
+        Route::get('sub-cars/{slugcar}/{slugSubcar}',[SubCarController::class ,'show_one_subcar']) -> name('subcar.index');
+        Route::get('sub-cars/{slugcar}/{slugSubcar}/{slugSubcarTag}',[SubCarController::class ,'show_subcar_with_one_tag']) -> name('subcar.tag.index');
+    }   
     ###########################################
 
     ###########################################

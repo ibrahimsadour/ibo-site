@@ -10,6 +10,7 @@ use App\Models\Tag;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
 class CarsController extends Controller
@@ -220,6 +221,25 @@ class CarsController extends Controller
         } catch (\Exception $ex) {
             // return $ex;
             return redirect()->route('admin.cars')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
+    }
+
+    public function deactive_car_table()
+    {
+
+        try {
+            if(check_if_cars_active() === 1){
+                Car::query()->update(['active' => '0']);
+            }
+            else{
+                Car::query()->update(['active' => '1']);
+            }
+        return Redirect::back()->with(['success' => 'تمت تحديث الحالة  بنجاح']);
+
+        } catch (\Exception $ex) {
+            return $ex;
+            return Redirect::back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+
         }
     }
         

@@ -194,5 +194,11 @@ function select10ActiveTags(){
 function FooterPageLinks(){
     return Footer::Active()->inRandomOrder()->limit(5)->get();
 }
+// this function to check if the table car active or not 
+// here it will be check the first items in the car table 
+function check_if_cars_active(){
+    $firstRow = Car::first();
+     return $firstRow->active;
+}
 
 define('PAGINATION_COUNT',15); // PAGINATION_COUNT : een vast variabel  om alleen 10 items te laat zien om de pagina
