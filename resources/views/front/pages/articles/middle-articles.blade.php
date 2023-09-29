@@ -1,7 +1,7 @@
 <div id="tie-block_1160" class="mag-box big-post-top-box has-first-big-post box-dark-skin dark-skin has-custom-color" data-current="1">
     <div class="container-wrapper">
         <div class="mag-box-title the-global-title">
-            <h3>خدمات صيانة السيارات</h3>
+            <h3>{{get_default_title()}}</h3>
         </div>
         <div class="mag-box-container clearfix">
             <ul class="posts-items posts-list-container">
@@ -42,7 +42,7 @@
                                     class="more-link button"
                                     href="{{url($article ->slug)}}" title="{{$article ->name}}"
                                 >
-                                    أكمل القراءة »
+                                @lang('front/home-blade.read_more') »
                                 </a>
                             </div>
                         </li>

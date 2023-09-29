@@ -3,7 +3,7 @@
     <div class="theiaStickySidebar">
         <div id="posts-list-widget-42" class="container-wrapper widget posts-list">
             <div class="widget-title the-global-title">
-                <div class="the-subtitle">الأكثر مشاهدة<span class="widget-title-icon tie-icon"></span></div>
+                <div class="the-subtitle">@lang('front/home-blade.most_watched')<span class="widget-title-icon tie-icon"></span></div>
             </div>
             <div class="widget-posts-list-wrapper">
                 <div class="widget-posts-list-container posts-list-counter">
@@ -37,7 +37,7 @@
                                         class="more-link button"
                                         href="{{ URL::route('car.index',$car -> slug) }}" title="{{$car ->name}}"
                                     >
-                                        أكمل القراءة »
+                                    @lang('front/home-blade.read_more')  »
                                     </a>
                                     </div>
                                     <div class="post-meta">

@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\ImportExcelController;
 use App\Http\Controllers\Admin\GoolgeController;
 use App\Http\Controllers\Admin\SubCarController;
 use App\Http\Controllers\Admin\FooterController;
+use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
@@ -280,6 +281,16 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::get('changeStatus/{id}',[DynamicContentController::class ,'dynamic_content_changeStatus']) -> name('admin.dynamic_content.status');
         Route::get('edit/{id}',[DynamicContentController::class ,'dynamic_content_edit']) -> name('admin.dynamic_content.edit');
         Route::post('update/{id}',[DynamicContentController::class ,'dynamic_content_update']) -> name('admin.dynamic_content.update');
+    });
+    ###########################################
+
+
+    // Setting route to edit some items in the config app 
+    ###########################################
+    Route::group( ['prefix' => 'app', 'middleware' => 'auth'],function() {
+        Route::get('/',[SettingController::class ,'config_app_locale']) -> name('admin.config.app.local');
+        Route::get('update/{lang}',[SettingController::class ,'update_config_app_locale']) -> name('admin.update.app.config');
+
     });
     ###########################################
 

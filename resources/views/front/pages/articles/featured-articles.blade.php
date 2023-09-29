@@ -3,7 +3,7 @@
         <div class="section-item is-first-section full-width">
             <div class="container">
                 <div class="mag-box-title the-global-title section-name">
-                    <h3> خدمات مميزة </h3>
+                    <h3>@lang('front/home-blade.related_services')</h3>
                 </div>
                 <div class="tie-row main-content-row">
                 <div class="main-content tie-col-md-12">

@@ -2,7 +2,7 @@
 <div id="tie-s_1441" class="mag-box big-posts-box has-custom-color" data-current="1">
     <div class="container">
         <div class="mag-box-title the-global-title section-name">
-            <h3> إكتشف أقسامنا </h3>
+            <h3>@lang('front/home-blade.our_services')</h3>
         </div>
         <div class="mag-box-container clearfix">
             <ul class="posts-items posts-list-container">

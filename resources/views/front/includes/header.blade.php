@@ -12,7 +12,9 @@
                 />
             </a>
             <div class="styles_wrapper_2__YjPsx">
-            <a href="{{'tel:'.get_default_phone_number()}}" class="button">أتصل الان</a>
+            <a href="{{'tel:'.get_default_phone_number()}}" class="button">@lang('front/home-blade.call_now')
+
+            </a>
             </div>
         </div>
     </div>
@@ -35,7 +37,7 @@
         </p>
         <div class="styles_search_wrapper__7GGVH">
             <form action="." class="styles_input_wrap__ZD8VR" data-test="search-form">
-                <input type="search" class="text-4-regular styles_search_input__2oA1U" placeholder="ما الذي تبحث عنه؟" value="" data-test="search-input" />
+                <input type="search" class="text-4-regular styles_search_input__2oA1U" placeholder="@lang('front/home-blade.what_are_you_looking_for')" value="" data-test="search-input" />
                 <div class="styles_searchIcon__WMc5H"><span class="styles_icon_wrapper__IHtt1 styles_inherit__Ygxw7"></span></div>
             </form>
         </div>

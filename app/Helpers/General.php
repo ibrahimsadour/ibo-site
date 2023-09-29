@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Models\Car;
 use App\Models\Footer;
 use App\Models\Section;
+use App\Models\Setting;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
@@ -203,6 +204,16 @@ function check_if_cars_active(){
         }
     }
 
+}
+
+// Setting config in the app
+function config_app_locale(){
+    $app_locale = Setting::select('value')->where('name','locale')->Where('active','1')->first(); 
+    if (!$app_locale) {
+        return redirect()->route('404.index');
+    }else{
+        return $app_locale['value'];
+    }
 }
 
 define('PAGINATION_COUNT',15); // PAGINATION_COUNT : een vast variabel  om alleen 10 items te laat zien om de pagina

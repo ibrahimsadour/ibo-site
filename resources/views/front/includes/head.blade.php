@@ -71,7 +71,11 @@
     <link rel='stylesheet' href="{{asset('assets/front/css/style.min.css')}}" type='text/css' media='all' />
     <link rel='stylesheet' href="{{asset('assets/front/css/widgets.min.css')}}" type='text/css' media='all' />
     <link rel="stylesheet" href="{{asset('assets/front/rtl.css')}}" type="text/css" media="screen" /> --}}
-    <link rel='stylesheet' href="{{asset('assets/front/css/v1/style.css')}}" />
+    <?php    
+    if (get_default_lang() === 'en'){ echo "<link rel='stylesheet' href="?>{{asset('assets/front/css/v1/ltr-style.css')}}<?php echo '>';}
+    elseif (get_default_lang() === 'nl'){ echo "<link rel='stylesheet' href="?>{{asset('assets/front/css/v1/ltr-style.css')}}<?php echo '>';}
+    elseif (get_default_lang() === 'ar'){ echo "<link rel='stylesheet' href="?>{{asset('assets/front/css/v1/style.css')}}<?php echo '>';}
+    ?>    
 
     {{-- hier is Google code or insert header code --}}
     {!! googleCodeHeader()!!} 
