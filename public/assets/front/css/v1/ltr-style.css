@@ -117,9 +117,7 @@ input:-moz-focusring {
 
 
 @font-face {
-    font-family: Cairo-Regular;
-    src: local('Cairo-Regular'),
-    url('../../../fonts/Cairo-Regular.woff2')format('woff2');
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -127,7 +125,7 @@ input:-moz-focusring {
 body {
     background: #f7f7f7;
     color: var(--base-color);
-    font-family: Cairo-Regular;
+    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     line-height: 21px;
 }
@@ -140,7 +138,7 @@ h5,
 h6 {
     line-height: 1.4;
     font-weight: 600;
-    font-family: Cairo-Regular;
+    font-family: 'Open Sans', sans-serif;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -1093,7 +1091,7 @@ var {
 }
 @media (min-width: 992px) {
     .sidebar-left .main-content {
-        float: right;
+        float: left;
         padding-left: 5px;
     }
     .sidebar-left .sidebar {
@@ -4849,7 +4847,7 @@ q:before {
     margin-right: 0;
 }
 .subscribe-widget .widget-title {
-    text-align: right;
+    text-align: left;
 }
 .subscribe-widget form:before {
     right: 12px;

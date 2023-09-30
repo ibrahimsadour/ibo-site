@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title',"جميع المدن")
+@section('title',trans("front/home-blade.cities"))
 @section('seo_keyword',get_default_seo_keyword())
 @section('seo_description',get_default_seo_description())
 @section('seo_url', URL::route('cities.index') )
@@ -8,7 +8,7 @@
     <div id="tie-block_1837" class="mag-box miscellaneous-box first-post-gradient has-first-big-post media-overlay has-custom-color">
         <div class="container">
             <div class="mag-box-title the-global-title">
-                <h3>جميع المدن</h3>
+                <h3>@lang("front/home-blade.cities")</h3>
             </div>
             <ul class="posts-items posts-list-container">
                 <li style="display: none"></li>

@@ -20,8 +20,60 @@ return [
     'related_services'=> 'Gerelateerde diensten',
     'read_more'=> 'Lees verder',
     'most_watched'=> 'Meest bekeken',
+    'The_first_added_services'=> 'De eerste toegevoegde diensten',
+    'The_latest_added_services'=> 'Laatst toegevoegde diensten',
+    'new_services'=> 'Nieuwe diensten',
+    'load_more'=> 'Meer laden',
+    '​​​​​​​Sign_up_for_our_newsletter'=> '​Meld je aan voor onze nieuwsbrief',
+    'newsletter' => 'Nieuwsbrief',
+    'Weekly_news_about_our_services_and_promotions_in_your_email' => 'Wekelijks nieuws over onze diensten en acties in je mail',
+    'your_E-mail' => 'Uw E-mail',
+    '​​​​​​​sign_up' =>'inschrijven',
+    'categories' =>'Categorieën',
 
 
+    //Footer
+    'follow_us' =>'Volg ons',
+    'facebook' =>'Facebook',
+    'instagram' =>'Instagram',
+    'twitter' =>'Twitter',
+    'tags' =>'Tags',
+    'ibrahim_sadour' =>'Ibrahim Sadour',
+    'Copyright' =>'Copyright ©',
+    'designed_by' =>'Designed by',
+    'home_page' =>'Home page',
+    'about' =>'Over ons ',
+    'privacy_policy' =>'Privacy policy',
+    'contact_us' =>'Contact us',
+    'sitemap' =>'Sitemap',
 
+    // Page not found
+    'page_not_found' =>'Pagina niet gevonden',
+    'Sorry_deze_pagina_bestaat_niet'=> 'Sorry, deze pagina bestaat niet.',
+    'It_looks_like_we_couldnt_find_what_you_were_looking_for_Research_can_help'=> 'Het lijkt erop dat we niet konden vinden wat je zocht. Onderzoek kan helpen.',
+    'serch' =>'Zoek',
+
+    // Contact us
+    'contact_us' =>'Contact ons',
+    'lets_see_how_we_can_help_Get_in_touch_today_and_speak_to_our_friendly_team_via_email_whatever_your_query_may_be'=>'Laten we kijken hoe we kunnen helpen. Neem vandaag nog contact op en spreek met ons vriendelijke team via e-mail, wat uw vraag ook mag zijn.',
+    'Since_we_receive_a_lot_of_messages_via_email_and_social_media_here_are_some_guidelines_to_make_sure_we_see_your_message_and_are_able_to_respond_in_a_timely_manner'=>'Omdat we veel berichten ontvangen via e-mail en sociale media, volgen hier enkele richtlijnen om ervoor te zorgen dat we uw bericht zien en tijdig kunnen reageren.',
+    'Send_us_a_message'=>'Stuur ons een bericht',
+    'name'=>'Naam',
+    'phone'=>'Telefoon',
+    'name'=>'Naam',
+    'your_message'=>'jouw bericht',
+    'send'=>'Versturen',
+    'reset'=>'Opnieuw instellen',
+
+    // Sitemap
+    'link'=>'Link',
+    'title'=>'Title',
+    'articles'=>'Articles',
+    'services'=>'Services',
+    'sections'=>'Sections',
+    'cars'=>'Cars',
+    'cars_with_tags'=>'Cars with tags',
+    'cities'=>'Cities',
+    'cities_with_tags'=>'Cities with tags',
 
 ];

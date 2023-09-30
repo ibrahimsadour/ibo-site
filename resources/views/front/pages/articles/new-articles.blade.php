@@ -1,7 +1,7 @@
 <div id="tie-s_1441" class="mag-box big-posts-box has-custom-color" data-current="1">
     <div class="container-wrapper">
         <div class="mag-box-title the-global-title">
-        <h3>الخدمات الجديدة</h3>
+        <h3>@lang('front/home-blade.new_services')</h3>
         </div>
         <div class="mag-box-container clearfix">
         <ul class="posts-items posts-list-container">
@@ -33,6 +33,6 @@
         </ul>
         <div class="clearfix"></div>
         </div>
-            <a href="{{ URL::route('articles.index')}}" class="block-pagination next-posts show-more-button load-more-button" data-text="تحميل المزيد">تحميل المزيد</a>
+            <a href="{{ URL::route('articles.index')}}" class="block-pagination next-posts show-more-button load-more-button">@lang('front/home-blade.load_more')</a>
     </div>
 </div>

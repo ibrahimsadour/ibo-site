@@ -6,7 +6,7 @@
                     <div class="tie-col-md-3 normal-side">
                         <div id="posts-list-widget-9" class="container-wrapper widget posts-list">
                             <div class="widget-title the-global-title">
-                                <div class="the-subtitle">صفحات الموقع<span class="widget-title-icon tie-icon"></span></div>
+                                <div class="the-subtitle">{{ preg_replace('#^https?://#', '', url('/')) }}</div>
                             </div>
                             <div class="widget-posts-list-wrapper">
                                 <div class="widget-posts-list-container timeline-widget">
@@ -34,7 +34,7 @@
                     <div class="tie-col-md-3 normal-side">
                         <div id="posts-list-widget-8" class="container-wrapper widget posts-list">
                             <div class="widget-title the-global-title">
-                                <div class="the-subtitle">جديد الخدمات<span class="widget-title-icon tie-icon"></span></div>
+                                <div class="the-subtitle">@lang('front/home-blade.new_services')<span class="widget-title-icon tie-icon"></span></div>
                             </div>
                             <div class="widget-posts-list-wrapper">
                                 <div class="widget-posts-list-container posts-pictures-widget">
@@ -74,7 +74,7 @@
                     <div class="tie-col-md-3 normal-side">
                         <div id="tag_cloud-6" class="container-wrapper widget widget_tag_cloud">
                             <div class="widget-title the-global-title">
-                                <div class="the-subtitle">سحابة الوسوم<span class="widget-title-icon tie-icon"></span></div>
+                                <div class="the-subtitle">@lang('front/home-blade.tags')</div>
                             </div>
                             <div class="tagcloud">
                                 @isset($tags)
@@ -89,20 +89,20 @@
                     <div class="tie-col-md-3 normal-side">
                         <div id="latest_tweets_widget-4" class="container-wrapper widget latest-tweets-widget">
                             <div class="widget-title the-global-title">
-                                <div class="the-subtitle"><a href="//twitter.com/tielabs" rel="nofollow noopener">تابعنا:</a><span class="widget-title-icon tie-icon"></span></div>
+                                <div class="the-subtitle">@lang('front/home-blade.follow_us'):</div>
                             </div>
                             <div class="widget-posts-list-wrapper">
                                 <div class="widget-posts-list-container timeline-widget">
                                     <ul class="posts-list-items widget-posts-wrapper">
 
                                         <li class="widget-single-post-item">
-                                            <a href="{{get_default_social_link_facebook()}}" rel="nofollow"><h3>فيس بوك</h3></a>
+                                            <a href="{{get_default_social_link_facebook()}}" rel="nofollow"><h3>@lang('front/home-blade.facebook')</h3></a>
                                         </li>
                                         <li class="widget-single-post-item">
-                                            <a href="{{get_default_social_link_instagram()}}" rel="nofollow"><h3> انستغرام</h3></a>
+                                            <a href="{{get_default_social_link_instagram()}}" rel="nofollow"><h3>@lang('front/home-blade.instagram')</h3></a>
                                         </li>
                                         <li class="widget-single-post-item">
-                                            <a href="{{get_default_social_link_twitter()}}" rel="nofollow"><h3>تويتر</h3></a>
+                                            <a href="{{get_default_social_link_twitter()}}" rel="nofollow"><h3>@lang('front/home-blade.twitter')</h3></a>
                                         </li>
 
                                     </ul>
@@ -119,16 +119,14 @@
         <div class="container">
             <div class="tie-row">
                 <div class="tie-col-md-12">
-                    <div class="copyright-text copyright-text-first">جميع الحقوق محفوظة {{ now()->year }} <a href="https://ibrahim.sadour.nl/ar" rel="nofollow" >تصميم إبراهيم صدور</a> </div>
+                    <div class="copyright-text copyright-text-first">@lang('front/home-blade.Copyright')   {{ now()->year }} <a href="https://ibrahim.sadour.nl/" rel="nofollow" >@lang('front/home-blade.designed_by') @lang('front/home-blade.ibrahim_sadour')  </a> </div>
                     <div class="footer-menu">
                         <ul class="menu">
-                            <li id="menu-item-2609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-131 current_page_item menu-item-2609 tie-current-menu">
-                                <a href="{{ URL::route('site.index')}}" aria-current="page" title="الرئيسية">الرئيسية</a>
-                            </li>
-                            <li id="menu-item-2613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2613"><a href="{{ URL::route('about.index')}}" title="من نحن">من نحن</a></li>
-                            <li id="menu-item-2610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2610"><a href="{{ URL::route('privacy-policy.index')}}" title="سياسة الخصوصية">سياسة الخصوصية</a></li>
-                            <li id="menu-item-2611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2611"><a href="{{ URL::route('contact-us.index')}}" title="إتصل بنا">إتصل بنا</a></li>
-                            <li id="menu-item-2612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2612"><a href="{{ URL::route('sitemap')}}" title="خارطة الموقع">خارطة الموقع</a></li>
+                            <li id="menu-item-2613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2613"><a href="{{ URL::route('site.index')}}" title="@lang('front/home-blade.home_page')">@lang('front/home-blade.home_page')</a></li>
+                            <li id="menu-item-2613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2613"><a href="{{ URL::route('about.index')}}" title="@lang('front/home-blade.about')">@lang('front/home-blade.about')</a></li>
+                            <li id="menu-item-2610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2610"><a href="{{ URL::route('privacy-policy.index')}}" title="@lang('front/home-blade.privacy_policy')">@lang('front/home-blade.privacy_policy')</a></li>
+                            <li id="menu-item-2611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2611"><a href="{{ URL::route('contact-us.index')}}" title="@lang('front/home-blade.contact_us')">@lang('front/home-blade.contact_us')</a></li>
+                            <li id="menu-item-2612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2612"><a href="{{ URL::route('sitemap')}}" title="@lang('front/home-blade.sitemap')">@lang('front/home-blade.sitemap')</a></li>
                         </ul>
                     </div>
                 </div>

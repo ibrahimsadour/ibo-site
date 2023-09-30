@@ -1,7 +1,7 @@
 <div id="tie-block_304" class="mag-box tie-col-sm-6 half-box has-first-big-post has-custom-color first-half-box">
     <div class="container-wrapper">
         <div class="mag-box-title the-global-title">
-            <h3>اول الخدمات المضافة</h3>
+            <h3>@lang('front/home-blade.The_first_added_services')</h3>
         </div>
         <div class="mag-box-container clearfix">
             <ul class="posts-items posts-list-container">
@@ -40,7 +40,7 @@
 <div id="tie-block_304" class="mag-box tie-col-sm-6 half-box has-first-big-post has-custom-color second-half-box">
     <div class="container-wrapper">
         <div class="mag-box-title the-global-title">
-            <h3>اخر الخدمات المضافة</h3>
+            <h3>@lang('front/home-blade.The_latest_added_services')</h3>
         </div>
         <div class="mag-box-container clearfix">
             <ul class="posts-items posts-list-container">

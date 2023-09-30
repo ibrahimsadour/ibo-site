@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title','خريطة الموقع')
+@section('title',trans("front/home-blade.sitemap"))
 @section('seo_keyword',get_default_seo_keyword())
 @section('seo_description',get_default_seo_description())
 @section('seo_url', URL::route('sitemap'))
@@ -58,60 +58,55 @@ th {
 
 
                 <div id="content">
-                    <p>جميع الروابط الخاصة بخريطة الموقع</p>
                     <table id="sitemap" cellpadding="3">
                         <thead>
                             <tr>
-                                <th width="75%">الرابط</th>
-                                <th width="25%">العنوان</th>
+                                <th width="75%">@lang("front/home-blade.link")</th>
+                                <th width="25%">@lang("front/home-blade.title")</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="{{ url('sitemap_index.xml')}}">{{ url('sitemap_index.xml')}}</a></td>
-                                <td>الرئيسية</td>
+                                <td>@lang("front/home-blade.home_page")</td>
                             </tr>
                             <tr>
                                 <td><a href="{{ url('sitemap_articles.xml')}}">{{ url('sitemap_articles.xml')}}</a></td>
-                                <td>المقالات</td>
+                                <td>@lang("front/home-blade.articles")</td>
                             </tr>
                             <tr>
                                 <td><a href="{{ url('sitemap_tags.xml')}}">{{ url('sitemap_tags.xml')}}</a></td>
-                                <td>العلامات الدلالية</td>
+                                <td>@lang("front/home-blade.tags")</td>
                             </tr>
                             <tr>
                                 <td><a href="{{ url('sitemap_services.xml')}}">{{ url('sitemap_services.xml')}}</a></td>
-                                <td>الخدمات</td>
+                                <td>@lang("front/home-blade.services")</td>
                             </tr>
                             <tr>
                                 <td><a href="{{ url('sitemap_sections.xml')}}">{{ url('sitemap_sections.xml')}}</a></td>
-                                <td>الاقسام</td>
+                                <td>@lang("front/home-blade.sections")</td>
                             </tr>
                             @if(check_if_cars_active() === 1)
                             <tr>
                                 <td><a href="{{ url('sitemap_cars.xml')}}">{{ url('sitemap_cars.xml')}}</a></td>
-                                <td>السيارات</td>
+                                <td>@lang("front/home-blade.cars")</td>
                             </tr>                            <tr>
                                 <td><a href="{{ url('sitemap_car_tags.xml')}}">{{ url('sitemap_car_tags.xml')}}</a></td>
-                                <td>السيارت مع العلامات الدلالية</td>
+                                <td>@lang("front/home-blade.cars_with_tags")</td>
                             </tr>
                             @endif
                             <tr>
                                 <td><a href="{{ url('sitemap_cities.xml')}}">{{ url('sitemap_cities.xml')}}</a></td>
-                                <td>المدن</td>
+                                <td>@lang("front/home-blade.cities")</td>
                             </tr> <tr>
                                 <td><a href="{{ url('sitemap_city_tags.xml')}}">{{ url('sitemap_city_tags.xml')}}</a></td>
-                                <td>المدن مع  العلامات الدلالية</td>
+                                <td>@lang("front/home-blade.cities_with_tags")</td>
                             </tr>
                         </tbody>
                     </table>
                 <div class="clearfix"></div>
             </div>
 
-
-
-
-            <div class="clearfix"></div>
         </div>
     </div>
     {{-- End Second section --}}

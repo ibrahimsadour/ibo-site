@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title','إتصل بنا')
+@section('title',trans("front/home-blade.contact_us"))
 @section('seo_keyword',get_default_seo_keyword())
 @section('seo_description',get_default_seo_description())
 @section('seo_url', URL::route('contact-us.index') )
@@ -58,7 +58,7 @@ textarea {
                         {{--title of the article--}}
                         <header class="entry-header-outer">
                             <div class="entry-header">
-                                <h1 class="post-title entry-title">إتصل بنا</h1>
+                                <h1 class="post-title entry-title">@lang("front/home-blade.contact_us")</h1>
                             </div>
                         </header>
                         {{--Imgage of the article--}}
@@ -81,33 +81,33 @@ textarea {
                         </div>
                         {{--Content of the article--}}
                         <div class="entry-content entry clearfix">
-                            <p>دعنا نرى كيف يمكننا المساعدة. تواصل معنا اليوم وتحدث إلى فريقنا الودود عبر البريد الإلكتروني ، مهما كان استفسارك.</p>
-                            <p>نظرًا لأننا نتلقى الكثير من الرسائل عبر البريد الإلكتروني ووسائل التواصل الاجتماعي ، فإليك بعض الإرشادات للتأكد من أننا نرى رسالتك وقدرتنا على الرد في الوقت المناسب.</p>
+                            <p>@lang("front/home-blade.lets_see_how_we_can_help_Get_in_touch_today_and_speak_to_our_friendly_team_via_email_whatever_your_query_may_be")</p>
+                            <p>@lang("front/home-blade.Since_we_receive_a_lot_of_messages_via_email_and_social_media_here_are_some_guidelines_to_make_sure_we_see_your_message_and_are_able_to_respond_in_a_timely_manner")</p>
                         </div>
                         <br>
-                        <h2 class="entry-sub-title">أرسل لنا رسالة</h2>
+                        <h2 class="entry-sub-title">@lang("front/home-blade.Send_us_a_message")</h2>
                         <br>
                         <div class="form">
                             <form id="submit-form" action="">
                               <p>
-                                <input id="name" class="form-input" type="text" placeholder="الإسم*">
+                                <input id="name" class="form-input" type="text" placeholder="@lang("front/home-blade.name")*">
                                 <small class="name-error"></small>
                               </p>
                               <p>
-                                <input id="email" class="form-input" type="email" placeholder="البريد الإلكتروني*">
+                                <input id="email" class="form-input" type="email" placeholder="@lang('front/home-blade.your_E-mail') *">
                                 <small class="name-error"></small>
                               </p>
                               <p class="full-width">
-                                <input id="company-name" class="form-input" type="text" placeholder="رقم الواتساب *" required>
+                                <input id="company-name" class="form-input" type="text" placeholder="@lang('front/home-blade.phone') *" required>
                                 <small></small>
                               </p>
                               <p class="full-width">
-                                <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="رسالتك *" required></textarea>
+                                <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="@lang('front/home-blade.your_message') *" required></textarea>
                                 <small></small>
                               </p>
                               <p class="full-width">
-                                <input type="   " class="contact-submit-btn button" value="إرسال" onclick="checkValidations()">
-                                <button class="button" onclick="reset()">تفريغ الحقول</button>
+                                <input type="button" class="contact-submit-btn button" value="@lang('front/home-blade.send')" onclick="checkValidations()">
+                                <button style="float: right;" class="button" onclick="reset()">@lang('front/home-blade.reset')</button>
                               </p>
                             </form>
                         </div>

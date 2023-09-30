@@ -1,4 +1,4 @@
-<div class="main-nav-wrapper">
+{{-- <div class="main-nav-wrapper">
     <nav id="main-nav" data-skin="search-in-main-nav" class="main-nav header-nav live-search-parent" aria-label="القائمة الرئيسية">
         <div class="container">
             <div class="main-menu-wrapper">
@@ -41,4 +41,4 @@
             </div>
         </div>
     </nav>
-</div>
+</div> --}}

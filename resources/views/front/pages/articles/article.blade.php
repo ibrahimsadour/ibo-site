@@ -45,7 +45,7 @@
                 <div class="tie-row main-content-row">
                     <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
                         <nav id="breadcrumb">
-                            <a href="{{ URL::route('site.index')}}" title="الرئيسية"><span class="tie-icon-home"></span>الرئيسية</a><em class="delimiter">/</em>
+                            <a href="{{ URL::route('site.index')}}" title="@lang("front/home-blade.home_page")"><span class="tie-icon-home"></span>@lang("front/home-blade.home_page")</a><em class="delimiter">/</em>
                             <span  title="{{$article ->name}}">{{$article ->name}}</span><em class="delimiter"></em>
 
                         </nav>

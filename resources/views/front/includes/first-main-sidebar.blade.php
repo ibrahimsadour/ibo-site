@@ -1,5 +1,5 @@
 {{-- Main side menu  --}}
-<aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky" aria-label="القائمة الجانبية الرئيسية">
+<aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky">
     <div class="theiaStickySidebar">
         <div id="posts-list-widget-42" class="container-wrapper widget posts-list">
             <div class="widget-title the-global-title">
