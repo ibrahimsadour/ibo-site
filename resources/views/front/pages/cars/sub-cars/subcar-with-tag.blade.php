@@ -45,8 +45,8 @@
                 <div class="tie-row main-content-row">
                     <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
                         <nav id="breadcrumb">
-                            <a href="{{ URL::route('site.index')}}" title="الرئيسية">الرئيسية</a><em class="delimiter">/</em>
-                            <a href="{{ URL::route('cars.index')}}" title="جميع السيارات">جميع السيارات</a><em class="delimiter">/</em>
+                            <a href="{{ URL::route('site.index')}}" title="@lang('front/home-blade.home_page')">@lang('front/home-blade.home_page')</a><em class="delimiter">/</em>
+                            <a href="{{ URL::route('cars.index')}}" title="@lang('front/home-blade.all') @lang('front/home-blade.cars')">@lang('front/home-blade.all') @lang('front/home-blade.cars') </a><em class="delimiter">/</em>
                             <a href="{{ URL::route('car.index',$car ->slug)}}" title="{{$car ->name}}" >{{$car ->name}}</a><em class="delimiter">/</em>
                             <a href="{{ URL::route('subcar.index',['slugSubcar' => $subCar->slug, 'slugcar' => $car -> slug])}}" title="{{$subCar ->name}}" >{{$subCar ->name}}</a><em class="delimiter">/</em>
                             <span  title="{{$slugTag.' '.$car ->name}}" >{{$slugTag.' '.$car ->name.' '.$subCar ->name}}</span><em class="delimiter"></em>

@@ -69,11 +69,31 @@ return [
     'link'=>'Link',
     'title'=>'Title',
     'articles'=>'Articles',
-    'services'=>'Services',
-    'sections'=>'Sections',
-    'cars'=>'Cars',
+    'services'=>'diensten',
+    'sections'=>'Secties',
+    'cars'=>'autos',
     'cars_with_tags'=>'Cars with tags',
     'cities'=>'Cities',
+    'city'=>'stad',
     'cities_with_tags'=>'Cities with tags',
+
+    // sections page
+    'all_services_related_to_the_department'=>'Alle diensten die verband houden met de afdeling',
+    'click_here'=>'Klik hier',
+    'see_also:_more_about'=>'Zie ook: Meer over',
+    'in'=>'in',
+    'all'=>'Alle',
+
+    // cars page
+    'all_car_services'=>'All car services',
+    '24_hours_a_day'=>'24 uur per dag',
+    'We_provide_you_with_the_best_service'=>'Wij bieden u de beste service',
+    'in_all_cities'=>'In alle steden',
+
+    
+    // city page
+    'service'=>'dienst',
+    'at_your_fingertips_24_hours_a_day_in_all_regions'=>'24 uur per dag binnen handbereik in alle regios',
+
 
 ];

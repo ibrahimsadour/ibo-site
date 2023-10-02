@@ -11,8 +11,8 @@
     <div id="tiepost-131-section-549" class="section-wrapper container normal-width without-background">
         <div class="section-item sidebar-left has-sidebar">
             <nav id="breadcrumb">
-                <a href="{{ URL::route('site.index') }}" title="الرئيسية">الرئيسية</a><em class="delimiter">/</em>
-                <a href="{{ URL::route('cars.index')}}" title="جميع السيارات">جميع السيارات</a><em class="delimiter">/</em>
+                <a href="{{ URL::route('site.index') }}" title="@lang('front/home-blade.home_page')">@lang('front/home-blade.home_page')</a><em class="delimiter">/</em>
+                <a href="{{ URL::route('cars.index')}}" title="@lang('front/home-blade.all') @lang('front/home-blade.cars')">@lang('front/home-blade.all') @lang('front/home-blade.cars')</a><em class="delimiter">/</em>
                 <span title="{{$car -> name}}">{{$car ->name}}</span><em class="delimiter"></em>
             </nav>
     
@@ -22,7 +22,7 @@
                     <header class="entry-header-outer">
                         <div class="entry-header">
                             {{--Catogry of the article--}}
-                            <h1 class="post-title entry-title">جميع الخدمات الخاصة بسيارة {{$car ->name}}</h1>
+                            <h1 class="post-title entry-title">@lang('front/home-blade.all_car_services')    {{$car ->name}}</h1>
                             <div id="tie-s_1441" class="mag-box big-posts-box has-custom-color" data-current="1">
                                 <div class="container">
                                     <div class="mag-box-container clearfix">

@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title','جميع  السيارات')
+@section('title',trans('front/home-blade.cars'))
 @section('seo_keyword',get_default_seo_keyword())
 @section('seo_description',get_default_seo_description())
 @section('seo_url', URL::route('cars.index'))
@@ -8,7 +8,7 @@
 <div id="tie-s_1441" class="mag-box big-posts-box has-custom-color" data-current="1">
     <div class="container">
         <div class="mag-box-title the-global-title section-name">
-            <h3>كل السيارات</h3>
+            <h3>@lang('front/home-blade.all') @lang('front/home-blade.cars')</h3>
         </div>
         <div class="mag-box-container clearfix">
             <ul class="posts-items posts-list-container">

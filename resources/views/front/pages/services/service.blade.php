@@ -12,7 +12,7 @@
     <div id="tiepost-131-section-549" class="section-wrapper container normal-width without-background">
         <div class="section-item sidebar-left has-sidebar">
             <nav id="breadcrumb">
-                <a href="{{ URL::route('site.index') }}" title="الرئيسية"><span class="tie-icon-home"></span> الرئيسية</a><em class="delimiter">/</em>
+                <a href="{{ URL::route('site.index') }}" title="@lang('front/home-blade.home_page')"><span class="tie-icon-home"></span> @lang('front/home-blade.home_page')</a><em class="delimiter">/</em>
                 <a>{{$service -> name}}</a><em class="delimiter"></em>
             </nav>
             <div class="container-normal">

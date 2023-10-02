@@ -11,8 +11,8 @@
     <div id="tiepost-131-section-549" class="section-wrapper container normal-width without-background">
         <div class="section-item sidebar-left has-sidebar">
             <nav id="breadcrumb">
-                <a href="{{ URL::route('site.index') }}" title="الرئيسية">الرئيسية</a><em class="delimiter">/</em>
-                <a href="{{ URL::route('cars.index')}}" title="جميع السيارات">جميع السيارات</a><em class="delimiter">/</em>
+                <a href="{{ URL::route('site.index') }}" title="@lang('front/home-blade.home_page')">@lang('front/home-blade.home_page')</a><em class="delimiter">/</em>
+                <a href="{{ URL::route('cars.index')}}" title="@lang('front/home-blade.all') @lang('front/home-blade.cars')">@lang('front/home-blade.all') @lang('front/home-blade.cars')</a><em class="delimiter">/</em>
                 <a href="{{url('cars/'.$car -> slug)}}" title="{{$car -> name}}">{{$car ->name}}</a><em class="delimiter">/</em>
                 <span title="{{$subCar -> name}}">{{$subCar ->name}}</span><em class="delimiter"></em>
             </nav>
@@ -23,7 +23,7 @@
                     <header class="entry-header-outer">
                         <div class="entry-header">
                             {{--Catogry of the article--}}
-                            <h1 class="post-title entry-title">جميع الخدمات الخاصة بسيارة {{$car ->name}} {{$subCar -> name}}</h1>
+                            <h1 class="post-title entry-title">@lang('front/home-blade.all_car_services')  {{$car ->name}} {{$subCar -> name}}</h1>
                             <div class="">
                                 <div id="tag_cloud-6" class="container-wrapper widget widget_tag_cloud">
                                     <div class="tagcloud">

@@ -73,5 +73,24 @@ return [
     'cars'=>'السيارات',
     'cars_with_tags'=>'السيارت مع العلامات الدلالية',
     'cities'=>'المدن',
+    'city'=>'مدينة',
     'cities_with_tags'=>'المدن مع العلامات الدلالية',
+
+    // sections page
+    'all_services_related_to_the_department'=>'جميع الخدمات الخاصة بقسم',
+    'click_here'=>'انقر هنا',
+    'see_also:_more_about'=>'شاهد ايضا: المزيد حول',
+    'in'=>'في',
+    'all'=>'كل',
+
+    // cars page
+    'all_car_services'=>'جميع الخدمات الخاصة بسيارة',
+    '24_hours_a_day'=>'على مدار 24 ساعة في اليوم ',
+    'We_provide_you_with_the_best_service'=>'نقدم لك افضل خدمة',
+    'in_all_cities'=>'في جميع مدن',
+
+    // city page
+    'service'=>'خدمة',
+    'at_your_fingertips_24_hours_a_day_in_all_regions'=>'بين يديك على مدار الـ 24 ساعة لجميع المناطق',
+
 ];

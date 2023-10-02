@@ -74,5 +74,28 @@ return [
     'cars'=>'cars',
     'cars_with_tags'=>'Cars with tags',
     'cities'=>'Cities',
+    'city'=>'city',
     'cities_with_tags'=>'Cities with tags',
+
+    // sections page
+    'all_services_related_to_the_department'=>'All services related to the department',
+    'click_here'=>'Click here',
+    'see_also:_more_about'=>'See also: More about',
+    'in'=>'in',
+    'all'=>'All',
+
+    // cars page
+    'all_car_services'=>'All car services',
+    '24_hours_a_day'=>'24 hours a day',
+    'We_provide_you_with_the_best_service'=>'We provide you with the best service',
+    'in_all_cities'=>'In all cities',
+
+    
+    // city page
+    'service'=>'خدمة',
+    'at_your_fingertips_24_hours_a_day_in_all_regions'=>'At your fingertips 24 hours a day in all regions',
+
+    
+
+
 ];
