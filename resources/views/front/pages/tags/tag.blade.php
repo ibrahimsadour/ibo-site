@@ -70,7 +70,6 @@
                         </div>
                         @endif
 
-
                     </div>
                     @include('front.includes.first-main-sidebar')
                     @include('front.includes.second-main-sidebar')
