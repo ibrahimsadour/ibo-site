@@ -97,7 +97,11 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         //change Status the category and the vendors
         Route::get('changeStatus/{id}',[CitiesController::class ,'changeStatus']) -> name('admin.cities.status');
         // insert_all_tags_to_one_city
-        Route::post('insert',[CitiesController::class ,'insert_all_tags_to_one_city']) -> name('insert-all-tags-to-one-city');
+        Route::post('insert-one-by-one',[CitiesController::class ,'insert_all_tags_to_one_city']) -> name('insert-all-tags-to-one-city');
+
+        // insert_all_tags_to_all_cities
+        Route::get('insert-all',[CitiesController::class ,'insert_all_tags_to_all_cities']) -> name('insert-all-tags-to-all-cities');
+
         //delete_all_tags_of_one_city 
         Route::get  ('delete-tags/{id}',[CitiesController::class ,'delete_all_tags_of_one_city']) -> name('delete-all-tags-of-one-city');
 

@@ -179,6 +179,24 @@ class CitiesController extends Controller
         }
         
     }
+
+    //insert_all_tags_to_all_cities
+    public function insert_all_tags_to_all_cities(){
+
+
+        $cities_id = City::where('id' ,'>' ,0)->pluck('id');
+        //  return $cities_id;
+        if($cities_id) {
+            
+            $tags = Tag:: get('id');
+            foreach($tags as $tag){
+                $tag->cities()->attach($cities_id);
+            }
+            return redirect()->route('admin.cities')->with(['success' => ' تم الاضافة بنجاح ']);
+        }
+        
+    }
+
     public function delete_all_tags_of_one_city($id)
     {
 

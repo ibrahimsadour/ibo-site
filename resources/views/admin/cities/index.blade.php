@@ -18,55 +18,120 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-xl-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-underline no-hover-bg">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="base-limit" data-toggle="tab" aria-controls="limit" href="#limit" aria-expanded="true">اضافة المدن عبر ملف Excel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="base-market" data-toggle="tab" aria-controls="market" href="#market" aria-expanded="false">مزامنة المدن مع العلامات الدلالية</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content px-1 pt-1">
+                                <div role="tabpanel" class="tab-pane" id="limit" aria-expanded="true" aria-labelledby="base-limit">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-12 border-right-blue-grey border-right-lighten-4 pr-2">
+                                            <form class="form form-horizontal" action="{{route('admin.cities.import')}}" method="POST" enctype="multipart/form-data">
+                                                <div class="form-body" >
+                                                    {{ csrf_field() }}
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="btc-limit-buy-total">أضافة هنا</label>
+                                                        <div class="col-md-9">
+                                                            <label id="projectinput7" class="dropzone dropzone-area dz-clickable">
+                                                                <input type="file" name="select_cities_file" />
+                                                            </label>
+                                                            @error('select_cities_file')
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions pb-0">
+                                                            <input type="submit" name="upload" class="btn round btn-success btn-block btn-glow" value="اضافة">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane active" id="market" aria-labelledby="base-market">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6 border-right-blue-grey border-right-lighten-4">
+                                            <div class="row my-2">
+                                                <div class="col-8">
+                                                    <h5 class="text-bold-600 mb-0">ربط كل مدينة مع جميع العلامات الدلالية بشكل فردي من خلال ال ID الخاص بكل مدينة</h5>
+                                                </div>
+                                            </div>
+                                            <form class="form form-horizontal" action="{{route('insert-all-tags-to-one-city')}}" method="POST">
+                                                @csrf
+
+                                                <div class="form-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="btc-market-buy-price">ادخل ID المدينة</label>
+                                                        <div class="col-md-9">
+                                                            <input type="number"
+                                                            class="form-control"
+                                                            value="{{old('id')}}"
+                                                            placeholder="city ID"
+                                                            name="id">
+                                                            @error("id")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-actions pb-0">
+                                                        <button type="submit" class="btn round btn-success btn-block btn-glow">
+                                                            <i class="la la-check-square-o"></i>اضافة </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-12 col-xl-6 pl-2 p-0">
+                                            <div class="row my-2">
+                                                <div class="col-8">
+                                                    <h5 class="text-bold-600 mb-0">مزامنة او حذف جميع المدن مع جميع العلامات الدلالية بضغطة زر واحدة</h5>
+                                                </div>
+                                            </div>
+                                            <form class="form form-horizontal">
+                                                <div class="form-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="btc-mrk-price">ربط</label>
+                                                        <div class="col-md-9">
+                                                            <a href="{{route('insert-all-tags-to-all-cities')}}" class="btn btn-warning btn-block btn-glow"><i class="la la-check-square-o"></i>مزامنة الكل</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="btc-market-sell-amount">حذف</label>
+                                                        <div class="col-md-9">
+                                                            <a href="{{route("admin.cities.destroyAll")}}"  class="btn btn-danger btn-block btn-glow"><i class="la la-remove"></i>حذف المدن مع العلامات  </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="content-body">
                 <!-- DOM - jQuery events table -->
                 <section id="dom">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <form class="form" action="{{route('insert-all-tags-to-one-city')}}" method="POST">
-                                        @csrf
-                                        <div class="form-body">
-                                            <h4 class="form-section"><i class="ft-home"></i>مزامنة المدن مع العلامات الدلالية</h4>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="projectinput1">ادخل ID المدينة</label>
-                                                        <input type="number"
-                                                               class="form-control"
-                                                               value="{{old('id')}}"
-                                                               name="id">
-                                                        @error("id")
-                                                        <span class="text-danger">{{$message}}</span>
-                                                        @enderror
-                                                        <br>
-                                                        <button type="submit" class="btn btn-success">
-                                                            <i class="la la-check-square-o"></i>اضافة
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
 
                                 @include('admin.includes.alerts.success')
                                 @include('admin.includes.alerts.errors')
 
-                                <form class="form" action="{{route('admin.cities.import')}}" method="POST" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <label>اضافة المدن عبر ملف Excel  </label>
-                                        <label id="projectinput7" class="dropzone dropzone-area dz-clickable">
-                                            <input type="file" name="select_cities_file" />
-                                        </label>
-                                        @error('select_cities_file')
-                                        <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                        <input type="submit" name="upload" class="btn btn-primary" value="اضافة">
-                                    </div>
-                                </form>
+
 
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
@@ -80,7 +145,7 @@
                                                 <th>الحالة</th>
                                                 <th>التاريخ</th>
                                                 <th>العلامات الدلالية</th>
-                                                <th>الإجرءات -- <a href="{{route("admin.cities.destroyAll")}}" class="btn btn-outline-danger">حذف الكل {{App\Models\City::count()}}</a></th>
+                                                <th>الإجرءات</th>
                                             </tr>
                                             </thead>
                                             <tbody>
