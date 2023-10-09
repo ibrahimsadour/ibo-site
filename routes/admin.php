@@ -100,6 +100,12 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::post('insert',[CitiesController::class ,'insert_all_tags_to_one_city']) -> name('insert-all-tags-to-one-city');
         //delete_all_tags_of_one_city 
         Route::get  ('delete-tags/{id}',[CitiesController::class ,'delete_all_tags_of_one_city']) -> name('delete-all-tags-of-one-city');
+
+        // Delet all cities
+        Route::get('deleteAll',[CitiesController::class ,'destroyAll']) -> name('admin.cities.destroyAll');
+
+        //import all cities by exel file
+        Route::post('/import',[ImportExcelController::class ,'import_cities'])-> name('admin.cities.import');
     });
     ############################# End Cities Route ###############################
 
@@ -127,7 +133,7 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::get('changeStatus/{id}',[TagsController::class ,'changeStatus']) -> name('admin.tags.status');
         Route::get('deleteAll',[TagsController::class ,'destroyAll']) -> name('admin.tags.destroyAll');
 
-        //show all articles by one tag
+        //import all tags by exel file
         Route::post('/import',[ImportExcelController::class ,'import'])-> name('admin.tags.import');
 
 //        Route::get('articles',[RelationsController::class ,'show_tags_article']) -> name('admin.tags.articles');

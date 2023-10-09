@@ -192,4 +192,11 @@ class CitiesController extends Controller
             return redirect()->route('admin.cities')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
+
+
+    public function destroyAll()
+    {
+        City::whereNotNull('id')->delete();  
+        return redirect()->route('admin.cities')->with(['success' => 'تم حذف الجميع بنجاح']);
+    }
 }

@@ -94,6 +94,7 @@ return [
     // city page
     'service'=>'dienst',
     'at_your_fingertips_24_hours_a_day_in_all_regions'=>'24 uur per dag binnen handbereik in alle regios',
+    'Call_24_hours_a_day_so_we_can_reach_you_as_quickly_as_possible'=>'Bel 24 uur per dag zodat wij u zo snel mogelijk kunnen bereiken',
 
 
 ];

@@ -2836,7 +2836,7 @@ div:not(.tie-ignore-fitvid) > .wp-video-shortcode {
     padding: 5px;
 }
 .big-posts-box .posts-items li .post-title {
-    font-size: 20px;
+    font-size: 16px;
     padding-left: 0;
 }
 .big-posts-box .posts-items li:nth-child(2n + 1) {

@@ -94,6 +94,7 @@ return [
     // city page
     'service'=>'خدمة',
     'at_your_fingertips_24_hours_a_day_in_all_regions'=>'At your fingertips 24 hours a day in all regions',
+    'Call_24_hours_a_day_so_we_can_reach_you_as_quickly_as_possible'=>'Call 24 hours a day so we can reach you as quickly as possible',
 
     
 

@@ -54,6 +54,20 @@
                                 @include('admin.includes.alerts.success')
                                 @include('admin.includes.alerts.errors')
 
+                                <form class="form" action="{{route('admin.cities.import')}}" method="POST" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label>اضافة المدن عبر ملف Excel  </label>
+                                        <label id="projectinput7" class="dropzone dropzone-area dz-clickable">
+                                            <input type="file" name="select_cities_file" />
+                                        </label>
+                                        @error('select_cities_file')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                        <input type="submit" name="upload" class="btn btn-primary" value="اضافة">
+                                    </div>
+                                </form>
+
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
                                         <table
@@ -66,7 +80,7 @@
                                                 <th>الحالة</th>
                                                 <th>التاريخ</th>
                                                 <th>العلامات الدلالية</th>
-                                                <th>الإجرءات</th>
+                                                <th>الإجرءات -- <a href="{{route("admin.cities.destroyAll")}}" class="btn btn-outline-danger">حذف الكل {{App\Models\City::count()}}</a></th>
                                             </tr>
                                             </thead>
                                             <tbody>

@@ -146,7 +146,7 @@
 
                             <div class="post-bottom-meta post-bottom-tags post-tags-modern">
                                     @isset($article->tags)
-                                        <b><span id="more-1787"></span>كلمات دلالية :</b><br>
+                                        <b><span id="more-1787"></span> @lang('front/home-blade.tags'):</b><br>
                                         @foreach($article->tags as $tag)
                                             <a class="post-cat tie-cat-6" href="{{url('tags/'.$tag->slug )}}" title="{{$tag -> name}}">{{$tag -> name}}</a>
                                         @endforeach
