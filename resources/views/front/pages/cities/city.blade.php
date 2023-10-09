@@ -28,7 +28,7 @@
                                     <div class="tagcloud">
                                         @isset($cityTags)
                                             @foreach($cityTags as $tag)
-                                                <a href="{{url('cities/'.$tag ->slug.'/'.$city -> slug) }}" title="{{$tag -> name}} @lang('front/home-blade.in') {{$city -> name}}" >{{ Str::limit($tag -> name, 45)}} @lang('front/home-blade.in') {{$city -> name}}</a>
+                                                <a style="background-color: #1d8eff;color: white;font-weight: 600;" href="{{url('cities/'.$tag ->slug.'/'.$city -> slug) }}" title="{{$tag -> name}} @lang('front/home-blade.in') {{$city -> name}}" >{{ Str::limit($tag -> name, 45)}} @lang('front/home-blade.in') {{$city -> name}}</a>
                                             @endforeach
                                             <div>{{$cityTags->links()}}</div>
                                         @endisset
