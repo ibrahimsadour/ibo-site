@@ -1,8 +1,8 @@
 @extends('front.layouts.master')
 @if(isset($city))
-    @section('title',$slugTag.' '.$city->name.' '.trans("front/home-blade.in").' '.trans("front/home-blade.city").' '.get_default_country().' '.trans('front/home-blade.24_hours_a_day'))
+    @section('title',$slugTag.' '.$city->name.' '.trans("front/home-blade.in").' '.get_default_country().' '.trans('front/home-blade.24_hours_a_day'))
     @section('seo_keyword',$slugTag.' '.$city->name)
-    @section('seo_description',trans('front/home-blade.We_provide_you_with_the_best_service').' '.$slugTag.' '.$city->name. ' '.trans("front/home-blade.in_all_cities").' '.get_default_country().' '.trans('front/home-blade.24_hours_a_day'))
+    @section('seo_description',trans('front/home-blade.We_provide_you_with_the_best_service').' '.$slugTag.' '.trans("front/home-blade.in").' '.$city->name. ' '.trans("front/home-blade.and").' '.trans("front/home-blade.in_all_cities").' '.get_default_country().' '.trans('front/home-blade.24_hours_a_day'))
     @section('seo_image',asset('assets/images/pages/default_seo_image.webp'))
     @section('seo_url', URL::route('city.index',str_replace(' ', '-', $slugTag).'/'.$city ->slug))
 @endif

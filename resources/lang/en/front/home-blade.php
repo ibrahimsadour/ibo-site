@@ -83,6 +83,9 @@ return [
     'see_also:_more_about'=>'See also: More about',
     'in'=>'in',
     'all'=>'All',
+    'from'=>'from',
+    'and'=>'and',
+
 
     // cars page
     'all_car_services'=>'All car services',
@@ -95,6 +98,7 @@ return [
     'service'=>'خدمة',
     'at_your_fingertips_24_hours_a_day_in_all_regions'=>'At your fingertips 24 hours a day in all regions',
     'Call_24_hours_a_day_so_we_can_reach_you_as_quickly_as_possible'=>'Call 24 hours a day so we can reach you as quickly as possible',
+    'all_city_services'=>'All services for the city of',
 
     
 

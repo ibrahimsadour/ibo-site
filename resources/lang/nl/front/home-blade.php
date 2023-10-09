@@ -41,7 +41,7 @@ return [
     'ibrahim_sadour' =>'Ibrahim Sadour',
     'Copyright' =>'Copyright ©',
     'designed_by' =>'Designed by',
-    'home_page' =>'Home page',
+    'home_page' =>'Startpagina',
     'about' =>'Over ons ',
     'privacy_policy' =>'Privacy policy',
     'contact_us' =>'Contact us',
@@ -83,6 +83,8 @@ return [
     'see_also:_more_about'=>'Zie ook: Meer over',
     'in'=>'in',
     'all'=>'Alle',
+    'from'=>'van',
+    'and'=>'en',
 
     // cars page
     'all_car_services'=>'All car services',
@@ -95,6 +97,7 @@ return [
     'service'=>'dienst',
     'at_your_fingertips_24_hours_a_day_in_all_regions'=>'24 uur per dag binnen handbereik in alle regios',
     'Call_24_hours_a_day_so_we_can_reach_you_as_quickly_as_possible'=>'Bel 24 uur per dag zodat wij u zo snel mogelijk kunnen bereiken',
+    'all_city_services'=>'Alle diensten voor de stad',
 
 
 ];

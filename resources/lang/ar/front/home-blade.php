@@ -82,6 +82,8 @@ return [
     'see_also:_more_about'=>'شاهد ايضا: المزيد حول',
     'in'=>'في',
     'all'=>'كل',
+    'from'=>'من',
+    'and'=>'و',
 
     // cars page
     'all_car_services'=>'جميع الخدمات الخاصة بسيارة',
@@ -93,5 +95,6 @@ return [
     'service'=>'خدمة',
     'at_your_fingertips_24_hours_a_day_in_all_regions'=>'بين يديك على مدار الـ 24 ساعة لجميع المناطق',
     'Call_24_hours_a_day_so_we_can_reach_you_as_quickly_as_possible'=>'على مدار 24 ساعة في اليوم اتصل لنصل اليك باسرع وقت',
+    'all_city_services'=>'جميع الخدمات الخاصة بمدينة',
 
 ];
