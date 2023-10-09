@@ -21,7 +21,7 @@
 
                         </nav>
                         {{--Content of the article--}}
-                        <h2 class="post-title entry-title">@lang('front/home-blade.service') {{$slugTag}} {{$city->name}} @lang('front/home-blade.in') {{get_default_country()}}  @lang('front/home-blade.at_your_fingertips_24_hours_a_day_in_all_regions')</h2>
+                        {{-- <h2 class="post-title entry-title">@lang('front/home-blade.service') {{$slugTag}} {{$city->name}} @lang('front/home-blade.in') {{get_default_country()}}  @lang('front/home-blade.at_your_fingertips_24_hours_a_day_in_all_regions')</h2> --}}
 
                         <div class="entry-content entry clearfix">
 
