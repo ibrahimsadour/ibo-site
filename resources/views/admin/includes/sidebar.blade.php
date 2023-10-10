@@ -206,7 +206,7 @@
                 class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>
             </li>
             <li class=" nav-item">
-                <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation"><i
+                <a href="https://demos.pixinvent.com/modern-html-admin-template/html/ltr/vertical-modern-menu-template/"><i
                         class="la la-text-height"></i>
                     <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
                 </a>
