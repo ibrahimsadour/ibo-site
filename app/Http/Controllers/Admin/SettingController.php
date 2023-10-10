@@ -34,7 +34,7 @@ class SettingController extends Controller
     public function update_config_app_locale($lang){
 
 
-        try {
+        // try {
 
             if (!$lang) {
                 return Redirect::back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
@@ -50,8 +50,8 @@ class SettingController extends Controller
             }
             return Redirect::back()->with(['success' => 'تمت تحديث بنجاح']);
 
-        } catch (\Exception $ex) {
-            return redirect()->route('admin.google')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-        }
+        // } catch (\Exception $ex) {
+        //     return redirect()->route('admin.google')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        // }
     }
 }
