@@ -16,7 +16,6 @@ class CreateHomePageTable extends Migration
         Schema::create('home_page', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('h2title')->nullable();
             $table->longText('description')->nullable();
             $table->string('logo')->nullable();
             $table->string('background')->nullable();
@@ -26,6 +25,8 @@ class CreateHomePageTable extends Migration
             $table->string('facebook_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('twitter_link')->nullable();
+            $table->string('h2title')->nullable();
+            $table->longText('extra_info')->nullable();
             $table->string('seo_title');
             $table->string('seo_keyword');
             $table->string('seo_description');

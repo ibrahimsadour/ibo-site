@@ -26,6 +26,7 @@
                                 @include('admin.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     @if(isset($home_page))
+                                        {{-- images section --}}
                                         <div class="card-body">
                                         <!-- the Logo of the site -->
                                             <div class="form-group">
@@ -65,50 +66,31 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <hr style="border-top: 2px solid #2196F3;">
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i> معلومات الصفحة الرئيسية </h4>
                                                 <!-- title of the erticle and the slug -->
                                                 <div class="row">
                                                     {{--  البلد الافتراضي  --}}
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">اسم الدولة</label>
-                                                            <input type="text" id="default_country"
-                                                                    class="form-control"
-                                                                    value="{{$home_page-> default_country}}">
+                                                            <input type="text" id="default_country" class="form-control" value="{{$home_page-> default_country}}">
                                                         </div>
                                                     </div>
                                                     {{--  عنوان الموقع --}}
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">H1عنوان الموقع </label>
-                                                            <input type="text" id="name"
-                                                                   class="form-control"
-                                                                   value="{{$home_page-> title}}">
-                                                        </div>
-                                                    </div>
-                                                    {{--  h2_title --}}
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">عنوان الموقع H2
-                                                            </label>
-                                                            <input type="text" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="عنوان الموقع H2"
-                                                                   value="{{$home_page-> h2title}}"
-                                                                   name="h2_title">
+                                                            <input type="text" class="form-control" value="{{$home_page-> title}}">
                                                         </div>
                                                     </div>
                                                     {{--  Phone number --}}
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> رقم الهاتف للتواصل
                                                             </label>
-                                                            <input type="text" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="عنوان الموقع H2"
-                                                                   value="{{$home_page-> call_us}}">
+                                                            <input type="text" class="form-control" value="{{$home_page-> call_us}}">
                                                         </div>
                                                     </div>
                                                     {{--  محتوى المقالة --}}
@@ -116,12 +98,69 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">وصف الموقع: </label>
                                                             <div class="form-group">
-                                                                <textarea class="form-control" id="ckeditor" name="description"  >{{$home_page-> description}}</textarea>
+                                                                <textarea class="form-control" >{{$home_page-> description}}</textarea>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--  Facebook--}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">Facebook</label>
+                                                            <input type="text" 
+                                                                class="form-control"
+                                                                value="{{$home_page ->facebook_link}}">
+                                                        </div>
+                                                    </div>
+                                                    {{--  instagram --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">Instagram</label>
+                                                            <input type="text" id="instagram_link"
+                                                                class="form-control"
+                                                                value="{{$home_page ->instagram_link}}">
+                                                           
+                                                        </div>
+                                                    </div>
+                                                    {{--  Twitter --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">Twitter</label>
+                                                            <input type="text" id="twitter_link"
+                                                                class="form-control"
+                                                                value="{{$home_page ->twitter_link}}">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <hr style="border-top: 2px solid #2196F3;">
+                                            {{-- extra info section --}}
+                                            <div class="form-body">
+                                                <h4 class="form-section"><i class="ft-home"></i> المعلومات الاضافية  </h4>
+                                                <!-- title of the erticle and the slug -->
+                                                <div class="row">
+                                                    {{--  h2_title --}}
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">عنوان الموقع H2
+                                                            </label>
+                                                            <input type="text" class="form-control" value="{{$home_page-> h2title}}">
+                                                        </div>
+                                                    </div>
+                                                    {{--   كلمات البحث الرئيسية --}}
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">معلومات اضافية</label>
+                                                            <div class="form-group">
+                                                                <textarea id="ckeditor" disabled class="form-control"  >{{$home_page->extra_info}}</textarea>
+                                                                <script> CKEDITOR.replace('ckeditor' );</script>                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                            </div>
+                                            <hr style="border-top: 2px solid #2196F3;">
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات SEO </h4>
                                                 <!-- title of the erticle and the slug -->
@@ -140,7 +179,7 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">الوصف
                                                             </label>
-                                                            <input type="text" id="name"
+                                                            <input type="text"
                                                                    class="form-control"
                                                                    value="{{$home_page-> seo_description}}"
                                                                    name="seo_description">
@@ -190,6 +229,7 @@
                                                 </div>
 
                                             </div>
+                                            <hr style="border-top: 2px solid #2196F3;">
                                             <!-- the status of the article -->
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -252,3 +292,5 @@
     </div>
 @endsection
 
+<!-- Text editor (ckeditor)  -->
+<script src="{{asset('assets/admin/vendors/js/editors/ckeditor/ckeditor.js')}}"></script>

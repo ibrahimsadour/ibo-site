@@ -25,7 +25,6 @@ class HomePageUsRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'h2title' => 'required',
             'call_us' => 'required',
             'description' => 'required',
             'seo_keyword'  => 'required',

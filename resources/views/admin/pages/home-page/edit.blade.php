@@ -117,29 +117,15 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    {{--  h2_title --}}
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">عنوان الموقع H2
-                                                            </label>
-                                                            <input type="text" id="name"
-                                                                    class="form-control"
-                                                                    placeholder="عنوان الموقع H2"
-                                                                    value="{{$home_page -> h2title}}"
-                                                                    name="h2title">
-                                                            @error("h2title")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
+
                                                     {{--  Phone number --}}
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> رقم الهاتف للتواصل
                                                             </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
-                                                                   placeholder="عنوان الموقع H2"
+                                                                   placeholder="رقم الهاتف للتواصل"
                                                                    value="{{$home_page -> call_us}}"
                                                                    name="call_us">
                                                             @error("call_us")
@@ -147,12 +133,12 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    {{--  محتوى المقالة --}}
-                                                    <div class="col-md-6">
+                                                    {{--  وصف الموقع:--}}
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="projectinput1">وصف الموقع: </label>
                                                             <div class="form-group">
-                                                                <textarea class="form-control" id="ckeditor" name="description" value="{{$home_page -> description}}" >{{$home_page -> description}}</textarea>
+                                                                <textarea class="form-control"  name="description" value="{{$home_page -> description}}" >{{$home_page -> description}}</textarea>
                                                                 <small id="description_error" class="form-text text-danger"></small>
                                                             </div>
                                                             @error("description")
@@ -201,6 +187,42 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {{-- extra info --}}
+                                            <div class="form-body">
+                                                <h4 class="form-section"><i class="ft-home"></i>تعديل معلومات اضافية </h4>
+
+                                                <!-- title of the erticle and the slug -->
+                                                <div class="row">
+                                                    {{--  h2_title --}}
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">عنوان الموقع H2
+                                                            </label>
+                                                            <input type="text" id="name"
+                                                                    class="form-control"
+                                                                    placeholder="عنوان الموقع H2"
+                                                                    value="{{$home_page -> h2title}}"
+                                                                    name="h2title">
+                                                            @error("h2title")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    {{--   كلمات البحث الرئيسية --}}
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">معلومات اضافية  :(اختياري) </label>
+                                                            <div class="form-group">
+                                                                <textarea id="ckeditor" name="extra_info" class="form-control" value="{{$home_page ->extra_info}}" >{{$home_page ->extra_info}}</textarea>
+                                                                <script> CKEDITOR.replace('ckeditor' );</script>                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            {{-- SEO section --}}
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات SEO </h4>
                                                 <!-- title of the erticle and the slug -->

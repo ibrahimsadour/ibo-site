@@ -18,6 +18,69 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-xl-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-underline no-hover-bg">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="base-limit" data-toggle="tab" aria-controls="limit" href="#limit" aria-expanded="true">اضافة العلامات الدلالية عبر ملف Excel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="base-market" data-toggle="tab" aria-controls="market" href="#market" aria-expanded="false">حذف  جميع العلامات </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content px-1 pt-1">
+                                <div class="tab-pane active" id="market" aria-labelledby="base-market">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6 border-right-blue-grey border-right-lighten-4">
+                                            <div class="row my-2">
+                                            </div>
+                                            <form class="form form-horizontal"  action="{{route('admin.tags.import')}}" method="POST" enctype="multipart/form-data">
+                                                {{ csrf_field() }}
+                                                <div class="form-group">
+                                                    <label>اضافة  ملف Excel  </label>
+                                                    <label id="projectinput7" class="dropzone dropzone-area dz-clickable">
+                                                        <input type="file" name="select_file" />
+                                                    </label>
+                                                    @error('select_file')
+                                                    <span class="text-danger">{{$message}}</span>
+                                                    @enderror
+                                                    <div class="form-actions pb-0">
+                                                        <input type="submit" name="upload" class="btn round btn-success btn-block btn-glow" value="اضافة">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-12 col-xl-6 pl-2 p-0">
+                                            <div class="row my-2">
+                                            </div>
+                                            <form class="form form-horizontal">
+                                                <div class="form-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label">أضافة </label>
+                                                        <div class="col-md-9">
+                                                            <a href="{{route('admin.tags.create')}}" class="btn btn-primary  btn-block btn-glow"><i class="la la-check-square-o"></i>أضافة علامة جديدة</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="btc-market-sell-amount">حذف [{{App\Models\Tag::count()}}]</label>
+                                                        <div class="col-md-9">
+                                                            <a href="{{route("admin.tags.destroyAll")}}"  class="btn btn-danger btn-block btn-glow"><i class="la la-remove"></i>حذف  جميع العلامات  </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="content-body">
                 <!-- DOM - jQuery events table -->
                 <section id="dom">
@@ -37,19 +100,6 @@
 
                                 @include('admin.includes.alerts.success')
                                 @include('admin.includes.alerts.errors')
-                                <form class="form" action="{{route('admin.tags.import')}}" method="POST" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <label>اضافة  ملف Excel  </label>
-                                        <label id="projectinput7" class="dropzone dropzone-area dz-clickable">
-                                            <input type="file" name="select_file" />
-                                        </label>
-                                        @error('select_file')
-                                        <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                        <input type="submit" name="upload" class="btn btn-primary" value="اضافة">
-                                    </div>
-                                </form>
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
                                         <table
@@ -63,7 +113,7 @@
                                                 <th> السيارات</th>
                                                 <th>الحالة</th>
                                                 <th>التاريخ</th>
-                                                <th>الإجرءات -- <a href="{{route("admin.tags.destroyAll")}}" class="btn btn-outline-danger">حذف الكل {{App\Models\Tag::count()}}</a></th>
+                                                <th>الإجرءات</th>
                                             </tr>
                                             </thead>
                                             <tbody>

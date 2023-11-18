@@ -2,6 +2,9 @@
 @section('content')
     @include('front.pages.sections.sections_group')
 
+
+    @include('front.includes.extra_info_page')
+
     @include('front.pages.articles.featured-articles')
 
     {{-- End First section --}}

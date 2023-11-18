@@ -87,7 +87,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            {{-- basic info section --}}
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات الصفحة الرئيسية </h4>
                                                 <!-- title of the erticle and the slug -->
@@ -118,23 +118,8 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    {{--  h2_title --}}
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">عنوان الموقع H2
-                                                            </label>
-                                                            <input type="text" id="name"
-                                                                    class="form-control"
-                                                                    placeholder="عنوان الموقع H2"
-                                                                    value="{{old('h2title')}}"
-                                                                    name="h2title">
-                                                            @error("h2title")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
                                                     {{--  Phone number --}}
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> رقم الهاتف للتواصل
                                                             </label>
@@ -149,11 +134,11 @@
                                                         </div>
                                                     </div>
                                                     {{--  محتوى المقالة --}}
-                                                    <div class="col-md-7">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="projectinput1">وصف الموقع: </label>
                                                             <div class="form-group">
-                                                                <textarea class="form-control" id="ckeditor" name="description" value="{{old('description')}}" >{{old('description')}}</textarea>
+                                                                <textarea class="form-control" name="description" value="{{old('description')}}" >{{old('description')}}</textarea>
                                                                 <small id="description_error" class="form-text text-danger"></small>
                                                             </div>
                                                             @error("description")
@@ -202,6 +187,37 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            {{-- extra info section --}}
+                                            <div class="form-body">
+                                                <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات اضافية </h4>
+                                                <div class="row" >
+                                                    {{--   معلومات اضافية--}}
+                                                    {{--  h2_title --}}
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">عنوان الموقع H2 (اختياري)
+                                                            </label>
+                                                            <input type="text" id="name"
+                                                                class="form-control"
+                                                                placeholder="عنوان الموقع H2"
+                                                                value="{{old('h2title')}}"
+                                                                name="h2title">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">معلومات اضافية  :(اختياري) </label>
+                                                            <div class="form-group">
+                                                                <textarea id="ckeditor" name="extra_info" value="{{old('extra_info')}}" >{{old('extra_info')}}</textarea>
+                                                                <script> CKEDITOR.replace('ckeditor' );</script>                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            {{-- SEO  section --}}
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات SEO </h4>
                                                 <!-- title of the erticle and the slug -->

@@ -70,6 +70,23 @@ function get_default_title(){
 
     return $title = $title['title'];
 }
+// deze method pakket de h2title
+function get_default_h2title(){
+    $h2title =  \App\Models\Pages\HomePage::select('h2title')->first();
+    if(!$h2title != Null)
+        return 'h2title_is_empty';
+
+    return $h2title = $h2title['h2title'];
+}
+// deze method pakket de extra_info
+function get_default_extra_info(){
+    $extra_info =  \App\Models\Pages\HomePage::select('extra_info')->first();
+    if(!$extra_info != Null)
+        return 'extra_info_is_empty';
+
+    return $extra_info = $extra_info['extra_info'];
+}
+
 // deze method pakket de get_default_social_link_facebook
 function get_default_social_link_facebook(){
     $facebook =  \App\Models\Pages\HomePage::select('facebook_link')->first();

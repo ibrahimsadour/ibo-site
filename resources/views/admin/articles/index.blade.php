@@ -51,7 +51,6 @@
                                                 <th>التاريخ</th>
                                                 <th>الكلمة الرئيسية</th>
                                                 <th>الصورة</th>
-                                                <th>المقالة</th>
                                                 <th>الإجرءات</th>
                                             </tr>
                                             </thead>
@@ -60,7 +59,7 @@
                                                 @foreach($articles as $article)
                                                     <tr>
                                                         <td>{{$article -> id}}</td>
-                                                        <td>{{$article -> name}}</td>
+                                                        <td><a href="{{ URL::route('article.index',$article -> slug) }}" title="{{$article ->name}}">{{ Str::limit($article -> name, 45) }}</a></td>
                                                         <td>التصنيفات</td>
                                                         <td>
                                                             @if($article -> getActive() === "active" || $article -> getActive() === "مفعل")
@@ -75,23 +74,23 @@
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.articles.tags',$article->id)}}"
-                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">  عرض المقالة <i class="la la-eye"></i></a>
+                                                                <a href="{{route('admin.articles.edit',$article -> id)}}"
+                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
+
+
+                                                                <a href="{{route('admin.articles.delete',$article -> id)}}"
+                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
+
+                                                                @if($article -> active == 0)
+                                                                    <a href="{{route('admin.articles.status',$article -> id)}}"
+                                                                       class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">تفعيل</a>
+                                                                @else
+                                                                    <a href="{{route('admin.articles.status',$article -> id)}}"
+                                                                       class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        إلغاء التفعيل</a>
+                                                                @endif
+
                                                             </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="dropdown">
-                                                                <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
-                                                                <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(73px, 32px, 0px);">
-                                                                    <a href="{{route('admin.articles.edit',$article -> id)}}" class="dropdown-item"><i class="la la-pencil"></i>تعديل</a>
-                                                                    @if($article -> active == 0)
-                                                                        <a href="{{route('admin.articles.status',$article -> id)}}" class="dropdown-item"><i class="la la-check"></i>تفعيل</a>
-                                                                    @else
-                                                                        <a href="{{route('admin.articles.status',$article -> id)}}" class="dropdown-item"><i class="la la-close"></i>إلغاء التفعيل</a>
-                                                                    @endif
-                                                                    <a href="{{route('admin.articles.delete',$article -> id)}}" class="dropdown-item"><i class="la la-trash"></i>حذف</a>
-                                                                </span>
-                                                            </span>
                                                         </td>
                                                     </tr>
                                                 @endforeach

@@ -36,17 +36,13 @@ class ArticlesController extends Controller
 
     //show all cars
     public function index()
-
     {
         // selection() deze methode is gemaakt in de Models
         $articles = Article::paginate(10);
-//        return $articles;
-
         return view('admin.articles.index', compact('articles'));
     }
     //open Form to add new articles
     public function create()
-
     {
         $data = [];
         $data['sections'] = Section::active()->select('id','name')->get();
@@ -145,7 +141,6 @@ class ArticlesController extends Controller
     }
 
     public function edit($id)
-
     {
 //        try {
             $article = Article::select()->Active()->find($id);

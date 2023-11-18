@@ -11,7 +11,7 @@ class HomePage extends Model
     protected $table = 'home_page';
 
     protected $fillable = [
-        'id', 'title','h2title','description','logo','background','default_seo_image','ads_sidebar',
+        'id', 'title','h2title','extra_info','description','logo','background','default_seo_image','ads_sidebar',
         'call_us','seo_title','seo_keyword','seo_description','facebook_link','instagram_link','twitter_link',
         'default_country','active','created_at','updated_at'
     ];

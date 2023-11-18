@@ -9,7 +9,6 @@ use App\Http\Controllers\Relation\RelationsController;
 use App\Http\Controllers\Admin\SectionsController;
 use App\Http\Controllers\Admin\CacheController;
 use App\Http\Controllers\Admin\DynamicContentController;
-use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\Pages\PrivacyPolicyController;
 use App\Http\Controllers\Admin\Pages\AboutController;
 use App\Http\Controllers\Admin\Pages\TermsConditionController;
@@ -157,7 +156,6 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::get('changeStatus/{id}',[ArticlesController::class ,'changeStatus']) -> name('admin.articles.status');
 
         //show all tags by one article
-        Route::get('tags/{articleId}',[RelationsController::class ,'show_tags_article']) -> name('admin.articles.tags');
         Route::get  ('delete-tags/{id}',[ArticlesController::class ,'delete_all_tags_of_one_article']) -> name('delete-all-tags-of-one-article');
 
     });

@@ -98,6 +98,12 @@
                                             <form class="form form-horizontal">
                                                 <div class="form-body">
                                                     <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label">أضافة </label>
+                                                        <div class="col-md-9">
+                                                            <a href="{{route('admin.cities.create')}}" class="btn btn-primary  btn-block btn-glow"><i class="la la-check-square-o"></i>أضافة اسم مدينة جديدة</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="btc-mrk-price">ربط</label>
                                                         <div class="col-md-9">
                                                             <a href="{{route('insert-all-tags-to-all-cities')}}" class="btn btn-warning btn-block btn-glow"><i class="la la-check-square-o"></i>مزامنة الكل</a>
