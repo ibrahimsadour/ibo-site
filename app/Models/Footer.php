@@ -12,7 +12,7 @@ class Footer extends Model
     protected $table = 'footer_page';
 
     protected $fillable = [
-        'id','title', 'link','active'
+        'id','title', 'link','copyright_text','copyright_page_name','copyright_page_link','active'
     ];
     protected $hidden = ['created_at','updated_at'];
 

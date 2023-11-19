@@ -119,14 +119,12 @@
         <div class="container">
             <div class="tie-row">
                 <div class="tie-col-md-12">
-                    <div class="copyright-text copyright-text-first">@lang('front/home-blade.Copyright')   {{ now()->year }} <a href="https://ibrahim.sadour.nl/" rel="nofollow" >@lang('front/home-blade.designed_by') @lang('front/home-blade.ibrahim_sadour')  </a> </div>
+                    <div class="copyright-text copyright-text-first"> {!! FooterCopyrights()!!} </div>
                     <div class="footer-menu">
                         <ul class="menu">
-                            <li id="menu-item-2613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2613"><a href="{{ URL::route('site.index')}}" title="@lang('front/home-blade.home_page')">@lang('front/home-blade.home_page')</a></li>
-                            <li id="menu-item-2613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2613"><a href="{{ URL::route('about.index')}}" title="@lang('front/home-blade.about')">@lang('front/home-blade.about')</a></li>
-                            <li id="menu-item-2610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2610"><a href="{{ URL::route('privacy-policy.index')}}" title="@lang('front/home-blade.privacy_policy')">@lang('front/home-blade.privacy_policy')</a></li>
-                            <li id="menu-item-2611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2611"><a href="{{ URL::route('contact-us.index')}}" title="@lang('front/home-blade.contact_us')">@lang('front/home-blade.contact_us')</a></li>
-                            <li id="menu-item-2612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2612"><a href="{{ URL::route('sitemap')}}" title="@lang('front/home-blade.sitemap')">@lang('front/home-blade.sitemap')</a></li>
+                            @foreach (FooterCopyrightsPages() as $footer_copyrights_page)
+                            <li class="menu-item"><a href="{{$footer_copyrights_page->copyright_page_link}}" title="{{$footer_copyrights_page->copyright_page_name}}">{{$footer_copyrights_page->copyright_page_name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

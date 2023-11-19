@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\SubCarController;
 use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\RobotsTxtController;
+
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -276,6 +278,21 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::get('delete/{id}',[FooterController::class ,'destroy']) -> name('admin.footer.delete');
         Route::get('changeStatus/{id}',[FooterController::class ,'changeStatus']) -> name('admin.footer.status');
 
+
+
+        // Footer copyright
+        Route::group(['prefix' => 'copyright'], function () {
+
+            // Footer copyright
+            Route::post('text/update/{id}',[FooterController::class ,'update_copyright_text']) -> name('admin.footer.update_copyright');
+            Route::post('text/store',[FooterController::class ,'store_copyright_text']) -> name('admin.footer.store_copyright_text');
+
+            // Footer copyright pages
+            Route::post('pages/store',[FooterController::class ,'copyright_pages_store']) -> name('admin.footer.copyright_pages_store');
+            Route::get('pages/edit/{id}',[FooterController::class ,'copyright_pages_edit']) -> name('admin.footer.copyright_pages_edit');
+            Route::post('pages/update/{id}',[FooterController::class ,'copyright_pages_update']) -> name('admin.footer.copyright_pages_update');
+           
+        });
         
     });
     ############################# End FooterController Route ################################
@@ -291,6 +308,12 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::post('update/{id}',[DynamicContentController::class ,'dynamic_content_update']) -> name('admin.dynamic_content.update');
     });
     ###########################################
+
+    // Robot txt file
+    Route::group( ['prefix' => 'robots', 'middleware' => 'auth'],function() {
+        Route::get('/',[RobotsTxtController::class ,'open_file']) -> name('admin.robots.index');
+        Route::post('update',[RobotsTxtController::class ,'update_file']) -> name('admin.robots.update');
+    });
 
 
     // Setting route to edit some items in the config app 

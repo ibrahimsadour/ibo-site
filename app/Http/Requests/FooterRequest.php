@@ -26,6 +26,7 @@ class FooterRequest extends FormRequest
         return [
             'title' => 'required',
             'link' => 'required',
+            
            
         ];
     }

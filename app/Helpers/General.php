@@ -208,9 +208,30 @@ function selectLast_Articles(){
 function select10ActiveTags(){
     return Tag::Active()->inRandomOrder()->limit(10)->get();
 }
+// footer function
 function FooterPageLinks(){
-    return Footer::Active()->inRandomOrder()->limit(5)->get();
+    return Footer::Active()->where('title','not like', '%copyright_text%')->where('title','not like', '%copyright_pages%')->inRandomOrder()->limit(5)->get();
 }
+function FooterCopyrights(){
+    $footer_copyright = Footer::select('copyright_text')->where('copyright_text','not like', '%copyright_pages%')->where('copyright_text','not like', '%footer_page_link%')->first();
+    if($footer_copyright){
+        return $footer_copyright -> copyright_text;
+    }
+}
+function FooterCopyrightsPages(){
+    $footer_copyrights_pages = Footer::
+    where('copyright_page_name','not like', '%copyright_text%')
+    ->where('copyright_page_link','not like', '%copyright_text%')
+    ->where('copyright_page_name','not like', '%footer_page_link%')
+    ->where('copyright_page_link','not like', '%footer_page_link%')
+    ->get();
+    if($footer_copyrights_pages){
+        return $footer_copyrights_pages;
+    }
+
+}
+
+
 // this function to check if the table car active or not 
 // here it will be check the first items in the car table 
 function check_if_cars_active(){

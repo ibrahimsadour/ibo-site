@@ -120,55 +120,72 @@
                    </li>
                </ul>
            </li>
-           {{--   خريطة الموقع   --}}
-           <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
-               <a href=""><i class="icon-globe"></i>
-                   <span class="menu-title" data-i18n="nav.dash.main">خريطة الموقع</span>
-                   <span class="badge badge badge-info badge-pill float-right mr-2">7</span>
-               </a>
-               <ul class="menu-content">
-                   <li><a class="menu-item" href="{{route('sitemap-index')}}">الصفحات</a></li>
-                   <li><a class="menu-item" href="{{route('sitemap-articles')}}" > المقالات </a></li>
-                   <li class="has-sub is-shown"><a class="menu-item" href="#"><i></i><span data-i18n="Buttons">خريطة المدن</span></a>
-                    <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="{{route('sitemap-cities')}}"><i></i><span data-i18n="Basic Buttons">المدن فقط</span></a>
-                      </li>
-                      <li class=""><a class="menu-item" href="{{route('sitemap-city-tags')}}"><i></i><span data-i18n="Extended Buttons">المدن مع العلامات الدلالية</span></a>
-                      </li>
-                    </ul>
-                  </li>
-                  @if(check_if_cars_active() === 1)
-                  <li class="has-sub is-shown"><a class="menu-item" href="#"><i></i><span data-i18n="Buttons">خريطة السيارات</span></a>
-                    <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="{{route('sitemap-cars')}}"><i></i><span data-i18n="Basic Buttons">السيارات فقط</span></a>
-                      </li>
-                      <li class=""><a class="menu-item" href="{{route('sitemap-car-tags')}}"><i></i><span data-i18n="Extended Buttons">السيارات مع العلامات الدلالية</span></a>
-                      </li>
-                    </ul>
-                  </li>
-                  @endif
-                   <li><a class="menu-item" href="{{route('sitemap-tags')}}" >العلامات الدلالية</a></li>
-                   <li><a class="menu-item" href="{{route('sitemap-services')}}" >الخدمات</a></li>
-                   <li><a class="menu-item" href="{{route('sitemap-sections')}}" >الاقسام</a></li>
 
-               </ul>
-           </li>
-           {{--   روابط غوغل  --}}
-            <li class="{{ Request::is('admin/google') ? 'nav-item active' : '' }}">
-                <a href=""><i class="icon-globe"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">روابط غوغل Google codes</span>
-                    <span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Google::count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="{{ Request::is('admin/google') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.google')}}"
-                                                                                data-i18n="nav.dash.ecommerce"> عرض كل الاكواد</a>
+            <li class="nav-item has-sub"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">SEO</span></a>
+                <ul class="menu-content" style="">
+                    {{--   روابط غوغل  --}}
+                    <li class="{{ Request::is('admin/google') ? 'nav-item active' : '' }}">
+                        <a href=""><i class="icon-globe"></i>
+                            <span class="menu-title" data-i18n="nav.dash.main">روابط غوغل Google codes</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li class="{{ Request::is('admin/google') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.google')}}"
+                                                                                        data-i18n="nav.dash.ecommerce"> عرض كل الاكواد</a>
+                            </li>
+                            <li class="{{ Request::is('admin/google/create') ? 'active' : '' }}" >
+                                <a class="menu-item" href="{{route('admin.google.create')}}" data-i18n="nav.dash.crypto">أضف كود جديد </a>
+                            </li>
+                        </ul>
+                    
+                    </li>   
+                    {{--   خريطة الموقع   --}}
+                    <li class="{{ Request::is('admin/cars') ? 'nav-item active' : '' }}">
+                        <a href=""><i class="icon-globe"></i>
+                            <span class="menu-title" data-i18n="nav.dash.main">خريطة الموقع</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('sitemap-index')}}">الصفحات</a></li>
+                            <li><a class="menu-item" href="{{route('sitemap-articles')}}" > المقالات </a></li>
+                            <li class="has-sub is-shown"><a class="menu-item" href="#"><i></i><span data-i18n="Buttons">خريطة المدن</span></a>
+                            <ul class="menu-content" style="">
+                            <li class=""><a class="menu-item" href="{{route('sitemap-cities')}}"><i></i><span data-i18n="Basic Buttons">المدن فقط</span></a>
+                            </li>
+                            <li class=""><a class="menu-item" href="{{route('sitemap-city-tags')}}"><i></i><span data-i18n="Extended Buttons">المدن مع العلامات الدلالية</span></a>
+                            </li>
+                        </ul>
+                        </li>
+                        @if(check_if_cars_active() === 1)
+                        <li class="has-sub is-shown"><a class="menu-item" href="#"><i></i><span data-i18n="Buttons">خريطة السيارات</span></a>
+                            <ul class="menu-content" style="">
+                            <li class=""><a class="menu-item" href="{{route('sitemap-cars')}}"><i></i><span data-i18n="Basic Buttons">السيارات فقط</span></a>
+                            </li>
+                            <li class=""><a class="menu-item" href="{{route('sitemap-car-tags')}}"><i></i><span data-i18n="Extended Buttons">السيارات مع العلامات الدلالية</span></a>
+                            </li>
+                            </ul>
+                        </li>
+                        @endif
+                            <li><a class="menu-item" href="{{route('sitemap-tags')}}" >العلامات الدلالية</a></li>
+                            <li><a class="menu-item" href="{{route('sitemap-services')}}" >الخدمات</a></li>
+                            <li><a class="menu-item" href="{{route('sitemap-sections')}}" >الاقسام</a></li>
+
+                        </ul>
                     </li>
-                    <li class="{{ Request::is('admin/google/create') ? 'active' : '' }}" >
-                        <a class="menu-item" href="{{route('admin.google.create')}}" data-i18n="nav.dash.crypto">أضف كود جديد </a>
-                    </li>
+                    {{--   Robots.txt   --}}
+                    <li class="{{ Request::is('admin/robots') ? 'nav-item active' : '' }}">
+                        <a href="{{route('admin.robots.index')}}"><i class="icon-globe"></i>
+                            <span>Robots.txt</span>
+                        </a>
+                    </li>  
                 </ul>
-            
             </li>
+
+
+
+
+
+
+
+
             {{--   ذاكرة التخزين المؤقت   --}}
             <li>    
                 <a><i class="la la-tags"></i>

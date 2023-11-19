@@ -47,33 +47,63 @@
 
                                             {{--edit name--}}
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> تعديل الكود</h4>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1"> عنوان الكود</label>
-                                                            <input type="text" id="title"
-                                                                   class="form-control"
-                                                                   value="{{$page_link -> title}}"
-                                                                   name="title">
-                                                            @error("title")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
+                                                    @if(strpos( App\Models\Footer::select('title')->find($page_link -> id), 'copyright_pages'))
+                                                        {{-- copyright link pages --}}
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="projectinput1"> عنوان الصفحة</label>
+                                                                    <input type="text" id="copyright_page_name"
+                                                                        class="form-control"
+                                                                        value="{{$page_link -> copyright_page_name}}"
+                                                                        name="copyright_page_name">
+                                                                    @error("copyright_page_name")
+                                                                    <span class="text-danger">{{$message}}</span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="projectinput1">رابط الصفحة</label>
+                                                                    <input type="text" id="copyright_page_link"
+                                                                        class="form-control"
+                                                                        value="{{$page_link -> copyright_page_link}}"
+                                                                        name="copyright_page_link"> 
+                                                                    @error("copyright_page_link")
+                                                                    <span class="text-danger">{{$message}}</span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @else 
+                                                    {{-- footer pages --}}
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="projectinput1"> عنوان الصفحة</label>
+                                                                <input type="text" id="title"
+                                                                    class="form-control"
+                                                                    value="{{$page_link -> title}}"
+                                                                    name="title">
+                                                                @error("title")
+                                                                <span class="text-danger">{{$message}}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="projectinput1">رابط الصفحة</label>
+                                                                <input type="text" id="link"
+                                                                    class="form-control"
+                                                                    value="{{$page_link -> link}}"
+                                                                    name="link"> 
+                                                                @error("link")
+                                                                <span class="text-danger">{{$message}}</span>
+                                                                @enderror
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">رابط الصفحة</label>
-                                                            <input type="text" id="link"
-                                                                   class="form-control"
-                                                                   value="{{$page_link -> link}}"
-                                                                   name="link"> 
-                                                            @error("link")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    @endif
                                                 {{--edit status --}}
                                                 <div class="row">
                                                     <div class="col-md-6">
