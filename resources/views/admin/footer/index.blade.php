@@ -34,8 +34,8 @@
                                                     {{ csrf_field() }}
                                                     <div class="form-body">
                                                         <h4 class="form-section"><i class="ft-home"></i>اضافة رابط صفحة </h4>
-                                                        <img src="http://127.0.0.1:8000/assets/admin/images/Pictures-clarification/footer-pages.png" width="1200" height="400">
-
+                                                        <img src="{{asset('assets/admin/images/Pictures-clarification/footer-pages.png')}}" width="1200" height="400">
+                                                        
                                                         <div class="row">
                                                             {{--  عنوان الكود --}}
                                                             <div class="col-md-6">
@@ -178,9 +178,9 @@
                                 </div>
                                 {{-- footer social media --}}
                                 <div role="tabpanel" class="tab-pane" id="social-media" aria-expanded="true" aria-labelledby="base-social-media">
-                                    <img src="http://127.0.0.1:8000/assets/admin/images/Pictures-clarification/comming-soon.avif" width="1000" height="400">
-
-                                </div>
+                                    <img src="{{asset('assets/admin/images/Pictures-clarification/comming-soon.avif')}}" width="1000" height="400">
+                                    
+                                </div>  
 
                                 {{-- footer copyright --}}
                                 <div class="tab-pane active" id="copyright" aria-labelledby="base-copyright">
@@ -189,7 +189,8 @@
                                             <div class="row my-2">
                                                 <div class="col-8">
                                                     <h5 class="text-bold-600 mb-0">copyright text</h5>
-                                                    <img src="http://127.0.0.1:8000/assets/admin/images/Pictures-clarification/copyright.png" width="600" height="300">
+                                                    <img src="{{asset('assets/admin/images/Pictures-clarification/copyright.png')}}" width="600" height="300">
+                                                    
                                                 </div>
                                             </div>
                                             @if(App\Models\Footer::where('copyright_text','not like', '%copyright_pages%')->where('copyright_text','not like', '%footer_page_link%')->count() > 0)

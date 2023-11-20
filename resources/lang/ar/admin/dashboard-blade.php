@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    
     'Latest_articles_added' => 'أحدث المقالات المضافة',
     'title'=>'العنوان',
     'date'=>'التاريخ',
@@ -23,6 +23,9 @@ return [
     'delete'=>'حذف',
     'section'=>'الاقسام',
     'tags'=>'العلامات الدلالية',
+    'hi'=>'مرحبا',
+    'logout'=>'تسجيل الخروج',
+
 
 
 ];

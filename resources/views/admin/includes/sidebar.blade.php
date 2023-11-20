@@ -219,11 +219,11 @@
                 </li>
             </ul>
         </li>
-            <li class=" nav-item"><a href="/" target="_blank"><i class="la la-support"></i><span
+            <li class=" nav-item"><a href="/" ><i class="la la-support"></i><span
                 class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>
             </li>
             <li class=" nav-item">
-                <a href="https://demos.pixinvent.com/modern-html-admin-template/html/ltr/vertical-modern-menu-template/"><i
+                <a target="_blank" href="https://demos.pixinvent.com/modern-html-admin-template/html/ltr/vertical-modern-menu-template/"><i
                         class="la la-text-height"></i>
                     <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
                 </a>

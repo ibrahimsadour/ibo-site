@@ -23,6 +23,8 @@ return [
     'delete'=>'Delete',
     'section'=>'Section',
     'tags'=>'Tags',
+    'hi'=>'Hi',
+    'logout'=>'Uitlogen',
 
 
 ];
