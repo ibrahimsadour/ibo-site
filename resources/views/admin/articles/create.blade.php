@@ -50,7 +50,7 @@
                                                     {{--  عنوان المقالة --}}
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">عنوان المقالة </label>
+                                                            <label for="projectinput1">عنوان المقالة <span style="color: red">( أجباري ) </span></label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
@@ -64,8 +64,7 @@
                                                     {{--  رابط المقالة --}}
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اسم الرابط
-                                                            </label>
+                                                            <label for="projectinput1"> اسم الرابط <span style="color: red">( أجباري ) </span></label>
                                                             <input type="text" id="name"
                                                                     class="form-control"
                                                                     placeholder="اختصار الاسم"
@@ -81,7 +80,7 @@
                                                     <!-- Section -->
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر القسم
+                                                            <label for="projectinput1"> اختر القسم <span style="color: #1e9ff2">( أختياري ) </span>
                                                             </label>
                                                             <select name="section_id" class="select2 form-control" value="{{old('section_id')}}" >
                                                                 <option value="0">بدون اضافة القسم</option>
@@ -104,7 +103,7 @@
                                                     <!-- car_id -->
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر ماركة السيارة
+                                                            <label for="projectinput1"> اختر ماركة السيارة<span style="color: #1e9ff2">( أختياري ) </span>
                                                             </label>
                                                             <select name="car_id" class="select2 form-control" value="{{old('car_id')}}" >
                                                                 <option value="0">بدون اضافة ماركة السيارة</option>
@@ -127,7 +126,7 @@
                                                     <!-- city_id -->
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر اسم المدينة
+                                                            <label for="projectinput1"> اختر اسم المدينة<span style="color: #1e9ff2">( أختياري ) </span>
                                                             </label>
                                                             <select name="city_id" class="select2 form-control" value="{{old('city_id')}}" >
                                                                 <option value="0">بدون اضافة مدن</option>
@@ -149,7 +148,7 @@
                                                     <!-- service_id  -->
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر الخدمة المناسبة
+                                                            <label for="projectinput1"> اختر الخدمة المناسبة<span style="color: #1e9ff2">( أختياري ) </span>
                                                             </label>
                                                             <select name="service_id" class="select2 form-control" value="{{old('service_id')}}" >
                                                                 <option value="0">بدون اضافة خدمة</option>
@@ -169,7 +168,7 @@
                                                     <!-- tags -->
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر ألعلامات الدلالية
+                                                            <label for="projectinput1"> اختر ألعلامات الدلالية<span style="color: #1e9ff2">( أختياري ) </span>
                                                             </label>
                                                             <select name="tags[]" class="select2 form-control" multiple value="{{old('tags[]')}}">
                                                                 <optgroup label=" اختر ألعلامات الدلالية ">
@@ -192,7 +191,7 @@
                                                     {{--  محتوى المقالة --}}
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">عنوان المقالة: </label>
+                                                            <label for="projectinput1">محتوى المقالة: <span style="color: red; font-weight: 600;" >( أجباري ) </span></label>
                                                             <div class="form-group">
                                                                 <textarea id="ckeditor" name="description" value="{{old('description')}}" >{{old('description')}}</textarea>
                                                                 <small id="description_error" class="form-text text-danger"></small>
@@ -226,7 +225,7 @@
                                             </div>
                                                 <div class="form-body">
 
-                                                    <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات SEO </h4>
+                                                    <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات SEO <span style="color: red">( أجباري ) </span></h4>
                                                     <!-- title of the erticle and the slug -->
                                                     <div class="row">
                                                         {{--  عنوان SEO --}}

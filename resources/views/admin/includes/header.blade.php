@@ -8,7 +8,7 @@
                             class="ft-menu font-large-1"></i></a></li>
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{route('admin.dashboard')}}">
-                        <img class="brand-logo" alt="modern admin logo"
+                        <img class="brand-logo" alt="modern admin logo" style="width: 70px;"
                              src="{{asset('assets/admin/images/logo/logo.png')}}">
                         <h3 class="brand-text">Ibrahim Sadour</h3>
                     </a>
@@ -50,7 +50,7 @@
                         </span>
                             <span class="avatar avatar-online">
 
-                        <img  style="height: 35px;" src="{{asset('assets/admin/images/logo/logo.png')}}" alt="avatar"><i></i></span>
+                        <img  style="height: 35px;" src="{{asset('assets/admin/images/logo/avatar.png')}}" alt="avatar"><i></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
                                     class="ft-user"></i>  ملفي الشخصي </a>
