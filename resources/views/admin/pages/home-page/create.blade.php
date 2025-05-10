@@ -1,5 +1,5 @@
 @extends('admin.layouts.admin')
-@section('title','أضافة معلومات الرئيسية')
+@section('title','أضافة معلومات الصفحة الرئيسية')
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
@@ -8,7 +8,7 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.home-page')}}"> قسم الصفحة الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.home-page')}}">قسم الصفحة الرئيسية</a>
                                 </li>
                             </ol>
                         </div>
@@ -24,69 +24,53 @@
 
                                 @include('admin.includes.alerts.success')
                                 @include('admin.includes.alerts.errors')
+
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form" action="{{route('admin.home_page.store')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
 
-                                            <!-- the Logo of the site -->
-                                            <div class="form-group">
-                                                <h4 class="form-section"><i class="ft-home"></i>اضافة صور الموقع </h4>
-                                                <div class="row">
+                                            {{-- Images Section --}}
+                                            <h4 class="form-section"><i class="ft-image"></i> اضافة صور الموقع </h4>
+                                            <div class="row">
+                                                @foreach([
+                                                    'logo' => ['label' => 'اضافة شعار الموقع (W250xH100px)', 'width' => 250, 'height' => 100],
+                                                    'background' => ['label' => 'اضافة خلفية الموقع (W2000xH475px)', 'width' => 300, 'height' => 150],
+                                                    'default_seo_image' => ['label' => 'اضافة default_seo_image الموقع (W780xH470px)', 'width' => 300, 'height' => 150],
+                                                    'ads_sidebar' => ['label' => 'اضافة ads_sidebar الموقع (W336xH280px)', 'width' => 300, 'height' => 150],
+                                                ] as $name => $info)
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label id="projectinput7" class="btn btn-float btn-float-lg btn-outline-pink">
-                                                                <i class="la la-camera"><img id="logo"  width="100" height="100"/></i>اضافة شعار الموقع (W250xH100px)
-                                                                <input type="file" id="file" name="logo" style="display: none"   onchange="document.getElementById('logo').src = window.URL.createObjectURL(this.files[0])">
-                                                                <span class="file-custom"></span>
+                                                            <label class="btn btn-float btn-float-lg btn-outline-pink">
+                                                                <i class="la la-camera">
+                                                                    <img id="{{ $name }}_preview" width="{{ $info['width'] }}" height="{{ $info['height'] }}" />
+                                                                </i> 
+                                                                {{ $info['label'] }}
+                                                                <input type="file" id="{{ $name }}" name="{{ $name }}" style="display: none;" onchange="previewImage('{{ $name }}')">
                                                             </label>
-                                                            @error('logo')
+                                                            @error($name)
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <!-- the background of the site -->
-                                                        <div class="form-group">
-                                                            <label id="projectinput7" class="btn btn-float btn-float-lg btn-outline-pink">
-                                                                <i class="la la-camera"><img id="background"  width="300" height="150"/></i>(W2000xH475px)اضافة خلفية الموقع
-                                                                <input type="file" id="file" name="background" style="display: none;" onchange="document.getElementById('background').src = window.URL.createObjectURL(this.files[0])">
-                                                                <span class="file-custom"></span>
-                                                            </label>
+                                                @endforeach
 
-                                                            @error('background')
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <!-- the default_seo_image of the site -->
-                                                        <div class="form-group">
-                                                            <label id="projectinput7" class="btn btn-float btn-float-lg btn-outline-pink">
-                                                                <i class="la la-camera"><img id="default_seo_image"  width="300" height="150"/></i>(W780xH470px)اضافة default_seo_image الموقع
-                                                                <input type="file" id="file" name="default_seo_image" style="display: none;" onchange="document.getElementById('default_seo_image').src = window.URL.createObjectURL(this.files[0])">
-                                                                <span class="file-custom"></span>
-                                                            </label>
-                                                            @error('default_seo_image')
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <!-- the ads_sidebar of the site -->
-                                                        <div class="form-group">
-                                                            <label id="projectinput7" class="btn btn-float btn-float-lg btn-outline-pink">
-                                                                <i class="la la-camera"><img id="ads_sidebar"  width="300" height="150"/></i>(W336xH280px)اضافة ads_sidebar الموقع
-                                                                <input type="file" id="file" name="ads_sidebar" style="display: none;" onchange="document.getElementById('ads_sidebar').src = window.URL.createObjectURL(this.files[0])">
-                                                                <span class="file-custom"></span>
-                                                            </label>
-                                                            @error('ads_sidebar')
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <script>
+                                                    function previewImage(id) {
+                                                        const input = document.getElementById(id);
+                                                        const preview = document.getElementById(id + '_preview');
+
+                                                        if (input.files && input.files[0]) {
+                                                            const reader = new FileReader();
+                                                            reader.onload = function (e) {
+                                                                preview.src = e.target.result;
+                                                            };
+                                                            reader.readAsDataURL(input.files[0]);
+                                                        }
+                                                    }
+                                                </script>
+
+                                            </div>                                            
                                             {{-- basic info section --}}
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i>اضافة معلومات الصفحة الرئيسية </h4>
@@ -112,7 +96,10 @@
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    value="{{old('title')}}"
-                                                                   name="title">
+                                                                   name="title"                                                                    
+                                                                   maxlength="80"
+                                                                   oninput="updateCharCount(this, 'title')">
+                                                            <small id="title" class="char-counter"></small>
                                                             @error("title")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -227,10 +214,13 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">عنوان المقالة </label>
                                                             <input type="text" id="seo_title"
-                                                                   class="form-control"
-                                                                   placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
-                                                                   value="{{old('seo_title')}}"
-                                                                   name="seo_title">
+                                                                    class="form-control"
+                                                                    placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
+                                                                    value="{{old('seo_title')}}"
+                                                                    name="seo_title"
+                                                                    maxlength="80"
+                                                                    oninput="updateCharCount(this, 'seo_title_counter')">
+                                                            <small id="seo_title_counter" class="char-counter"></small>
                                                             @error("seo_title")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -245,7 +235,10 @@
                                                                    class="form-control"
                                                                    placeholder="يجب الا يتجاوز االوصف 160 حرفا"
                                                                    value="{{old('seo_description')}}"
-                                                                   name="seo_description">
+                                                                   name="seo_description"maxlength="160"
+                                                                placeholder="يجب الا يتجاوز الوصف 160 حرفا"
+                                                                oninput="updateCharCount(this, 'seo_description_counter')">
+                                                            <small id="seo_description_counter" class="char-counter"></small>
                                                             @error("seo_description")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror

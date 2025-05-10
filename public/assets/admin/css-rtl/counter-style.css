@@ -1,0 +1,10 @@
+.char-counter {
+    left: 10px;
+    top: 10px;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-weight: bold;
+    font-size: 14px;
+    pointer-events: none;
+    position: absolute;
+}

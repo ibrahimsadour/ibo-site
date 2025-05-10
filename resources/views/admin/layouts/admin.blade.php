@@ -49,6 +49,8 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/style-rtl.css')}}">
     <!-- END Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/counter-style.css') }}">
+
     <!-- @notify_css -->
     @yield('style')
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
@@ -117,6 +119,8 @@
         type="text/javascript"></script>
 <script src="{{asset('assets/admin/js/scripts/extensions/date-time-dropper.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
+
+<script src="{{asset('assets/admin/js/scripts/char-counter/char-counter.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('assets/admin/js/scripts/forms/checkbox-radio.js')}}" type="text/javascript"></script>
 

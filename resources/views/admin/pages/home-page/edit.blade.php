@@ -111,7 +111,10 @@
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    value="{{$home_page -> title}}"
-                                                                   name="title">
+                                                                   name="title"                                                                   
+                                                                   maxlength="80"
+                                                                   oninput="updateCharCount(this, 'title')">
+                                                            <small id="title" class="char-counter">{{ strlen($home_page->title) }} / 80</small>
                                                             @error("title")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -229,34 +232,40 @@
                                                 <div class="row">
                                                     {{--  عنوان SEO --}}
                                                     <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">عنوان المقالة </label>
-                                                            <input type="text" id="seo_title"
-                                                                   class="form-control"
-                                                                   value="{{$home_page ->seo_title}}"
-                                                                   name="seo_title">
+                                                        <div class="form-group position-relative">
+                                                            <label for="seo_title">عنوان المقالة</label>
+                                                            <input type="text" id="seo_title" class="form-control"
+                                                                value="{{ $home_page->seo_title }}"
+                                                                name="seo_title"
+                                                                maxlength="80"
+                                                                oninput="updateCharCount(this, 'seo_title_counter')">
+                                                            <small id="seo_title_counter" class="char-counter">
+                                                                {{ strlen($home_page->seo_title) }} / 80
+                                                            </small>
                                                             @error("seo_title")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                     {{--  SEo الوصف --}}
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">الوصف
-                                                            </label>
-                                                            <input type="text" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="يجب الا يتجاوز االوصف 160 حرفا"
-                                                                   value="{{$home_page ->seo_description}}"
-                                                                   name="seo_description">
+                                                   <div class="col-md-6">
+                                                        <div class="form-group position-relative">
+                                                            <label for="seo_description">الوصف</label>
+                                                            <input type="text" id="seo_description" class="form-control"
+                                                                value="{{ $home_page->seo_description }}"
+                                                                name="seo_description"
+                                                                maxlength="160"
+                                                                placeholder="يجب الا يتجاوز الوصف 160 حرفا"
+                                                                oninput="updateCharCount(this, 'seo_description_counter')">
+                                                            <small id="seo_description_counter" class="char-counter">
+                                                                {{ strlen($home_page->seo_description) }} / 160
+                                                            </small>
                                                             @error("seo_description")
-                                                            <span class="text-danger">{{$message}}</span>
+                                                            <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                </div>
-
+                                                </div>    
                                                 <div class="row" >
                                                     {{--   كلمات البحث الرئيسية --}}
                                                     <div class="col-md-12">

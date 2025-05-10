@@ -52,10 +52,13 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">عنوان المقالة <span style="color: red">( أجباري ) </span></label>
                                                             <input type="text" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
-                                                                   value="{{old('name')}}"
-                                                                   name="name">
+                                                                    class="form-control"
+                                                                    placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
+                                                                    value="{{old('name')}}"
+                                                                    name="name"
+                                                                   maxlength="80"
+                                                                   oninput="updateCharCount(this, 'title_counter')">
+                                                            <small id="title_counter" class="char-counter"></small>
                                                             @error("name")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -69,7 +72,10 @@
                                                                     class="form-control"
                                                                     placeholder="اختصار الاسم"
                                                                     value="{{old('slug')}}"
-                                                                    name="slug">
+                                                                    name="slug"
+                                                                    maxlength="70"
+                                                                   oninput="updateCharCount(this, 'slug_counter')">
+                                                            <small id="slug_counter" class="char-counter"></small>
                                                             @error("slug")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -235,8 +241,11 @@
                                                                 <input type="text" id="seo_title"
                                                                        class="form-control"
                                                                        placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
-                                                                       value="{{old('seo_title')}}"
-                                                                       name="seo_title">
+                                                                    value="{{old('seo_title')}}"
+                                                                    name="seo_title"
+                                                                    maxlength="80"
+                                                                    oninput="updateCharCount(this, 'seo_title_counter')">
+                                                            <small id="seo_title_counter" class="char-counter"></small>
                                                                 @error("seo_title")
                                                                 <span class="text-danger"> {{$message}}</span>
                                                                 @enderror
@@ -251,7 +260,10 @@
                                                                        class="form-control"
                                                                        placeholder="يجب الا يتجاوز االوصف 160 حرفا"
                                                                        value="{{old('seo_description')}}"
-                                                                       name="seo_description">
+                                                                       name="seo_description"                                                                        
+                                                                       maxlength="160"
+                                                                        oninput="updateCharCount(this, 'seo_description_counter')">
+                                                            <small id="seo_description_counter" class="char-counter"></small>
                                                                 @error("seo_description")
                                                                 <span class="text-danger">{{$message}}</span>
                                                                 @enderror

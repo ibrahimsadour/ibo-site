@@ -75,7 +75,10 @@
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    value="{{$article -> name}}"
-                                                                   name="name">
+                                                                   name="name"
+                                                                   maxlength="80"
+                                                                   oninput="updateCharCount(this, 'name_counter')">
+                                                            <small id="name_counter" class="char-counter">{{ strlen($article->name) }} / 80</small>
                                                             @error("name")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -88,7 +91,10 @@
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    value="{{$article -> slug}}"
-                                                                   name="slug">
+                                                                   name="slug"
+                                                                   maxlength="80"
+                                                                   oninput="updateCharCount(this, 'slug_counter')">
+                                                            <small id="slug_counter" class="char-counter">{{ strlen($article->slug) }} / 80</small>
                                                             @error("slug")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -236,7 +242,10 @@
                                                                    class="form-control"
                                                                    placeholder="مثال(بنشر متنقل - كهربائي سيارات)"
                                                                    value="{{$article-> seo_title}}"
-                                                                   name="seo_title">
+                                                                   name="seo_title"                                                                   
+                                                                   maxlength="80"
+                                                                   oninput="updateCharCount(this, 'seo_title_counter')">
+                                                            <small id="seo_title_counter" class="char-counter">{{ strlen($article->seo_title) }} / 80</small>
                                                             @error("seo_title")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -251,7 +260,10 @@
                                                                    class="form-control"
                                                                    placeholder="يجب الا يتجاوز االوصف 160 حرفا"
                                                                    value="{{$article-> seo_description}}"
-                                                                   name="seo_description">
+                                                                   name="seo_description"
+                                                                    maxlength="160"
+                                                                   oninput="updateCharCount(this, 'seo_description_counter')">
+                                                            <small id="seo_description_counter" class="char-counter">{{ strlen($article->seo_description) }} / 160</small>
                                                             @error("seo_description")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror

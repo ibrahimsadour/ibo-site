@@ -66,7 +66,7 @@ function get_default_seo_image(){
 function get_default_title(){
     $title =  \App\Models\Pages\HomePage::select('title')->first();
     if(!$title != Null)
-        return 'title_is_empty';
+        return '(H1) لم يتم اضافة عنوان بعد';
 
     return $title = $title['title'];
 }
@@ -74,7 +74,7 @@ function get_default_title(){
 function get_default_h2title(){
     $h2title =  \App\Models\Pages\HomePage::select('h2title')->first();
     if(!$h2title != Null)
-        return 'h2title_is_empty';
+        return '(H2) لم يتم اضافة عنوان بعد';
 
     return $h2title = $h2title['h2title'];
 }

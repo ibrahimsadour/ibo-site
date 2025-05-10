@@ -1,10 +1,11 @@
 <?php
 
 namespace Database\Seeders;
+
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -16,12 +17,19 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // Insert Admin information to databse
-        $add_admin = new User;
-        $add_admin ->name = "Ibrahim Sadour";
-        $add_admin ->email  = "i.m.s.1995@hotmail.com";
-        $add_admin ->mobile  = "0685125822";
-        $add_admin ->password = Hash::make('ibrahem810907');
-        $add_admin->save();
+        // بيانات المستخدم
+        $user = [
+            'name' => 'Ibrahim Sadour',
+            'email' => 'i.m.s.1995@hotmail.com',
+            'mobile' => '0685125822',
+            'password' => Hash::make('Mustafa@2023@'),
+            'email_verified_at' => Carbon::now(),
+            'remember_token' => Str::random(60),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+
+        // إدخال المستخدم إلى قاعدة البيانات
+        User::create($user);
     }
 }

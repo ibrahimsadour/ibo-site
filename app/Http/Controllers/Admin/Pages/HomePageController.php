@@ -53,38 +53,35 @@ class HomePageController extends Controller
             $home_page->seo_description =  $request->input('seo_description');
             $home_page->active = $request->input('active');
 
-            // Images section ----> logo
-            if($request->hasfile('logo')) {
-                $file = $request->file('logo');
-                $filename=  'images/pages/logo/'.$file->getClientOriginalName();
-                $final_filename = preg_replace('#[ -]+#', '-', $filename);
-                $file->move('assets/images/pages/logo/', $final_filename);
-                $home_page->logo = $final_filename;
+            // قائمة الصور المطلوبة
+            $imageFields = [
+                'logo' => 'assets/images/pages/logo/',
+                'background' => 'assets/images/pages/background/',
+                'default_seo_image' => 'assets/images/pages/default_seo_image/',
+                'ads_sidebar' => 'assets/images/pages/ads_sidebar/',
+            ];
+
+            // معالجة رفع الصور
+            foreach ($imageFields as $field => $path) {
+                if ($request->hasFile($field)) {
+                    $file = $request->file($field);
+                    
+                    // إنشاء اسم ملف نظيف بدون مسافات
+                    $filename = time() . '-' . preg_replace('#[ -]+#', '-', $file->getClientOriginalName());
+
+                    // حفظ الصورة في المسار المحدد
+                    $file->move(public_path($path), $filename);
+
+                    // حفظ المسار في قاعدة البيانات بدون "assets/"
+                    $home_page->{$field} = str_replace('assets/', '', $path) . $filename;
+                }
             }
-            // ----> background
-            if($request->hasfile('background')) {
-                $file = $request->file('background');
-                $filename=  'images/pages/background/'.$file->getClientOriginalName();
-                $final_filename = preg_replace('#[ -]+#', '-', $filename);
-                $file->move('assets/images/pages/background/', $final_filename);
-                $home_page->background = $final_filename;
-            }
-            // ----> default_seo_image
-            if($request->hasfile('default_seo_image')) {
-                $file = $request->file('default_seo_image');
-                $filename=  'images/pages/default_seo_image/'.$file->getClientOriginalName();
-                $final_filename = preg_replace('#[ -]+#', '-', $filename);
-                $file->move('assets/images/pages/default_seo_image/', $final_filename);
-                $home_page->default_seo_image = $final_filename;
-            }
-            // ----> ads_sidebar
-            if($request->hasfile('ads_sidebar')) {
-                $file = $request->file('ads_sidebar');
-                $filename=  'images/pages/ads_sidebar/'.$file->getClientOriginalName();
-                $final_filename = preg_replace('#[ -]+#', '-', $filename);
-                $file->move('assets/images/pages/ads_sidebar/', $final_filename);
-                $home_page->ads_sidebar = $final_filename;
-            }
+
+// حفظ باقي البيانات
+$home_page->save();
+FacadesDB::commit();
+
+return redirect()->route('admin.home-page')->with(['success' => 'تمت الاضافة بنجاح']);
 
             $home_page->save();
             FacadesDB::commit();
@@ -254,5 +251,22 @@ class HomePageController extends Controller
         //     // return $ex;
         //     return redirect()->route('admin.home-page')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         // }
+    }
+        public function changeStatus($id)
+    {
+        try {
+            $privacy_policy = HomePage::find($id);
+            if (!$privacy_policy)
+                return redirect()->route('admin.home-page')->with(['error' => 'هذه المقالة غير موجود ']);
+
+            $status =  $privacy_policy -> active  == 0 ? 1 : 0;
+
+            $privacy_policy -> update(['active' =>$status ]);
+
+            return redirect()->route('admin.home-page')->with(['success' => ' تم تغيير الحالة بنجاح ']);
+
+        } catch (\Exception $ex) {
+            return redirect()->route('admin.home-page')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
     }
 }
