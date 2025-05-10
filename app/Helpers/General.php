@@ -254,4 +254,5 @@ function config_app_locale(){
     }
 }
 
+
 define('PAGINATION_COUNT',15); // PAGINATION_COUNT : een vast variabel  om alleen 10 items te laat zien om de pagina

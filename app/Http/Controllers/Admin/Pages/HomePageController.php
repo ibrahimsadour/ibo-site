@@ -27,6 +27,18 @@ class HomePageController extends Controller
         return view('admin.pages.home-page.create');
     }
 
+    private function formatKeywords($keywordsJson)
+    {
+        // تحويل JSON إلى مصفوفة
+        $keywordsArray = json_decode($keywordsJson, true);
+
+        // استخراج القيم فقط
+        $keywords = array_column($keywordsArray, 'value');
+
+        // دمج الكلمات بفواصل
+        return implode(', ', $keywords);
+    }
+   
     //add info of the home page
     public function store(HomePageUsRequest $request)
     {
@@ -34,7 +46,7 @@ class HomePageController extends Controller
             $request->request->add(['active' => 0]);
         else
             $request->request->add(['active' => 1]);
-        try{
+        // try{
             $home_page = new HomePage;
             // basic info sction
             $home_page->title = $request->input('title');
@@ -49,7 +61,7 @@ class HomePageController extends Controller
             $home_page->extra_info = $request->input('extra_info');
             // SEO section
             $home_page->seo_title =  $request->input('seo_title');
-            $home_page->seo_keyword =  $request->input('seo_keyword');
+            $home_page->seo_keyword = $this->formatKeywords($request->input('seo_keyword'));
             $home_page->seo_description =  $request->input('seo_description');
             $home_page->active = $request->input('active');
 
@@ -77,20 +89,20 @@ class HomePageController extends Controller
                 }
             }
 
-// حفظ باقي البيانات
-$home_page->save();
-FacadesDB::commit();
+            // حفظ باقي البيانات
+            $home_page->save();
+            FacadesDB::commit();
 
-return redirect()->route('admin.home-page')->with(['success' => 'تمت الاضافة بنجاح']);
+            return redirect()->route('admin.home-page')->with(['success' => 'تمت الاضافة بنجاح']);
 
             $home_page->save();
             FacadesDB::commit();
             return redirect()->route('admin.home-page')->with(['success' => 'تمت الاضافة بنجاح']);
-        }
-        catch(Exception $e){
-            FacadesDB::rollback();
-            return Redirect::back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-        }
+        // }
+        // catch(Exception $e){
+        //     FacadesDB::rollback();
+        //     return Redirect::back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        // }
 
     }
 
@@ -130,7 +142,8 @@ return redirect()->route('admin.home-page')->with(['success' => 'تمت الاض
 
             // seo section
             $home_page->seo_title =  $request->input('seo_title');
-            $home_page->seo_keyword =  $request->input('seo_keyword');
+            $home_page->seo_keyword = $this->formatKeywords($request->input('seo_keyword'));
+
             $home_page->seo_description =  $request->input('seo_description');
             $home_page->active = $request->input('active');
             

@@ -350,3 +350,52 @@
     });
 
 })(window, document, jQuery);
+
+// يعطي تنبيه قبل الخروج من الصفحة
+document.addEventListener("DOMContentLoaded", function() {
+    let formChanged = false;
+
+    // استهداف جميع النماذج داخل لوحة التحكم
+    const forms = document.querySelectorAll("form");
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll("input, textarea, select");
+
+        // متابعة أي تغيير في الحقول
+        inputs.forEach(input => {
+            input.addEventListener("input", () => {
+                formChanged = true;
+            });
+        });
+
+        // إزالة التحذير عند النقر على زر الحفظ
+        form.addEventListener("submit", () => {
+            formChanged = false;
+        });
+    });
+
+    // عرض الرسالة عند محاولة مغادرة الصفحة
+    window.addEventListener("beforeunload", (event) => {
+        if (formChanged) {
+            const message = "هل أنت متأكد من مغادرة الصفحة؟ قد يتم فقدان التغييرات التي أجريتها.";
+            event.returnValue = message;
+            return message;
+        }
+    });
+});
+
+// كلمة البحث بالشكل الصحيح
+document.addEventListener("DOMContentLoaded", function() {
+    var input = document.querySelector("#seo_keyword");
+    
+    // تهيئة Tagify
+    new Tagify(input, {
+        whitelist: [],
+        maxTags: 10,
+        dropdown: {
+            enabled: 0, // فتح القائمة تلقائيًا عند التركيز على الحقل
+            maxItems: 10,
+            classname: "tags-look",
+            closeOnSelect: false
+        }
+    });
+});

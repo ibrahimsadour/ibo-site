@@ -75,14 +75,14 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">اسم الدولة</label>
-                                                            <input type="text" id="default_country" class="form-control" value="{{$home_page-> default_country}}">
+                                                            <input type="text" disabled id="default_country" class="form-control" value="{{$home_page-> default_country}}">
                                                         </div>
                                                     </div>
                                                     {{--  عنوان الموقع --}}
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">H1عنوان الموقع </label>
-                                                            <input type="text" class="form-control" value="{{$home_page-> title}}">
+                                                            <input type="text" disabled class="form-control" value="{{$home_page-> title}}">
                                                         </div>
                                                     </div>
                                                     {{--  Phone number --}}
@@ -90,7 +90,7 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1"> رقم الهاتف للتواصل
                                                             </label>
-                                                            <input type="text" class="form-control" value="{{$home_page-> call_us}}">
+                                                            <input type="text" disabled class="form-control" value="{{$home_page-> call_us}}">
                                                         </div>
                                                     </div>
                                                     {{--  محتوى المقالة --}}
@@ -98,7 +98,7 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">وصف الموقع: </label>
                                                             <div class="form-group">
-                                                                <textarea class="form-control" >{{$home_page-> description}}</textarea>
+                                                                <textarea class="form-control" disabled >{{$home_page-> description}}</textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -106,7 +106,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">Facebook</label>
-                                                            <input type="text" 
+                                                            <input type="text"  disabled
                                                                 class="form-control"
                                                                 value="{{$home_page ->facebook_link}}">
                                                         </div>
@@ -115,7 +115,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">Instagram</label>
-                                                            <input type="text" id="instagram_link"
+                                                            <input type="text" id="instagram_link" disabled
                                                                 class="form-control"
                                                                 value="{{$home_page ->instagram_link}}">
                                                            
@@ -125,7 +125,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">Twitter</label>
-                                                            <input type="text" id="twitter_link"
+                                                            <input type="text" id="twitter_link" disabled
                                                                 class="form-control"
                                                                 value="{{$home_page ->twitter_link}}">
                                                         </div>
@@ -143,7 +143,7 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">عنوان الموقع H2
                                                             </label>
-                                                            <input type="text" class="form-control" value="{{$home_page-> h2title}}">
+                                                            <input type="text" disabled class="form-control" value="{{$home_page-> h2title}}">
                                                         </div>
                                                     </div>
                                                     {{--   كلمات البحث الرئيسية --}}
@@ -169,7 +169,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1">عنوان المقالة </label>
-                                                            <input type="text" id="seo_title"
+                                                            <input type="text" id="seo_title" disabled
                                                                    class="form-control"
                                                                    value="{{$home_page-> seo_title}}">
                                                         </div>
@@ -179,53 +179,27 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1">الوصف
                                                             </label>
-                                                            <input type="text"
+                                                            <input type="text" disabled
                                                                    class="form-control"
                                                                    value="{{$home_page-> seo_description}}"
                                                                    name="seo_description">
                                                         </div>
                                                     </div>
-                                                    {{--  Facebook--}}
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">Facebook</label>
-                                                            <input type="text" 
-                                                                class="form-control"
-                                                                value="{{$home_page ->facebook_link}}">
-                                                        </div>
-                                                    </div>
-                                                    {{--  instagram --}}
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">Instagram</label>
-                                                            <input type="text" id="instagram_link"
-                                                                class="form-control"
-                                                                value="{{$home_page ->instagram_link}}">
-                                                           
-                                                        </div>
-                                                    </div>
-                                                    {{--  Twitter --}}
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">Twitter</label>
-                                                            <input type="text" id="twitter_link"
-                                                                class="form-control"
-                                                                value="{{$home_page ->twitter_link}}">
-                                                        </div>
-                                                    </div>
                                                 </div>
 
-                                                <div class="row" >
+                                                <div class="row">
                                                     {{--   كلمات البحث الرئيسية --}}
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">كلمات البحث الرئيسية: </label>
-                                                            <div class="form-group">
-                                                                <textarea  name="seo_keyword"  class="form-control"  >{{$home_page-> seo_keyword}}</textarea>
+                                                            <label for="seo_keyword">الكلمات المفتاحية الرئيسية</label>
+                                                            <div class="rank-math-keywords-container">
+                                                                <input id="seo_keyword" disabled
+                                                                    name="seo_keyword" 
+                                                                    value="{{ old('seo_keyword', $home_page->seo_keyword ?? '') }}"
+                                                                    class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
 
                                             </div>

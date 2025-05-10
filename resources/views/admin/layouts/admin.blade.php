@@ -50,6 +50,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/style-rtl.css')}}">
     <!-- END Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/counter-style.css') }}">
+    <!-- تضمين ملفات Tagify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js"></script>
 
     <!-- @notify_css -->
     @yield('style')
@@ -111,6 +114,10 @@
 <script src="{{asset('assets/admin/js/scripts/customizer.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/vendors/js/extensions/dropzone.min.js')}}" type="text/javascript"></script>
 <!-- END MODERN JS-->
+<!-- تضمين ملفات Tagify -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js"></script>
+
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{asset('assets/admin/js/scripts/pages/dashboard-crypto.js')}}" type="text/javascript"></script>
 

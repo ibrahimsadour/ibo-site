@@ -1,0 +1,289 @@
+[33mcommit 2f65711cb6b7f2592c22ae81f775672027168239[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Sat May 10 17:28:10 2025 +0200
+
+    إضافة عداد الأحرف لجميع الحقول وتحسين تصميم العدادات
+
+[33mcommit 4d515bbda098285ba9a3dafcf0b18d497cb9586a[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Thu Nov 30 16:58:11 2023 +0100
+
+    edit logo
+
+[33mcommit 917055f026d90dc29432522f4e899445b6223839[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Nov 20 21:58:40 2023 +0100
+
+    admin-bar
+
+[33mcommit cb2b1ff49a600eca5022e98c14733fa16d50674b[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Sun Nov 19 01:58:06 2023 +0100
+
+    edit footer and rdit robot.txt
+
+[33mcommit 5474a7ddba6060016cec6177fd4f0dd167acdf77[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Sat Nov 18 11:39:14 2023 +0100
+
+    add section to home page
+
+[33mcommit a236323a4feac1e3f97d3b8ab87acf18808ea0c2[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Tue Oct 10 13:57:57 2023 +0200
+
+    edit
+
+[33mcommit b1a9096d3fed80c7529a4841c83578a69a507f5d[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Tue Oct 10 13:43:33 2023 +0200
+
+    edit
+
+[33mcommit 221e624bb3803d5255a2d8368b700c7384606453[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Oct 9 19:37:02 2023 +0200
+
+    edit city admin page
+
+[33mcommit 955a013e1d533ecc25e3ded58e7b205d68cf6497[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Oct 9 16:50:25 2023 +0200
+
+    d
+
+[33mcommit 880871fdc1b757c95d8bcd308b441deffb5b261c[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Oct 9 15:34:11 2023 +0200
+
+    city trans
+
+[33mcommit bc9387866432287f25ad04c137cd0f96778bdd56[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Oct 9 15:32:00 2023 +0200
+
+    city trans
+
+[33mcommit ed75ec456f132640275d7334800dda1259bdf77b[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Oct 9 11:19:17 2023 +0200
+
+    edit lang + cities import
+
+[33mcommit d816fd59b1567ba0ded5812042c75653b2705cf7[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Tue Oct 3 11:30:39 2023 +0200
+
+    edit seeder in dataase
+
+[33mcommit 7f3253d881b6a41aa8d7941a4e11ab075407441c[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Oct 2 15:29:29 2023 +0200
+
+    transleet
+
+[33mcommit d25745f9cfe445572570bcd2aa196d869eb79faf[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Sat Sep 30 17:27:30 2023 +0200
+
+    transleet
+
+[33mcommit 2392744a6192d82253ca339905682b66b7cf1a40[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 29 13:17:45 2023 +0200
+
+    localezetion
+
+[33mcommit bc0e3f48613b504d7abbd486bc74a118f9efc768[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 15 16:55:03 2023 +0200
+
+    active cars or deactive
+
+[33mcommit f6faea4b3f7246da592fbd470bd2aecb3a488f30[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 15 16:52:18 2023 +0200
+
+    active cars or deactive
+
+[33mcommit 3bfed870ac3e0889d57d2c2642ead5c1e5a85cb7[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 15 16:47:09 2023 +0200
+
+    active cars or deactive
+
+[33mcommit cd950f82f3431d68fe106e3ec5920ee38f6cd281[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 15 16:39:06 2023 +0200
+
+    active cars or deactive
+
+[33mcommit 6deed91146535e7a1f0010213897b43f0140db01[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 15 15:34:35 2023 +0200
+
+    active cars or deactive
+
+[33mcommit d7877cb382ac8c18c05822155e71cdbd7132c4a1[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Thu Sep 14 14:42:34 2023 +0200
+
+    edit seo title in tags
+
+[33mcommit c677b2967bf8a0b18d20bfadef7361f06b34c8af[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Tue Sep 12 16:39:10 2023 +0200
+
+    edit articels page
+
+[33mcommit 79d193faf4ea7a8d6a9f7f74da3c5231f14bab32[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 22:10:00 2023 +0200
+
+    edit css link
+
+[33mcommit 0108754388eb43cf257735778e67db80593620b2[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 21:16:41 2023 +0200
+
+    edit css link
+
+[33mcommit 025307b52531126b7c371c479f267e0bf583b3fd[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 21:16:06 2023 +0200
+
+    edit css link
+
+[33mcommit 63c4840528a608cb8b792c267daee254de3ab9f9[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 21:14:34 2023 +0200
+
+    edit css link
+
+[33mcommit 837bb3e1f539995dbab0b73739608dec78d1f3d7[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 21:12:45 2023 +0200
+
+    edit css link
+
+[33mcommit 3ee849b20b4a3242d04ac612425334a6aef11605[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 21:05:03 2023 +0200
+
+    edit css link
+
+[33mcommit c77f1ee4ed63758b340b792712a93615f5d483bb[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:48:55 2023 +0200
+
+    edit css link
+
+[33mcommit fb388f8c61c7d95f371ca5703fc7496456c4cd54[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:46:45 2023 +0200
+
+    edit css link
+
+[33mcommit 42352a1e3e22d79f44d7b94a2e4f773ac59bf39d[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:45:52 2023 +0200
+
+    edit css link
+
+[33mcommit 8223ea7bb465603f86c41c966a702ca9c3e20792[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:43:41 2023 +0200
+
+    edit css link
+
+[33mcommit 427ead46217a230f241ad8a8dbab39a33bde6634[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:41:28 2023 +0200
+
+    edit css link
+
+[33mcommit 74864c48b1cc7f52e142274a8ff044b25441e848[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:21:52 2023 +0200
+
+    edit css link
+
+[33mcommit 0b4de1f29f740d71542e11285a7ee4dc9496f74d[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:19:19 2023 +0200
+
+    edit css link
+
+[33mcommit 9e252bd17fc4fa5efb8ce655e373d859e11e216a[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:18:32 2023 +0200
+
+    edit css link
+
+[33mcommit 8440a47fa3710ae8a995a2f9d2599fce9e6ae366[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:17:35 2023 +0200
+
+    edit css link
+
+[33mcommit 37f2b0e92eb29a3a64bfde2aacd7acf378e57712[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 20:11:17 2023 +0200
+
+    edit css link
+
+[33mcommit f4905c0d27648a29a345fc5a310130e022db5f93[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 19:58:42 2023 +0200
+
+    edit css link
+
+[33mcommit ac017e1567d66969dd4898510daa305715ebb57d[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 19:51:16 2023 +0200
+
+    edit css link
+
+[33mcommit c6322f8b7bea2d534f8b4b131f86ab20f23fb129[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 17:16:50 2023 +0200
+
+    edit css link
+
+[33mcommit 0d38a72cc7a4e6ef2fe998ccd37775c2a939570f[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 17:09:11 2023 +0200
+
+    edit seo image
+
+[33mcommit 8ad063f3e178ae5ff84b9e944d557a49813a573e[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 14:59:25 2023 +0200
+
+    add back link to tag page
+
+[33mcommit 7c2e05c456b347bd02d6013c5cf0e57cb4ea63a0[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 14:53:20 2023 +0200
+
+    add back link to tag page
+
+[33mcommit 2de06869622da140349e7e3d1b640f31d5a11b78[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Mon Sep 11 14:30:56 2023 +0200
+
+    add call button + add dynamic content
+
+[33mcommit cf8539e9ab48b7c1c5e4d6840f0229642469dacd[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Fri Sep 8 10:09:11 2023 +0200
+
+    edit sitmap
+
+[33mcommit 160bb7c2f9c5eff7f2260953ffd10179a0ded830[m
+Author: Ibrahim Sadour <i.m.s.1995@hotmail.com>
+Date:   Thu Sep 7 01:19:31 2023 +0200
+
+    edit articles group
+
+[33mcommit 30d379963ee254523ecc4b03d40a0271c1e6e8ee[m
