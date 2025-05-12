@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\RobotsTxtController;
+use App\Http\Controllers\GitController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -323,6 +324,12 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
         Route::get('update/{lang}',[SettingController::class ,'update_config_app_locale']) -> name('admin.update.app.config');
 
     });
+    ###########################################
+
+    
+    ###########################################
+    Route::get('/updates', [GitController::class, 'index'])->name('updates.index');
+    Route::post('/updates/pull', [GitController::class, 'pull'])->name('updates.pull');
     ###########################################
 
 });
