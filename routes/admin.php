@@ -20,7 +20,6 @@ use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\RobotsTxtController;
-use App\Http\Controllers\GitController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -327,10 +326,6 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
     ###########################################
 
     
-    ###########################################
-    Route::get('/updates', [GitController::class, 'index'])->name('updates.index');
-    Route::post('/updates/pull', [GitController::class, 'pull'])->name('updates.pull');
-    ###########################################
 
 });
 ############################# End admin Dashboard Route ###############################
