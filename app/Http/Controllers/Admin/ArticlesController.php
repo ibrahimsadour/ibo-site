@@ -55,22 +55,11 @@ class ArticlesController extends Controller
         return view('admin.articles.create', $data);
     }
 
-    private function formatKeywords($keywordsJson)
-{
-    // تحويل JSON إلى مصفوفة
-    $keywordsArray = json_decode($keywordsJson, true);
-
-    // استخراج القيم فقط
-    $keywords = array_column($keywordsArray, 'value');
-
-    // دمج الكلمات بفواصل
-    return implode(', ', $keywords);
-}
     //add new car
     public function store(ArticlesRequest $request)
 
     {
-//    return $request->tags;
+    //    return $request->tags;
         DB::beginTransaction();
         //Deze gemaakt om te checken als het goed gaat met insert proces:
         ### try {
@@ -131,7 +120,7 @@ class ArticlesController extends Controller
                 'description' =>$request->description,
                 'seo_title' =>$request->seo_title,
 
-                'seo_keyword' => $this->formatKeywords($request->seo_keyword), // تعديل هنا
+                'seo_keyword' =>$request->seo_keyword,
                 'seo_description' =>$request->seo_description,
                 'section_id' => $section_id,
                 'car_id' => $car_id,
@@ -183,7 +172,7 @@ class ArticlesController extends Controller
     {
             //validation => ArticlesRequest
 
-        try {
+        // try {
             // return $request;
             //find Article and check of the exists or not
             $article = Article::find($request->id);
@@ -203,7 +192,6 @@ class ArticlesController extends Controller
             $article->description = $request->input('description');
             $article->seo_title = $request->input('seo_title');
             $article->seo_keyword = $request->input('seo_keyword');
-            $article->seo_keyword = $this->formatKeywords($request->input('seo_keyword'));
 
             $article->seo_description = $request->input('seo_description');
 
@@ -233,9 +221,9 @@ class ArticlesController extends Controller
             DB::commit();
             return redirect()->route('admin.articles')->with(['success' => 'تمت تحديث المقالة بنجاح']);
 
-        } catch (\Exception $ex) {
-            return redirect()->route('admin.articles')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-        }
+        // } catch (\Exception $ex) {
+        //     return redirect()->route('admin.articles')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        // }
     }
 
     public function delete_all_tags_of_one_article($id)

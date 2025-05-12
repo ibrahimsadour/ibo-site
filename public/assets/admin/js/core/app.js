@@ -382,20 +382,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-// كلمة البحث بالشكل الصحيح
-document.addEventListener("DOMContentLoaded", function() {
-    var input = document.querySelector("#seo_keyword");
-    
-    // تهيئة Tagify
-    new Tagify(input, {
-        whitelist: [],
-        maxTags: 10,
-        dropdown: {
-            enabled: 0, // فتح القائمة تلقائيًا عند التركيز على الحقل
-            maxItems: 10,
-            classname: "tags-look",
-            closeOnSelect: false
-        }
-    });
-});

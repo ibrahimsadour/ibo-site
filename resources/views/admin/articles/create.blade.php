@@ -275,19 +275,16 @@
                                                         {{--   كلمات البحث الرئيسية --}}
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="seo_keyword">الكلمات المفتاحية الرئيسية</label>
-                                                                <div class="rank-math-keywords-container">
-                                                                    <input id="seo_keyword" 
-                                                                            name="seo_keyword" 
-                                                                            placeholder="مثال: بنشر, تبديل تواير, كهربائي, ميكانيكي" 
-                                                                            value="{{ old('seo_keyword', $article->seo_keyword ?? '') }}"
-                                                                            class="form-control">
+                                                                <label for="projectinput1">كلمات البحث الرئيسية: </label>
+                                                                <div class="form-group">
+                                                                    <textarea multiple name="seo_keyword" placeholder="بنشر, تبديل تواير, كهربائي, ميكانيكي" class="form-control" value="{{old('seo_keyword')}}" >{{old('seo_keyword')}}</textarea>
                                                                 </div>
                                                                 @error("seo_keyword")
                                                                 <span class="text-danger">{{$message}}</span>
                                                                 @enderror
                                                             </div>
                                                         </div>
+
                                                     </div>
 
                                                 </div>
