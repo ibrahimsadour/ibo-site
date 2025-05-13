@@ -41,6 +41,8 @@ class HomePageController extends Controller
             $home_page->facebook_link =  $request->input('facebook_link');
             $home_page->instagram_link =  $request->input('instagram_link');
             $home_page->twitter_link =  $request->input('twitter_link');
+            $home_page->extra_info = $request->input('extra_info');
+
             $home_page->seo_title =  $request->input('seo_title');
             $home_page->seo_keyword =  $request->input('seo_keyword');
             $home_page->seo_description =  $request->input('seo_description');
@@ -122,6 +124,8 @@ class HomePageController extends Controller
             $home_page->facebook_link =  $request->input('facebook_link');
             $home_page->instagram_link =  $request->input('instagram_link');
             $home_page->twitter_link =  $request->input('twitter_link');
+            $home_page->extra_info = $request->input('extra_info');
+
             $home_page->seo_title =  $request->input('seo_title');
             $home_page->seo_keyword =  $request->input('seo_keyword');
             $home_page->seo_description =  $request->input('seo_description');
