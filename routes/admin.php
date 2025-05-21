@@ -20,6 +20,9 @@ use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\RobotsTxtController;
+use App\Http\Controllers\RedirectController;
+use Illuminate\Http\Request;
+use App\Models\Redirect;
 
 
 use Illuminate\Support\Facades\Route;
@@ -325,9 +328,40 @@ Route::group( ['prefix' => 'admin', 'middleware' => 'auth'],function() {
     });
     ###########################################
 
-    
+    //redirects Route
+    Route::prefix('redirects')->group(function () {
+        Route::get('/', [RedirectController::class, 'index'])->name('redirects.index');
+        Route::get('/create', [RedirectController::class, 'create'])->name('redirects.create');
+        Route::post('/', [RedirectController::class, 'store'])->name('redirects.store');
+        Route::get('/{id}/edit', [RedirectController::class, 'edit'])->name('redirects.edit');
+        Route::put('/{id}', [RedirectController::class, 'update'])->name('redirects.update');
+        Route::delete('/{id}', [RedirectController::class, 'destroy'])->name('redirects.destroy');
+        Route::get('/{id}',[RedirectController::class ,'changeStatus']) -> name('redirects.changeStatus');
 
-});
+    });
+
+    Route::fallback(function (Request $request) {
+        // استخراج المسار وفك ترميزه لدعم العربية
+        $uri = '/' . ltrim(urldecode($request->path()), '/');
+
+        // البحث عن التوجيه في قاعدة البيانات
+            // البحث عن التوجيه المفعّل فقط
+    $redirect = Redirect::where('source_url', $uri)
+                        ->where('active', true)
+                        ->first();
+
+        if ($redirect) {
+            return redirect($redirect->target_url, $redirect->status_code)
+                ->header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+                ->header('Pragma', 'no-cache')
+                ->header('Expires', '0');
+        }
+
+        abort(404);
+    });
+    //Eind redirects Route
+    
+    });
 ############################# End admin Dashboard Route ###############################
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

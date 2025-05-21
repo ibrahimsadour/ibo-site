@@ -176,6 +176,12 @@
                             <span>Robots.txt</span>
                         </a>
                     </li>  
+                    {{--   redirects اعادة توجيه   --}}
+                    <li class="{{ Request::is('admin/redirects') ? 'nav-item active' : '' }}">
+                        <a href="{{route('redirects.index')}}"><i class="icon-globe"></i>
+                            <span>redirects اعادة توجيه </span>
+                        </a>
+                    </li>  
                 </ul>
             </li>
 
